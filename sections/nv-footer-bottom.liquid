@@ -70,6 +70,9 @@
         text-decoration: none;
         color: {{section.settings.content_color |  default:'#fff'}};
     }
+    .section-{{ section.id }}-padding footer__copyright.caption{
+      color: {{section.settings.content_color |  default:'#fff'}};
+    }
     @media(max-width:1279px){
         .section-{{ section.id }}-padding .nv-footer-bottom-wrapper {
                 grid-template-columns: 1fr;
