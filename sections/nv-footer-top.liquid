@@ -6,7 +6,7 @@
   
   .section-{{ section.id }}-padding {
     background-color:{{ section.settings.bg_color | default: "#000"}};
-    border-bottom: 1px solid rgba(255, 255, 255, .4);
+    border-bottom: 1px solid rgba({{section.settings.content_color.red}}, {{section.settings.content_color.green}}, {{section.settings.content_color.blue}}, .4);
   }
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
