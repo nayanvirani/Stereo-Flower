@@ -1,1 +1,190 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"nv_footer_top_TYVEkq":{"type":"nv-footer-top","name":"NV: Footer top","settings":{"title":"STEREO FLOWER","image":"shopify:\/\/shop_images\/Stereo_Creative_Asset025.png","text":"DRINK UP, TUNE IN, STAY LOUD","bg_color":"#ffffff","content_color":"#121212","padding_top":36,"padding_bottom":36}},"nv_footer_center_yncqTV":{"type":"nv-footer-center","blocks":{"followus_UwRRVJ":{"type":"followus","settings":{"title":"FOLLOW US"}},"menu_cdHidz":{"type":"menu","settings":{"title":"SHOP","menu":"main-menu-1"}},"menu_eDCtER":{"type":"menu","settings":{"title":"SHOP","menu":"main-menu-1"}},"menu_jRJ4rn":{"type":"menu","settings":{"title":"SHOP","menu":"main-menu-1"}},"newsletter_7PTUWe":{"type":"newsletter","settings":{"title":"STAY IN THE LOOP","content":"New drops. Good times"}}},"block_order":["followus_UwRRVJ","menu_cdHidz","menu_eDCtER","menu_jRJ4rn","newsletter_7PTUWe"],"name":"NV: Footer center","settings":{"section_color_scheme":"scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d","padding_top":36,"padding_bottom":36}},"nv_footer_bottom_38g98L":{"type":"nv-footer-bottom","name":"NV: Footer bottom","settings":{"image":"shopify:\/\/shop_images\/LOGO.png","payment_icon":"shopify:\/\/shop_images\/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg","bg_color":"#ffffff","content_color":"#fff","padding_top":15,"padding_bottom":15}},"custom_footer_GBAEPB":{"type":"custom-footer","disabled":true,"name":"Custom footer","settings":{"footer_policy_menu":"footer-policy-menu","section_color_scheme":"scheme-1","copytext":"@STEREO.FLOWER","copytext_url":"https:\/\/www.instagram.com\/stereo.flower","logo":"shopify:\/\/shop_images\/Stereo_Creative_Asset025.png","ft_email":"info@stereoflower.com","padding_top":36,"padding_bottom":36,"footer_note":"<p>MUST BE 21+ TO PURCHASE. THE PRODUCTS DISPLAYED AND AVAILABLE FOR SALE ON THIS SITE (1) ARE HEMP DERIVED CANNABINOID PRODUCTS THAT COMPLY WITH THE FEDERAL LEGAL LIMIT CONTAINING LESS THAN ZERO AND THREE-TENTHS (0.3%) DELTA-9 TETRAHYDROCANNABINOL (THC), (2) DO NOT CLAIM TO DIAGNOSE, TREAT, MITIGATE, CURE, OR PREVENT ANY DISEASE, AND (3) HAVE NOT BEEN EVALUATED OR APPROVED BY THE UNITED STATES FOOD AND DRUG ADMINISTRATION (FDA) FOR SAFETY, EFFICACY, EFFECTIVENESS, OR QUALITY.<\/p>"}},"footer":{"type":"footer","blocks":{"brand_information_Ecrybi":{"type":"brand_information","settings":{"show_social":true}},"link_list_FGDwdk":{"type":"link_list","settings":{"heading":"Shop","menu":"main-menu-1"}},"link_list_hE3Whb":{"type":"link_list","settings":{"heading":"Shop","menu":"main-menu-1"}},"link_list_ee3zxa":{"type":"link_list","settings":{"heading":"Shop","menu":"main-menu-1"}},"klaviyo_email_marketing_sms_form_embed_block_FtpyUT":{"type":"shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/form-embed-block\/2632fe16-c075-4321-a88b-50b567f42507","settings":{"formId":""}}},"block_order":["brand_information_Ecrybi","link_list_FGDwdk","link_list_hE3Whb","link_list_ee3zxa","klaviyo_email_marketing_sms_form_embed_block_FtpyUT"],"disabled":true,"settings":{"color_scheme":"scheme-3","newsletter_enable":false,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":false,"show_social":false,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}},"custom_liquid_MLGbkj":{"type":"custom-liquid","disabled":true,"custom_css":[".custom-payment-icon-wrapper.footer-payment-icons {max-width: 450px; margin: 0 auto; padding: 15px;}"],"name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"custom-payment-icon-wrapper footer-payment-icons\"> <img src=\"\/\/www.stereoflower.com\/cdn\/shop\/files\/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=900\" alt=\"payment icon\" srcset=\"\/\/www.stereoflower.com\/cdn\/shop\/files\/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=352 352w, \/\/www.stereoflower.com\/cdn\/shop\/files\/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=832 832w, \/\/www.stereoflower.com\/cdn\/shop\/files\/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=900 900w\" width=\"900\" height=\"87\"><\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}}},"order":["nv_footer_top_TYVEkq","nv_footer_center_yncqTV","nv_footer_bottom_38g98L","custom_footer_GBAEPB","footer","custom_liquid_MLGbkj"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "nv_footer_top_TYVEkq": {
+      "type": "nv-footer-top",
+      "name": "NV: Footer top",
+      "settings": {
+        "title": "STEREO FLOWER",
+        "image": "shopify://shop_images/Stereo_Flower_Logo_Flower_Simple_White.webp",
+        "text": "DRINK UP, TUNE IN, STAY LOUD",
+        "bg_color": "#121212",
+        "content_color": "#ffffff",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "nv_footer_center_yncqTV": {
+      "type": "nv-footer-center",
+      "blocks": {
+        "followus_UwRRVJ": {
+          "type": "followus",
+          "settings": {
+            "title": "FOLLOW US"
+          }
+        },
+        "menu_cdHidz": {
+          "type": "menu",
+          "settings": {
+            "title": "SHOP",
+            "menu": "main-menu-1"
+          }
+        },
+        "menu_eDCtER": {
+          "type": "menu",
+          "settings": {
+            "title": "SHOP",
+            "menu": "main-menu-1"
+          }
+        },
+        "menu_jRJ4rn": {
+          "type": "menu",
+          "settings": {
+            "title": "SHOP",
+            "menu": "main-menu-1"
+          }
+        },
+        "newsletter_7PTUWe": {
+          "type": "newsletter",
+          "settings": {
+            "title": "STAY IN THE LOOP",
+            "content": "New drops. Good times"
+          }
+        }
+      },
+      "block_order": [
+        "followus_UwRRVJ",
+        "menu_cdHidz",
+        "menu_eDCtER",
+        "menu_jRJ4rn",
+        "newsletter_7PTUWe"
+      ],
+      "name": "NV: Footer center",
+      "settings": {
+        "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "nv_footer_bottom_38g98L": {
+      "type": "nv-footer-bottom",
+      "name": "NV: Footer bottom",
+      "settings": {
+        "image": "shopify://shop_images/LOGO.png",
+        "payment_icon": "shopify://shop_images/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg",
+        "bg_color": "#ffffff",
+        "content_color": "#fff",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "custom_footer_GBAEPB": {
+      "type": "custom-footer",
+      "disabled": true,
+      "name": "Custom footer",
+      "settings": {
+        "footer_policy_menu": "footer-policy-menu",
+        "section_color_scheme": "scheme-1",
+        "copytext": "@STEREO.FLOWER",
+        "copytext_url": "https://www.instagram.com/stereo.flower",
+        "logo": "shopify://shop_images/Stereo_Creative_Asset025.png",
+        "ft_email": "info@stereoflower.com",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "footer_note": "<p>MUST BE 21+ TO PURCHASE. THE PRODUCTS DISPLAYED AND AVAILABLE FOR SALE ON THIS SITE (1) ARE HEMP DERIVED CANNABINOID PRODUCTS THAT COMPLY WITH THE FEDERAL LEGAL LIMIT CONTAINING LESS THAN ZERO AND THREE-TENTHS (0.3%) DELTA-9 TETRAHYDROCANNABINOL (THC), (2) DO NOT CLAIM TO DIAGNOSE, TREAT, MITIGATE, CURE, OR PREVENT ANY DISEASE, AND (3) HAVE NOT BEEN EVALUATED OR APPROVED BY THE UNITED STATES FOOD AND DRUG ADMINISTRATION (FDA) FOR SAFETY, EFFICACY, EFFECTIVENESS, OR QUALITY.</p>"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_Ecrybi": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_FGDwdk": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu-1"
+          }
+        },
+        "link_list_hE3Whb": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu-1"
+          }
+        },
+        "link_list_ee3zxa": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu-1"
+          }
+        },
+        "klaviyo_email_marketing_sms_form_embed_block_FtpyUT": {
+          "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/form-embed-block/2632fe16-c075-4321-a88b-50b567f42507",
+          "settings": {
+            "formId": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_Ecrybi",
+        "link_list_FGDwdk",
+        "link_list_hE3Whb",
+        "link_list_ee3zxa",
+        "klaviyo_email_marketing_sms_form_embed_block_FtpyUT"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-3",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_liquid_MLGbkj": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".custom-payment-icon-wrapper.footer-payment-icons {max-width: 450px; margin: 0 auto; padding: 15px;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"custom-payment-icon-wrapper footer-payment-icons\"> <img src=\"//www.stereoflower.com/cdn/shop/files/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=900\" alt=\"payment icon\" srcset=\"//www.stereoflower.com/cdn/shop/files/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=352 352w, //www.stereoflower.com/cdn/shop/files/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=832 832w, //www.stereoflower.com/cdn/shop/files/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg?v=1772181299&amp;width=900 900w\" width=\"900\" height=\"87\"></div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "nv_footer_top_TYVEkq",
+    "nv_footer_center_yncqTV",
+    "nv_footer_bottom_38g98L",
+    "custom_footer_GBAEPB",
+    "footer",
+    "custom_liquid_MLGbkj"
+  ]
+}
