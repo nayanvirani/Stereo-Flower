@@ -11,12 +11,12 @@
   }
   
    {% if section.settings.bg_image != blank %}
-    .section-{{ section.id }}-padding{
+    /*.section-{{ section.id }}-padding{
       background:url('{{ section.settings.bg_image | image_url }}');
       background-repeat: no-repeat;
       background-size: cover;
        background-position: center;
-    }
+    }*/
   {% endif %}
   .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
         display: flex;
@@ -86,12 +86,12 @@
   @media(max-width:749px){
     
      {% if section.settings.bg_image_m != blank %}
-        .section-{{ section.id }}-padding{
+       /* .section-{{ section.id }}-padding{
         background:url('{{ section.settings.bg_image_m | image_url }}');
         background-repeat: no-repeat;
         background-size: cover;
          background-position: center;
-        }
+        }*/
     {% endif %}
     .section-{{ section.id }}-padding .nv-match-flavor-item {
         gap: 15%;
@@ -120,85 +120,91 @@
 
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}{% if section.settings.enable_border_radius == true %} content-border-radius{% endif %}">
-  <div class="page-width">
-    <div class="nv-custom-section__title title-wrapper title-wrapper--no-top-margin center">
-      {%- if section.settings.title != blank -%}
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} uppercase">
-          {{ section.settings.title }}
-        </h2>
-      {%- endif -%}
+    <div class="custom-full-image-wrapper">
+        <img src="{{section.settings.bg_image | image_url }}" loading="lazy"  width="{{section.settings.bg_image.width }}" height="{{section.settings.bg_image.height }}">
     </div>
-    <div class="nv-match-flavor-wrapper">
-        {% for block in section.blocks %}
-            {% if block.type == 'leftitem' %}
-                <div class="nv-match-flavor-item left-item">
-                    {% if block.settings.left_icon != blank %}
-                        <div class="image-wrapper left-icon-wrapper">
-                            <img src="{{ block.settings.left_icon | image_url }}" loading="lazy" width="{{ block.settings.left_icon.width }}" height="{{ block.settings.left_icon.height }}">
+    <div class="custom-full-content-wrapper">
+        <div class="page-width">
+            <div class="nv-custom-section__title title-wrapper title-wrapper--no-top-margin center">
+            {%- if section.settings.title != blank -%}
+                <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} uppercase">
+                {{ section.settings.title }}
+                </h2>
+            {%- endif -%}
+            </div>
+            <div class="nv-match-flavor-wrapper">
+                {% for block in section.blocks %}
+                    {% if block.type == 'leftitem' %}
+                        <div class="nv-match-flavor-item left-item">
+                            {% if block.settings.left_icon != blank %}
+                                <div class="image-wrapper left-icon-wrapper">
+                                    <img src="{{ block.settings.left_icon | image_url }}" loading="lazy" width="{{ block.settings.left_icon.width }}" height="{{ block.settings.left_icon.height }}">
+                                </div>
+                            {% endif %}
+                            <div class="nv-match-flavor-item-content">
+                                {% if block.settings.top_icon != blank %}
+                                    <div class="image-wrapper top-icon-wrapper">
+                                        <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.title != blank %}
+                                    <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                                {% endif %}
+                                {% if block.settings.sub_title != blank %}
+                                    <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                                {% endif %}
+                                {% if block.settings.content != blank %}
+                                    <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                                {% endif %}
+                                {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+                                    <div class="nv-match-flavor-item-button-wrapper">
+                                        <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
+                                            --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                                            --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                                            "{% endif %}>{{ block.settings.button_text }}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% elsif block.type == 'rightitem' %}
+                        <div class="nv-match-flavor-item right-item">
+                            
+                            <div class="nv-match-flavor-item-content">
+                                {% if block.settings.top_icon != blank %}
+                                    <div class="image-wrapper top-icon-wrapper">
+                                        <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.title != blank %}
+                                    <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                                {% endif %}
+                                {% if block.settings.sub_title != blank %}
+                                    <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                                {% endif %}
+                                {% if block.settings.content != blank %}
+                                    <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                                {% endif %}
+                                {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+                                    <div class="nv-match-flavor-item-button-wrapper">
+                                        <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
+                                            --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                                            --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                                            "{% endif %}>{{ block.settings.button_text }}</a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            {% if block.settings.right_icon != blank %}
+                                <div class="image-wrapper right-icon-wrapper">
+                                    <img src="{{ block.settings.right_icon | image_url }}" loading="lazy" width="{{ block.settings.right_icon.width }}" height="{{ block.settings.right_icon.height }}">
+                                </div>
+                            {% endif %}
                         </div>
                     {% endif %}
-                    <div class="nv-match-flavor-item-content">
-                        {% if block.settings.top_icon != blank %}
-                            <div class="image-wrapper top-icon-wrapper">
-                                <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
-                            </div>
-                        {% endif %}
-                        {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
-                        {% endif %}
-                        {% if block.settings.sub_title != blank %}
-                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
-                        {% endif %}
-                        {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
-                        {% endif %}
-                        {% if block.settings.button_text != blank and block.settings.button_url != blank %}
-                            <div class="nv-match-flavor-item-button-wrapper">
-                                <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
-                                    --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
-                                    --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
-                                    "{% endif %}>{{ block.settings.button_text }}</a>
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-            {% elsif block.type == 'rightitem' %}
-                <div class="nv-match-flavor-item right-item">
-                    
-                    <div class="nv-match-flavor-item-content">
-                        {% if block.settings.top_icon != blank %}
-                            <div class="image-wrapper top-icon-wrapper">
-                                <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
-                            </div>
-                        {% endif %}
-                        {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
-                        {% endif %}
-                        {% if block.settings.sub_title != blank %}
-                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
-                        {% endif %}
-                        {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
-                        {% endif %}
-                        {% if block.settings.button_text != blank and block.settings.button_url != blank %}
-                            <div class="nv-match-flavor-item-button-wrapper">
-                                <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
-                                    --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
-                                    --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
-                                    "{% endif %}>{{ block.settings.button_text }}</a>
-                            </div>
-                        {% endif %}
-                    </div>
-                    {% if block.settings.right_icon != blank %}
-                        <div class="image-wrapper right-icon-wrapper">
-                            <img src="{{ block.settings.right_icon | image_url }}" loading="lazy" width="{{ block.settings.right_icon.width }}" height="{{ block.settings.right_icon.height }}">
-                        </div>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
-  </div>
+    
 </div>
 {% schema %}
 {
