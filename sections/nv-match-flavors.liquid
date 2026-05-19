@@ -21,7 +21,7 @@
   .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
         display: flex;
         justify-content: space-between;
-        height:100vh;
+       
     }
 
     .section-{{ section.id }}-padding .nv-match-flavor-item {
@@ -115,7 +115,16 @@
         max-width: 70px;
     }
   }
-  
+  @media(min-width:750px){
+    .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
+        height:65vh;
+    }
+  }
+  @media(min-width:1024px){
+    .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
+        height:100vh;
+    }
+  }
 {%- endstyle -%}
 
 
