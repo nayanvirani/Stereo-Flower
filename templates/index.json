@@ -226,7 +226,7 @@
           "type": "leftitem",
           "settings": {
             "left_icon": "shopify://shop_images/stereo_flower_levels_5mg.png",
-            "top_icon": "shopify://shop_images/LoFi_Asset_stereo_flower.png",
+            "top_icon": "shopify://shop_images/LoFi_Asset_Small_e8c0e67f-90a3-4ee0-b7db-bd32c9de2351.png",
             "title": "LOW FREQUENCY",
             "title_color": "#000000",
             "sub_title": "5mg THC | 10mg CBD",
@@ -266,6 +266,7 @@
         "title": "MATCH ANY FLAVOR TO YOUR FREQUENCY",
         "heading_size": "h1",
         "bg_image": "shopify://shop_images/HWD-SF-ASSETS-02.webp",
+        "bg_image_m": "shopify://shop_images/stereo_flower_flavor_frequency.jpg",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
         "padding_top": 36,
         "padding_bottom": 36
