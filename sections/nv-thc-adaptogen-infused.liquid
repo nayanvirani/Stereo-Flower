@@ -1,0 +1,335 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+   {% if section.settings.bg_image != blank %}
+    .section-{{ section.id }}-padding{
+      background:url('{{ section.settings.bg_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+       background-position: center;
+    }
+  {% endif %}
+  .section-{{ section.id }}-padding .nv-thc-adaptogen-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(0,1fr));
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        height: 100%;
+    }
+
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item-title {
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 100%;
+        margin-top: 15px;
+    }
+
+   .section-{{ section.id }}-padding .nv-thc-adaptogen-item-content {
+        font-size: 20px;
+        text-align: center;
+        line-height: 120%;
+        text-transform: uppercase;
+        margin-top: 5px;
+    }
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item.enable-wave {
+        position: relative;
+    }
+
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item.enable-wave:after {
+        content: "";
+        position: absolute;
+        background: url('https://cdn.shopify.com/s/files/1/0956/8344/5049/files/HWD-SF-ASSETS-17.webp');
+         background-repeat: no-repeat;
+      background-size: contain;
+       background-position: center;
+        height: 33px;
+        width: 58%;
+        right: -30%;
+        top: 20%;
+        transform: translateY(-20%);
+    }
+     .section-{{ section.id }}-padding .nv-thc-adaptogen-item.enable-wave:before {
+        content: "";
+        position: absolute;
+        background: url('https://cdn.shopify.com/s/files/1/0956/8344/5049/files/HWD-SF-ASSETS-17.webp');
+         background-repeat: no-repeat;
+      background-size: contain;
+       background-position: center;
+        height: 33px;
+        width: 58%;
+        left: -30%;
+        top: 20%;
+        transform: translateY(-20%);
+    }
+  @media(max-width:749px){
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item.enable-wave:after {
+      display:none;
+    }
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item.enable-wave:before {
+      display:none;
+    }
+     {% if section.settings.bg_image_m != blank %}
+        .section-{{ section.id }}-padding{
+        background:url('{{ section.settings.bg_image_m | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-position: center;
+        }
+    {% endif %}
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item-title {
+        font-size: 18px;
+    }
+
+   .section-{{ section.id }}-padding .nv-thc-adaptogen-item-content {
+        font-size: 16px;
+    }
+  }
+  {% if section.settings.enable_border_radius == true and section.settings.border_radius > 0 %}
+        .section-{{ section.id }}-padding.content-border-radius{
+            border-radius:{{section.settings.border_radius}}px !important;
+            {% if section.settings.marginleftright > 0 %}
+                margin-left:{{section.settings.marginleftright }}px;
+                margin-right:{{section.settings.marginleftright }}px;
+            {% endif %}
+        }
+        {% if section.settings.marginleftright_m > 0 %}
+            @media(max-width:749px){
+                .section-{{ section.id }}-padding.content-border-radius{
+                    margin-left:{{section.settings.marginleftright_m }}px;
+                    margin-right:{{section.settings.marginleftright_m }}px;
+                }
+            }
+        {% endif %}
+    {% endif %}
+    .section-{{ section.id }}-padding{
+      margin-top:{{section.settings.margin_top | default:0 }}px;
+      margin-bottom:{{section.settings.margin_bottom | default:0 }}px;
+    }
+    @media(max-width:749px){
+      .section-{{ section.id }}-padding{
+        margin-top:{{section.settings.margin_top_m | default:0 }}px;
+        margin-bottom:{{section.settings.margin_bottom_m | default:0 }}px;
+      }
+    }
+{%- endstyle -%}
+
+
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}{% if section.settings.enable_border_radius == true %} content-border-radius{% endif %}">
+  <div class="page-width">
+    <div class="nv-custom-section__title title-wrapper title-wrapper--no-top-margin center">
+      {%- if section.settings.title != blank -%}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} uppercase">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+    </div>
+    <div class="nv-thc-adaptogen-wrapper">
+        {% for block in section.blocks %}
+            <div class="nv-thc-adaptogen-item{% if block.settings.enable_wave == true %} enable-wave{% endif %}">
+                {% if block.settings.image != blank %}
+                    <div class="image-wrapper" {% if block.settings.image_width > 0 %} style="max-width:{{ block.settings.image_width }}px;"{% endif %}>
+                        <img src="{{ block.settings.image | image_url }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+                    </div>
+                {% endif %}
+                {% if block.settings.title != blank %}
+                    <div class="nv-thc-adaptogen-item-title">{{ block.settings.title }}</div>
+                {% endif %}
+                {% if block.settings.content != blank %}
+                    <div class="nv-thc-adaptogen-item-content">{{ block.settings.content }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "NV: THC Adaptogen Infused",
+  "class": "section nv-thc-adaptogen-i-nfused nv-sections",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "THC & Adaptogen Infused",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background image (Mobile)"
+    },
+     {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type":"checkbox",
+      "id":"enable_border_radius",
+      "default":false,
+      "label":"Enable border radius?"
+    },
+    {
+      "type":"number",
+      "id":"border_radius",
+      "label": "Border radius(px)",
+      "default":40
+    },
+    {
+      "type":"number",
+      "id":"marginleftright",
+      "label": "Margin left/right (Desktop)",
+      "default":40,
+      "info": "Margin will add if border radius enabled"
+    },
+    {
+      "type":"number",
+      "id":"marginleftright_m",
+      "label": "Margin left/right (Mobile)",
+      "default":20,
+      "info": "Margin will add if border radius enabled"
+    },
+    {
+      "type":"number",
+      "id":"margin_top",
+      "label": "Margin top (Desktop)",
+      "default":0
+    },
+    {
+      "type":"number",
+      "id":"margin_bottom",
+      "label": "Margin bottom (Desktop)",
+      "default":0
+    },
+    {
+      "type":"number",
+      "id":"margin_top_m",
+      "label": "Margin top (Mobile)",
+      "default":0
+    },
+    {
+      "type":"number",
+      "id":"margin_bottom_m",
+      "label": "Margin bottom (Mobile)",
+      "default":0
+    }
+  ],
+  "blocks": [
+    {
+        "type": "item",
+        "name":"Item",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "number",
+                "id": "image_width",
+                "label": "Image width"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "content",
+                "label": "Content"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_wave",
+                "default":false,
+                "label": "Enable wave?"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV: THC Adaptogen Infused"
+      
+    }
+  ]
+}
+{% endschema %}

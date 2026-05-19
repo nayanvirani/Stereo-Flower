@@ -1,0 +1,253 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+  .section-{{ section.id }}-padding .page-full-width .nv-section-title.title-wrapper {
+    padding: 0 15px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+   {% if section.settings.bg_image != blank %}
+    .section-{{ section.id }}-padding{
+      background:url('{{ section.settings.bg_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+       background-position: center;
+    }
+  {% endif %}
+  .section-{{ section.id }}-padding .nv-trust-bulders-items{
+    display:grid;
+    grid-template-columns:repeat({{section.settings.desktop_grid | default:6}},1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .section-{{ section.id }}-padding .nv-trust-bulders-item.space-item {
+    display: block;
+}
+  .section-{{ section.id }}-padding .nv-trust-bulders-item-title {
+        font-weight: 600;
+        font-size: 17px;
+        letter-spacing: 0;
+        text-align: center;
+        margin-top: 25px;
+    }
+  @media(max-width:1024px){
+     .section-{{ section.id }}-padding .nv-trust-bulders-items{
+        display:grid;
+        grid-template-columns:repeat({{section.settings.tablet_grid | default:3}},1fr);
+        gap: 20px;
+    }
+    .section-{{ section.id }}-padding .nv-trust-bulders-item.space-item.hide-on-tablet{
+        display:none;
+    }
+  }
+  @media(max-width:749px){
+     {% if section.settings.bg_image_m != blank %}
+        .section-{{ section.id }}-padding{
+        background:url('{{ section.settings.bg_image_m | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-position: center;
+        }
+    {% endif %}
+    .section-{{ section.id }}-padding .nv-trust-bulders-items{
+        display:grid;
+        grid-template-columns:repeat({{section.settings.mobile_grid | default:2}},1fr);
+        gap: 20px;
+    }
+    .section-{{ section.id }}-padding .nv-trust-bulders-item.space-item.hide-on-mobile{
+        display:none;
+    }
+  }
+{%- endstyle -%}
+
+
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="{% if section.settings.full_width %}page-full-width{% else %}page-width{% endif %}">
+
+    {%- if section.settings.heading != blank or section.settings.content != blank -%}
+      <div class="nv-section-title title-wrapper title-wrapper--no-top-margin center">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="title margin-bottom-15 inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.content != blank -%}
+          <div class="nv_section__description rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            {{ section.settings.content }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+
+        <div class="nv-trust-bulders-wrapper">
+                <div class="nv-trust-bulders-items">
+                    {%- for block in section.blocks -%}
+                        {%  if block.type == 'image' %}
+                            {%- if block.settings.image != blank -%}
+                                <div class="nv-trust-bulders-item">
+                                    <div class="image-wrapper">
+                                        <img alt="{{ block.settings.image.alt | escape }}" src="{{block.settings.image | image_url }}" width="{{block.settings.image.width}}" height="{{block.settings.image.height}}" loading="lazy" fetchpriority="auto" decoding="async">
+                                    </div>
+                                </div>
+                            {%- endif -%}
+                        {% elsif block.type == 'space' %}
+                            <div class="nv-trust-bulders-item space-item{% if block.settings.hide_on_mobile == true %} hide-on-mobile{% endif %}{% if block.settings.hide_on_tablet == true %} hide-on-tablet{% endif %}" style="--width:{{ block.settings.width | default:0 }}px;"></div>
+                        {% endif %}
+                    {%- endfor -%}
+                </div>
+         </div>
+    {%- endif -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "NV: Trust builders",
+  "class": "section nv-trust-builders nv-sections",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "Heading",
+        "label": "Heading"
+    },
+    {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+        {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+            "value": "h0",
+            "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+            "value": "hxl",
+            "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+            "value": "hxxl",
+            "label": "t:sections.all.heading_size.options__5.label"
+        }
+        ],
+        "default": "h1",
+        "label": "t:sections.all.heading_size.label"
+    },
+     {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+        "type": "number",
+        "id": "desktop_grid",
+        "label": "Desktop grid",
+        "default":6
+    },
+    {
+        "type": "number",
+        "id": "tablet_grid",
+        "label": "Tablet grid",
+        "default":3
+    },
+    {
+        "type": "number",
+        "id": "mobile_grid",
+        "label": "Mobile grid",
+        "default":2
+    }
+  ],
+  "blocks": [
+    {
+        "type": "image",
+        "name":"image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+    },
+    {
+        "type": "space",
+        "name":"Space",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "hide_on_tablet",
+                "label": "Hide on tablet?",
+                "default":false
+            },
+            {
+                "type": "checkbox",
+                "id": "hide_on_mobile",
+                "label": "Hide on mobile?",
+                "default":true
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV: Trust builders"
+      
+    }
+  ]
+}
+{% endschema %}

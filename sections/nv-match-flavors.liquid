@@ -1,0 +1,438 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+   {% if section.settings.bg_image != blank %}
+    .section-{{ section.id }}-padding{
+      background:url('{{ section.settings.bg_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+       background-position: center;
+    }
+  {% endif %}
+  .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item {
+        display: grid;
+        gap: 15%;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 30px 1fr;
+            width: calc(50% - 30%);
+            flex:0 0 calc(50% - 30%);
+    }
+
+    .section-{{ section.id }}-padding .image-wrapper.top-icon-wrapper {
+        max-width: 100px;
+    }
+
+    .section-{{ section.id }}-padding .image-wrapper.left-icon-wrapper {
+        max-width: 100%;
+    }
+
+    .section-{{ section.id }}-padding .image-wrapper.right-icon-wrapper {
+        max-width: 100%;
+    }
+    .section-{{ section.id }}-padding .nv-match-flavor-item.right-item {
+        grid-template-columns: 1fr 30px;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+   
+    .section-{{ section.id }}-padding .nv-match-flavor-item-title {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 120%;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-sub_title {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 120%;
+        margin-bottom: 10px;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-content {
+        font-size: 20px;
+        line-height: 120%;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-button-wrapper {
+        margin-top: 30px;
+    }
+    .section-{{ section.id }}-padding .nv-match-flavor-item-button-wrapper .button {
+            font-weight: 600;
+        }
+  @media(max-width:749px){
+    
+     {% if section.settings.bg_image_m != blank %}
+        .section-{{ section.id }}-padding{
+        background:url('{{ section.settings.bg_image_m | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-position: center;
+        }
+    {% endif %}
+    .section-{{ section.id }}-padding .nv-match-flavor-item {
+        gap: 15%;
+        width: calc(50% - 10%);
+        flex:0 0 calc(50% - 10%);
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-title {
+        font-size: 24px;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-sub_title {
+        font-size: 18px;
+    }
+
+    .section-{{ section.id }}-padding .nv-match-flavor-item-content {
+        font-size: 16px;
+    }
+    .section-{{ section.id }}-padding .image-wrapper.top-icon-wrapper {
+        max-width: 70px;
+    }
+  }
+  
+{%- endstyle -%}
+
+
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}{% if section.settings.enable_border_radius == true %} content-border-radius{% endif %}">
+  <div class="page-width">
+    <div class="nv-custom-section__title title-wrapper title-wrapper--no-top-margin center">
+      {%- if section.settings.title != blank -%}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} uppercase">
+          {{ section.settings.title }}
+        </h2>
+      {%- endif -%}
+    </div>
+    <div class="nv-match-flavor-wrapper">
+        {% for block in section.blocks %}
+            {% if block.type == 'leftitem' %}
+                <div class="nv-match-flavor-item left-item">
+                    {% if block.settings.left_icon != blank %}
+                        <div class="image-wrapper left-icon-wrapper">
+                            <img src="{{ block.settings.left_icon | image_url }}" loading="lazy" width="{{ block.settings.left_icon.width }}" height="{{ block.settings.left_icon.height }}">
+                        </div>
+                    {% endif %}
+                    <div class="nv-match-flavor-item-content">
+                        {% if block.settings.top_icon != blank %}
+                            <div class="image-wrapper top-icon-wrapper">
+                                <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
+                            </div>
+                        {% endif %}
+                        {% if block.settings.title != blank %}
+                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                        {% endif %}
+                        {% if block.settings.sub_title != blank %}
+                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                        {% endif %}
+                        {% if block.settings.content != blank %}
+                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                        {% endif %}
+                        {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+                            <div class="nv-match-flavor-item-button-wrapper">
+                                <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
+                                    --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                                    --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                                    "{% endif %}>{{ block.settings.button_text }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% elsif block.type == 'rightitem' %}
+                <div class="nv-match-flavor-item right-item">
+                    
+                    <div class="nv-match-flavor-item-content">
+                        {% if block.settings.top_icon != blank %}
+                            <div class="image-wrapper top-icon-wrapper">
+                                <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
+                            </div>
+                        {% endif %}
+                        {% if block.settings.title != blank %}
+                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                        {% endif %}
+                        {% if block.settings.sub_title != blank %}
+                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                        {% endif %}
+                        {% if block.settings.content != blank %}
+                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                        {% endif %}
+                        {% if block.settings.button_text != blank and block.settings.button_url != blank %}
+                            <div class="nv-match-flavor-item-button-wrapper">
+                                <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
+                                    --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                                    --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                                    "{% endif %}>{{ block.settings.button_text }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if block.settings.right_icon != blank %}
+                        <div class="image-wrapper right-icon-wrapper">
+                            <img src="{{ block.settings.right_icon | image_url }}" loading="lazy" width="{{ block.settings.right_icon.width }}" height="{{ block.settings.right_icon.height }}">
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "NV: Match Flavors",
+  "class": "section nv-match-flavors nv-sections",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "MATCH ANY FLAVOR TO YOUR FREQUENCY",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background image (Mobile)"
+    },
+     {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+        "type": "leftitem",
+        "name":"Left Item",
+        "limit":1,
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "left_icon",
+                "label": "Left Icon"
+            },
+            {
+                "type": "image_picker",
+                "id": "top_icon",
+                "label": "Top Icon"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default":"LOW FREQUENCY"
+            },
+            {
+                "type": "color",
+                "id": "title_color",
+                "label": "Title color",
+                "default":"#000"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Sub Title",
+                "default":"5mg THC | 10mg CBD"
+            },
+            {
+                "type": "color",
+                "id": "sub_title_color",
+                "label": "Sub Title color",
+                "default":"#000"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "content",
+                "label": "Content"
+            },
+            {
+                "type": "color",
+                "id": "content_color",
+                "label": "Content color",
+                "default":"#000"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button",
+                "default":"SHOP NOW"
+            },
+            {
+                "type": "url",
+                "id":"button_url",
+                "label": "Button URL"
+            },
+            {
+                "type": "color",
+                "id": "button_bg_color",
+                "label": "Button background color",
+                "default":"#000"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "label": "Button color",
+                "default":"#fff"
+            }
+        ]
+    },
+    {
+        "type": "rightitem",
+        "name":"Right Item",
+        "limit":1,
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "right_icon",
+                "label": "Right Icon"
+            },
+            {
+                "type": "image_picker",
+                "id": "top_icon",
+                "label": "Top Icon"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default":"HIGH FREQUENCY"
+            },
+            {
+                "type": "color",
+                "id": "title_color",
+                "label": "Title color",
+                "default":"#000"
+            },
+            {
+                "type": "text",
+                "id": "sub_title",
+                "label": "Sub Title",
+                "default":"10mg THC | 10mg CBD"
+            },
+            {
+                "type": "color",
+                "id": "sub_title_color",
+                "label": "Sub Title color",
+                "default":"#000"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "content",
+                "label": "Content"
+            },
+            {
+                "type": "color",
+                "id": "content_color",
+                "label": "Content color",
+                "default":"#000"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button",
+                "default":"SHOP NOW"
+            },
+            {
+                "type": "url",
+                "id":"button_url",
+                "label": "Button URL"
+            },
+            {
+                "type": "color",
+                "id": "button_bg_color",
+                "label": "Button background color",
+                "default":"#000"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "label": "Button color",
+                "default":"#fff"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV: Match Flavors"
+      
+    }
+  ]
+}
+{% endschema %}

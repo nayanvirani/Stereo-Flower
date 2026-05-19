@@ -1,0 +1,109 @@
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+      .section-{{ section.id }}-padding .image-wrapper {
+          line-height: 0;
+      }
+
+      .section-{{ section.id }}-padding .image-wrapper img {max-width: 100%;width: 100%;height: auto;object-fit: contain;}
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+  <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+    <div class="{% if section.settings.fullwidth %}page-full-width{% else %}page-width{% endif %}">
+      <a href="{{ section.settings.url | default:'#' }}">
+        {% if section.settings.image != blank %}
+          {% assign desktop_image_class = '' %}
+          {% if section.settings.image_m != blank %}
+            {% assign desktop_image_class = 'mobile-hide' %}
+          {% endif %}
+          <div class="image-wrapper">
+            {{
+              section.settings.image
+              | image_url: width: '1920x'
+              | image_tag: loading: 'lazy', class: desktop_image_class, alt: section.settings.image.alt
+            }}
+            {% if section.settings.image_m != blank %}
+              {{
+                section.settings.image_m
+                | image_url: width: '1024x'
+                | image_tag: loading: 'lazy', class: 'desktop-hide', alt: section.settings.image_m.alt
+              }}
+            {% endif %}
+          </div>
+        {% endif %}
+      </a>
+    </div>
+  </div>
+
+{% schema %}
+{
+  "name": "NV:Image banner",
+  "class": "shopify-section nv-image-banner",
+  "settings": [
+    {
+        "type": "checkbox",
+        "id": "fullwidth",
+        "label": "Full width?",
+        "default":false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_m",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "URL"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "NV:Image banner"
+    }
+  ]
+}
+{% endschema %}

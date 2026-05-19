@@ -1,0 +1,188 @@
+{% style %}
+#custom-pdp-{{block.id}}-block{
+    {% if block.settings.bg_image != blank %}
+        background:url('{{ block.settings.bg_image | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: unset;
+    {% elsif block.settings.bg_color != blank %}
+        background:{{ block.settings.bg_color }};
+    {% endif %}
+    {% if block.settings.border_radius > 0 %}
+        border-radius:{{block.settings.border_radius }}px;
+    {% endif %}
+    padding:15px;
+}
+#custom-pdp-{{block.id}}-block .bundle-info-title{
+    {% if block.settings.title_color != blank %}
+        color:{{block.settings.title_color }};
+    {% endif %}
+    {% if block.settings.title_fontsize > 0 %}
+        font-size:{{block.settings.title_fontsize }}px;
+    {% endif %}
+        font-weight: 600;
+}
+#custom-pdp-{{block.id}}-block .bundle-info-badge{
+    {% if block.settings.badge_color != blank %}
+        background:{{block.settings.badge_color }};
+    {% endif %}
+    {% if block.settings.badge_text_color != blank %}
+        color:{{block.settings.badge_text_color }};
+    {% endif %}
+    {% if block.settings.badge_fontsize > 0 %}
+        font-size:{{block.settings.badge_fontsize }}px;
+    {% endif %}
+    border-radius:15px;
+}
+#custom-pdp-{{block.id}}-block .bundle-info-bottom-text{
+    {% if block.settings.bottom_text_color != blank %}
+        color:{{block.settings.bottom_text_color }};
+    {% endif %}
+    {% if block.settings.bottom_fontsize > 0 %}
+        font-size:{{block.settings.bottom_fontsize }}px;
+    {% endif %}
+}
+#custom-pdp-{{block.id}}-block .bundle-info-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 5px;
+}
+
+#custom-pdp-{{block.id}}-block .text-icon {
+    max-width: 20px;
+    line-height: 0;
+}
+
+#custom-pdp-{{block.id}}-block .text-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+#custom-pdp-{{block.id}}-block .bundle-info-item {
+    display: flex;
+    gap: 8px;
+    padding: 8px 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+#custom-pdp-{{block.id}}-block .bundle-info-bottom-text {
+    text-align: center;
+    margin-top: 10px;
+        line-height: 120%;
+}
+
+#custom-pdp-{{block.id}}-block .text-save-bold {
+    font-weight: 600;
+    line-height: 100%;
+}
+
+#custom-pdp-{{block.id}}-block .text-plain {
+    line-height: 100%;
+}
+#custom-pdp-{{block.id}}-block .bundle-info-content {
+    position: relative;
+}
+
+#custom-pdp-{{block.id}}-block .bundle-info-badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    line-height: 100%;
+    font-weight: 600;
+}
+
+#custom-pdp-{{block.id}}-block .bundle-info-title {
+    line-height: 100%;
+    margin-bottom: 15px;
+}
+{% for i in (1..6) %}
+    {% capture text_bg %}text_{{i}}_bg{% endcapture %}
+    {% capture text_color %}text_{{i}}_color{% endcapture %}
+    {% capture text_fontsize %}text_{{i}}_fontsize{% endcapture %}
+  
+#custom-pdp-{{block.id}}-block #custom-pdp-{{block.id}}-block-{{ i }}{
+    
+    {% if block.settings[text_bg] != blank %}
+        background:{{block.settings[text_bg] }};
+    {% endif %}
+    {% if block.settings[text_color] != blank %}
+        color:{{block.settings[text_color] }};
+    {% endif %}
+    {% if block.settings[text_fontsize] > 0 %}
+        font-size:{{block.settings[text_fontsize] }}px;
+    {% endif %}
+    border-radius:15px;
+}
+{% endfor %}
+@media(max-width:749px){
+    #custom-pdp-{{block.id}}-block .bundle-info-title{
+        {% if block.settings.title_fontsize_m > 0 %}
+            font-size:{{block.settings.title_fontsize_m }}px;
+        {% endif %}
+    }
+    #custom-pdp-{{block.id}}-block .bundle-info-badge{
+        {% if block.settings.badge_fontsize_m > 0 %}
+            font-size:{{block.settings.badge_fontsize_m }}px;
+        {% endif %}
+    }
+    #custom-pdp-{{block.id}}-block .bundle-info-bottom-text{
+        {% if block.settings.bottom_fontsize_m > 0 %}
+            font-size:{{block.settings.bottom_fontsize_m }}px;
+        {% endif %}
+    }
+    {% for i in (1..6) %}
+        {% capture text_fontsize_m %}text_{{i}}_fontsize_m{% endcapture %}
+
+       #custom-pdp-{{block.id}}-block #custom-pdp-{{block.id}}-block-{{ i }}{
+            
+           
+            {% if block.settings[text_fontsize_m] > 0 %}
+                font-size:{{block.settings[text_fontsize_m] }}px;
+            {% endif %}
+        }
+        {% endfor %}
+}
+{% endstyle %}
+<div class="custom-pdp-bundle-info-block" id="custom-pdp-{{block.id}}-block">
+    <div class="bundle-info-content">
+        {% if block.settings.badge != blank %}
+            <div class="bundle-info-badge">{{ block.settings.badge }}</div>
+        {% endif %}
+        {% if block.settings.title != blank %}
+        <div class="bundle-info-title">{{ block.settings.title }}</div>
+        {% endif %}
+        {% capture bundleinfohtml %}
+          {% for i in (1..6) %}
+            {% capture text_key %}text_{{i}}{% endcapture %}
+            {% capture text_save_key %}text_{{i}}_save{% endcapture %}
+            {% capture text_icon_key %}text_{{i}}_icon{% endcapture %}
+            {% if block.settings[text_key] != blank %}
+                <div class="bundle-info-item" id="custom-pdp-{{block.id}}-block-{{ i }}">
+                    <div class="text-plain">{{ block.settings[text_key] }}</div>
+                     {% if block.settings[text_save_key] != blank %}
+                    <div class="text-save-bold">{{ block.settings[text_save_key] }}</div>
+                     {% endif %}
+                     {% if block.settings[text_icon_key] != blank %}
+                        {% assign image = block.settings[text_icon_key] %}
+                    <div class="text-icon"><img src="{{image | image_url }}" loading="lazy" width="{{image.width }}" height="{{image.height }}"></div>
+                     {% endif %}
+                </div>
+            {% endif %}
+          {% endfor %}
+        {% endcapture %}
+        {% if bundleinfohtml != blank %}
+             <div class="bundle-info-items">
+                {{ bundleinfohtml}}
+             </div>
+        {% endif %}
+
+        {% if block.settings.bottom_text != blank %}
+            <div class="bundle-info-bottom-text">{{ block.settings.bottom_text}}</div>
+        {% endif %}
+    </div>
+</div>

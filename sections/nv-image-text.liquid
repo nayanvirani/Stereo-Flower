@@ -1,0 +1,287 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    {% if section.settings.background_image_m != blank %}
+        .section-{{ section.id }}-padding {
+            background-image:url('{{ section.settings.background_image_m | image_url:width:"1024x" }}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            background-attachment: unset;
+        }
+    {% elsif section.settings.background_image != blank %}
+            .section-{{ section.id }}-padding {
+                background-image:url('{{ section.settings.background_image | image_url:width:"1024x" }}');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: unset;
+            }
+    {%  endif %}
+         .section-{{ section.id }}-padding .nv-image-text-main {
+            display: grid;
+            align-items: center;
+            justify-content: space-between;
+            grid-template-columns: .5fr 1fr;
+            gap: 25px;
+        }
+
+         .section-{{ section.id }}-padding .image-wrapper {
+            line-height: 0;
+        }
+
+         .section-{{ section.id }}-padding .image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+         .section-{{ section.id }}-padding  .nv-image-text-content-wrapper{
+            margin-left:auto;
+            padding:3rem 0;
+        }
+
+        .section-{{ section.id }}-padding .nv-image-text-title {
+            font-size: 34px;
+            font-weight: bold;
+             font-family: "Avenir Next LT Pro";
+            line-height:120%;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-subtitle {
+            font-weight: 600;
+            font-family: "Avenir Next LT Pro";
+            font-size: 24px;
+            font-style: italic;
+            line-height: 120%;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-content {
+            font-weight: 500;
+             font-family: "Avenir Next LT Pro";
+            font-size: 24px;
+            line-height: 120%;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-content p {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-buttons {
+            margin-top: 30px;
+        }
+
+        .section-{{ section.id }}-padding .nv-image-text-buttons a {
+            font-size: 34px;
+            font-style: italic;
+            font-weight: bold;
+            font-family: "Avenir Next LT Pro";
+            line-height: 100%;
+            padding-top: 7px;
+        }
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+        {% if section.settings.background_image != blank %}
+            .section-{{ section.id }}-padding {
+                background-image:url('{{ section.settings.background_image | image_url:width:"1900x" }}');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                background-attachment: unset;
+            }
+        {%  endif %}
+    }
+      
+    @media(max-width:989px){
+      .section-{{ section.id }}-padding .nv-image-text-main {
+            grid-template-columns: .6fr 1fr;
+            gap: 10px;
+        }
+
+        .section-{{ section.id }}-padding .nv-image-text-title {
+            font-size: 24px;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-subtitle {
+            font-size: 18px;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-content {
+            font-size: 16px;
+        }
+        .section-{{ section.id }}-padding .nv-image-text-buttons {
+            margin-top: 15px;
+        }
+    }
+    {% if section.settings.enable_border_radius == true and section.settings.border_radius > 0 %}
+        .section-{{ section.id }}-padding.content-border-radius{
+            border-radius:{{section.settings.border_radius}}px !important;
+            {% if section.settings.paddingleftright > 0 %}
+                margin-left:{{section.settings.paddingleftright }}px;
+                margin-right:{{section.settings.paddingleftright }}px;
+            {% endif %}
+        }
+        {% if section.settings.paddingleftright_m > 0 %}
+            @media(max-width:749px){
+                .section-{{ section.id }}-padding.content-border-radius{
+                    margin-left:{{section.settings.paddingleftright_m }}px;
+                    margin-right:{{section.settings.paddingleftright_m }}px;
+                }
+            }
+        {% endif %}
+    {% endif %}
+{%- endstyle -%}
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}{% if section.settings.enable_border_radius == true %} content-border-radius{% endif %}">
+        <div class="page-width">
+        <div class="nv-image-text-main">
+            {% if section.settings.image != blank %}
+            <div class="image-wrapper">
+                {{ section.settings.image | image_url: width: '600x' | image_tag:loading:'lazy',alt:section.settings.title }}
+            </div>
+            {% endif %}
+            <div class="nv-image-text-content-wrapper{% if section.settings.content_center %} center{% endif %}{% if section.settings.is_uppercase %} uppercase{% endif %}">
+            {% if section.settings.title != blank %}
+                <div class="nv-image-text-title">{{ section.settings.title }}</div>
+            {% endif %}
+            {% if section.settings.subtitle != blank %}
+                <div class="nv-image-text-subtitle">{{ section.settings.subtitle }}</div>
+            {% endif %}
+            {% if section.settings.content != blank %}
+            <div class="nv-image-text-content">{{ section.settings.content }}</div>
+            {% endif %}
+            {% if section.settings.button != blank %}
+            <div class="nv-image-text-buttons">
+              <a href="{{ section.settings.url | default:'#' }}" class="button button--primary">{{ section.settings.button }}</a>
+            </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% schema %}
+{
+  "name": "NV:Image text",
+  "class": "shopify-section nv-image-text-section",
+  "settings": [
+    
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_",
+      "label": "Background image (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+        "type": "image_picker",
+        "id":"image",
+        "label": "Image"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+    },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sub Title"
+    },
+    {
+        "type": "richtext",
+        "id":"content",
+        "label": "Content"
+    },
+    {
+        "type": "checkbox",
+        "id": "content_center",
+        "label": "Content center?",
+        "default":false
+    },
+    {
+        "type": "checkbox",
+        "id":"is_uppercase",
+        "label": "All text uppsercase?",
+        "default":false
+    },
+    {
+        "type": "text",
+        "id": "button",
+        "label": "Button",
+        "default":"Buy Now"
+    },
+    {
+        "type": "url",
+        "id": "url",
+        "label": "Url"
+    },
+    {
+      "type":"checkbox",
+      "id":"enable_border_radius",
+      "default":false,
+      "label":"Enable border radius?"
+    },
+    {
+      "type":"number",
+      "id":"border_radius",
+      "label": "Border radius(px)",
+      "default":40
+    },
+    {
+      "type":"number",
+      "id":"paddingleftright",
+      "label": "Margin left/right (Desktop)",
+      "default":40,
+      "info": "Margin will add if border radius enabled"
+    },
+    {
+      "type":"number",
+      "id":"paddingleftright_m",
+      "label": "Margin left/right (Mobile)",
+      "default":20,
+      "info": "Margin will add if border radius enabled"
+    }
+  ],
+  
+  "presets": [
+    {
+      "name": "NV:Image text"
+    }
+  ]
+}
+{% endschema %}

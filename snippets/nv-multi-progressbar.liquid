@@ -1,0 +1,181 @@
+{% if settings.enable_cart_progressbar %}
+
+{% assign cart_amount = cart.total_price | divided_by: 100.0 %}
+
+{% liquid
+  assign raw_milestones = settings.cart_threshold | append: ',' | append: settings.cart_threshold_1 | append: ',' | append: settings.cart_threshold_2 | append: ',' | append: settings.cart_threshold_3 | append: ',' | append: settings.cart_threshold_4 | append: ',' | append: settings.cart_threshold_5 | append: ',' | append: settings.cart_threshold_6 | split: ','
+
+  assign milestone_string = ''
+
+  for m in raw_milestones
+    assign m_stripped = m | strip
+    assign m_val = m_stripped | plus: 0.0
+    if m_stripped != '' and m_val > 0
+      if milestone_string == ''
+        assign milestone_string = m_stripped
+      else
+        assign milestone_string = milestone_string | append: ',' | append: m_stripped
+      endif
+    endif
+  endfor
+
+  assign milestones = milestone_string | split: ','
+  assign total_milestones = milestones.size
+  assign current_percentage = 0
+  assign current_step = 0
+  assign next_goal = 0
+  assign goal_message = ''
+  assign progress_message = ''
+%}
+
+{% liquid
+  for milestone in milestones
+
+    assign milestone_value = milestone | plus: 0.0
+    assign step_index = forloop.index
+
+    if cart_amount < milestone_value and next_goal == 0
+
+      assign next_goal = milestone_value
+      assign current_step = step_index
+
+      case step_index
+        when 1
+          assign goal_message = settings.cart_goal_description_1
+        when 2
+          assign goal_message = settings.cart_goal_description_2
+        when 3
+          assign goal_message = settings.cart_goal_description_3
+        when 4
+          assign goal_message = settings.cart_goal_description_4
+        when 5
+          assign goal_message = settings.cart_goal_description_5
+        when 6
+          assign goal_message = settings.cart_goal_description_6
+      endcase
+
+    endif
+
+  endfor
+%}
+
+{% liquid
+
+  if next_goal > 0
+
+    assign previous_goal = 0.0
+
+    if current_step > 1
+      assign previous_index = current_step | minus: 2
+      assign previous_goal = milestones[previous_index] | plus: 0.0
+    endif
+
+    assign step_size = 100.0 | divided_by: total_milestones
+
+    assign current_range_progress = cart_amount | minus: previous_goal
+    assign current_range_total = next_goal | minus: previous_goal
+
+    assign current_range_percentage = current_range_progress | times: 100.0 | divided_by: current_range_total
+
+    assign completed_percentage = current_step | minus: 1 | times: step_size
+
+    assign partial_percentage = current_range_percentage | times: step_size | divided_by: 100.0
+
+    assign current_percentage = completed_percentage | plus: partial_percentage
+    assign current_percentage = current_percentage | minus: 10
+
+    assign remaining = next_goal | minus: cart_amount
+    assign remaining_cents = remaining | times: 100
+
+    capture amount_html
+      echo '<span class="custom-amount">'
+      echo remaining_cents | money
+      echo '</span>'
+    endcapture
+
+    assign progress_message = goal_message | replace: '__AMOUNT__', amount_html
+
+  else
+    assign current_percentage = 100
+    assign progress_message = settings.threshold_success_message
+  endif
+  
+%}
+
+  <div class="custom-progressbar">
+
+    {% if settings.cart_progressbar_title != blank %}
+      <h2>{{ settings.cart_progressbar_title }}</h2>
+    {% endif %}
+
+    {% if settings.cart_progressbar_title_2 != blank %}
+      <p>{{ settings.cart_progressbar_title_2 }}</p>
+    {% endif %}
+
+    <div class="progressbar-wrapper">
+
+      <div class="progressbar-track">
+        <div
+          class="progressbar-fill"
+          style="width: {{ current_percentage }}%;"
+        ></div>
+      </div>
+
+      <div class="progressbar-milestones">
+
+        {% for milestone in milestones %}
+
+          {% assign index = forloop.index %}
+          {% assign milestone_value = milestone | plus: 0.0 %}
+
+          <div class="milestone-item {% if cart_amount >= milestone_value %}is-active{% endif %}">
+
+            {% capture offer_text_key %}offert_text_{{ index }}{% endcapture %}
+            {% capture icon_key %}{% if forloop.first %}threshold_icon{% else %}threshold_icon_{{ forloop.index0 }}{% endif  %}{% endcapture %}
+            {% capture active_icon_key %}active_threshold_image_{{ index }}{% endcapture %}
+
+            {% assign offer_text = settings[offer_text_key] %}
+            {% assign icon = settings[icon_key] %}
+            {% assign active_icon = settings[active_icon_key] %}
+
+            {% if offer_text != blank %}
+              <div class="milestone-label">
+                {{ offer_text }}
+              </div>
+            {% endif %}
+
+            <div class="milestone-icon">
+
+              {% if cart_amount >= milestone_value and active_icon != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ active_icon | image_url }}"
+                  width="{{ active_icon.width }}"
+                  height="{{ active_icon.height }}"
+                >
+              {% elsif icon != blank %}
+                <img
+                  loading="lazy"
+                  src="{{ icon | image_url }}"
+                  width="{{ icon.width }}"
+                  height="{{ icon.height }}"
+                >
+              {% endif %}
+
+            </div>
+
+          </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+    <div class="progressbar-message">
+      {{ progress_message }}
+    </div>
+
+  </div>
+
+{% endif %}

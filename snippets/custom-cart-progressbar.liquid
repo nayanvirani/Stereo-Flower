@@ -1,0 +1,103 @@
+{% comment %}
+  Cart Progress Bar Component with Simple Currency Rate
+  Add this to your cart drawer or cart page template
+{% endcomment %}
+
+{% if settings.enable_cart_progress %}
+  {% liquid
+    # Calculate current cart value
+    if settings.test_mode
+      assign current_value = settings.test_cart_value
+    else
+      assign current_value = cart.total_price | money_without_currency | remove: ','
+    endif
+
+    # Get currency rate (you provide this)
+    assign currency_rate = cart.currency.rate | default: 1
+
+    # Build threshold values (in base currency - will be converted by component)
+    assign threshold1 = ''
+    assign threshold2 = ''
+    assign threshold3 = ''
+    
+    if settings.threshold1_enabled
+      assign threshold1 = settings.threshold1_amount
+    endif
+    
+    if settings.threshold2_enabled
+      assign threshold2 = settings.threshold2_amount
+    endif
+    
+    if settings.threshold3_enabled
+      assign threshold3 = settings.threshold3_amount
+    endif
+
+    # Build product variant IDs
+    assign product1_id = ''
+    assign product2_id = ''
+    assign product3_id = ''
+    
+    if settings.threshold1_enabled and settings.threshold1_product != blank
+      assign product1_id = settings.threshold1_product.selected_or_first_available_variant.id
+    endif
+    
+    if settings.threshold2_enabled and settings.threshold2_product != blank
+      assign product2_id = settings.threshold2_product.selected_or_first_available_variant.id
+    endif
+    
+    if settings.threshold3_enabled and settings.threshold3_product != blank
+      assign product3_id = settings.threshold3_product.selected_or_first_available_variant.id
+    endif
+
+    # Build icon URLs
+    assign icon1_url = ''
+    assign icon2_url = ''
+    assign icon3_url = ''
+    
+    if settings.threshold1_icon != blank
+      assign icon1_url = settings.threshold1_icon | img_url: '56x56'
+    endif
+    
+    if settings.threshold2_icon != blank
+      assign icon2_url = settings.threshold2_icon | img_url: '56x56'
+    endif
+    
+    if settings.threshold3_icon != blank
+      assign icon3_url = settings.threshold3_icon | img_url: '56x56'
+    endif
+  %}
+
+  <!-- Cart Progress Bar Component with Simple Currency Rate -->
+  <div class="cart-progress-wrapper" id="cart-progress-wrapper"
+       data-location="{{ settings.display_location }}"
+       {% unless settings.show_on_mobile %}data-hide-mobile{% endunless %}>
+    
+    <custom-cart-progressbar 
+      current="{{ cart.total_price }}"
+      currency-rate="{{ currency_rate }}"
+      dtitle="{{ settings.progress_bar_title }}"
+      subtitle="{{ settings.progress_bar_subtitle }}"
+      {% if threshold1 != blank %}threshold1="{{ threshold1 }}"{% endif %}
+      {% if threshold2 != blank %}threshold2="{{ threshold2 }}"{% endif %}
+      {% if threshold3 != blank %}threshold3="{{ threshold3 }}"{% endif %}
+      {% if product1_id != blank %}threshold1product="{{ product1_id }}"{% endif %}
+      {% if product2_id != blank %}threshold2product="{{ product2_id }}"{% endif %}
+      {% if product3_id != blank %}threshold3product="{{ product3_id }}"{% endif %}
+      {% if settings.threshold1_message != blank %}threshold1message="{{ settings.threshold1_message | escape }}"{% endif %}
+      {% if settings.threshold2_message != blank %}threshold2message="{{ settings.threshold2_message | escape }}"{% endif %}
+      {% if settings.threshold3_message != blank %}threshold3message="{{ settings.threshold3_message | escape }}"{% endif %}
+      {% if icon1_url != blank %}threshold1icon="{{ icon1_url }}"{% endif %}
+      {% if icon2_url != blank %}threshold2icon="{{ icon2_url }}"{% endif %}
+      {% if icon3_url != blank %}threshold3icon="{{ icon3_url }}"{% endif %}
+      {% if settings.success_message != blank %}successmessage="{{ settings.success_message | escape }}"{% endif %}
+      data-animation-duration="{{ settings.animation_duration }}"
+      threshold1text="{{ settings.threshold1_icon_text }}"
+      threshold2text="{{ settings.threshold2_icon_text }}"
+      threshold3text="{{ settings.threshold3_icon_text }}"
+      {% if settings.enable_debug_mode %}data-debug="true"{% endif %}
+      {% if settings.auto_remove_products %}data-auto-remove="true"{% endif %}
+      {% if settings.prevent_duplicate_products %}data-prevent-duplicates="true"{% endif %}>
+    </custom-cart-progressbar>
+  </div>
+
+{% endif %}

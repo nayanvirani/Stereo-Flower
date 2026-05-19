@@ -1,0 +1,178 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+  
+  .section-{{ section.id }}-padding {
+    background-color:{{ section.settings.bg_color | default: "#000"}};
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+   {% if section.settings.bg_image != blank %}
+    .section-{{ section.id }}-padding{
+      background:url('{{ section.settings.bg_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+       background-position: center;
+    }
+  {% endif %}
+  
+  @media(max-width:749px){
+     {% if section.settings.bg_image_m != blank %}
+        .section-{{ section.id }}-padding{
+        background:url('{{ section.settings.bg_image_m | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-position: center;
+        }
+    {% endif %}
+    
+  }
+  .section-{{ section.id }}-padding .nv-footer-top-section-title{
+    color:{{ section.settings.content_color | default:'#fff' }};
+    margin: 0;
+    font-size: 36px;
+    line-height: 100%;
+  }
+  .section-{{ section.id }}-padding .nv-footer-top-section-text{
+    color:{{ section.settings.content_color | default:'#fff' }};
+    font-size: 26px;
+    text-align: right;
+    line-height: 100%;
+  }
+  .section-{{ section.id }}-padding .nv-footer-top-wrapper {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      grid-template-columns: 300px 1fr 300px;
+  }
+
+  .section-{{ section.id }}-padding .image-wrapper.nv-footer-top-logo-center {
+      width: 100px;
+  }
+  @media(max-width:1024px){
+    .section-{{ section.id }}-padding .nv-footer-top-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .section-{{ section.id }}-padding .nv-footer-top-section-title{
+      font-size: 32px;
+    }
+    .section-{{ section.id }}-padding .nv-footer-top-section-text{
+      font-size: 24px;
+    }
+  }
+  @media(max-width:749px){
+    .section-{{ section.id }}-padding .nv-footer-top-wrapper{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .section-{{ section.id }}-padding .nv-footer-top-section-text {
+        text-align: center;
+    }
+    .section-{{ section.id }}-padding .nv-footer-top-section-title{
+      text-align: center;
+    }
+  }
+{%- endstyle -%}
+
+
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+    <div class="nv-footer-top-wrapper">
+        {% if section.settings.title != blank %}
+            <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
+        {% endif %}
+        {% if section.settings.image != blank %}
+            <div class="image-wrapper nv-footer-top-logo-center">
+                <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
+            </div>
+        {% endif %}
+        {% if section.settings.text != blank %}
+            <div class="nv-footer-top-section-text">{{ section.settings.text }}</div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "NV: Footer top",
+  "class": "section nv-footer-top nv-sections",
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default":"STEREO FLOWER"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+    },
+    {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default":"DRINK UP, TUNE IN, STAY LOUD"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default":"#000"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background image (Mobile)"
+    },
+    {
+        "type": "color",
+        "id": "content_color",
+        "label": "Content Color",
+        "default":"#fff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+ 
+  "presets": [
+    {
+      "name": "NV: Footer top"
+      
+    }
+  ]
+}
+{% endschema %}

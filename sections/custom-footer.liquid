@@ -1,0 +1,226 @@
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+    .custom-footer-image-text-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        /* align-self: center; */
+    }
+
+    .custom-footer-image-text-wrapper--item.image-block img {
+        max-width: 100px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .custom-footer-image-text-wrapper--item {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #000;
+        flex: 1;
+        text-align: center;
+    }
+
+    .custom-footer-image-text-wrapper--item a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .custom-footer-image-text-wrapper--item.copytext-block {
+        text-align: right;
+    }
+
+    .custom-footer-image-text-wrapper--item.image-block {
+        max-width: 100px;
+        line-height:0;
+    }
+
+    .custom-footer-image-text-wrapper--item.ft-email-block {
+        text-align: left;
+    }
+    .footer__content-bottom-wrapper.page-width {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer__content-bottom-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer__copyright.caption {
+        text-align: center;
+        margin-top: 1.5rem;
+        display: flex;
+    }
+
+    small.copyright__content {
+        font-size: 16px;
+    }
+
+    .policies li {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .policies li:before {
+        content: "\b7";
+        padding: 0 .8rem;
+    }
+    .copyright__content a {
+        color: currentColor;
+        text-decoration: none;
+        padding: 0;
+        /* display: block; */
+    }
+
+    .custom-footer-note-bottom {
+        font-size: 12px;
+        line-height: 1.4;
+        letter-spacing: 0.06rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media(max-width:749px){
+    .custom-footer-image-text-wrapper {flex-direction: column;gap: 10px;}
+
+    .custom-footer-image-text-wrapper--item {
+        text-align: center;
+        flex: 0 0 100%;
+    }
+    .custom-footer-image-text-wrapper--item.image-block img{
+        max-width:70px;
+    }
+    .footer__copyright.caption {
+        flex-direction: column;
+    }
+  }
+{%- endstyle -%}
+
+<div class="footer color-{{ section.settings.section_color_scheme }} gradient section-{{ section.id }}-padding">
+    <div class="page-width">
+        {% if section.settings.copytext != blank or section.settings.logo != blank or section.settings.ft_email != blank %}
+        <div class="custom-footer-image-text-wrapper">
+            {%if section.settings.copytext != blank %}
+            <div class="custom-footer-image-text-wrapper--item copytext-block"><a href="{{ section.settings.copytext_url | default:'#'}}">{{section.settings.copytext}}</a></div>
+            {% endif %}
+            {% if section.settings.logo != blank %}
+            <div class="custom-footer-image-text-wrapper--item image-block">{{section.settings.logo | image_url: width: '200x' | image_tag }}</div>
+            {% endif %}
+            {% if section.settings.ft_email != blank %}
+            <div class="custom-footer-image-text-wrapper--item ft-email-block">{{ section.settings.ft_email}}</div>
+            {% endif %}
+        </div>
+        {% endif %}
+        <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
+          <div class="footer__copyright caption">
+            <small class="copyright__content"
+              >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+            </small>
+            <small class="copyright__content hidden">{{ powered_by_link }}</small>
+              <ul class="policies list-unstyled">
+               {%- for link in section.settings.footer_policy_menu.links -%}
+                  <li>
+                    <small class="copyright__content"
+                      ><a href="{{ link.url }}">{{ link.title | escape }}</a></small
+                    >
+                  </li>
+              {%- endfor -%}
+              </ul>
+          </div>
+        </div>
+        {% if section.settings.footer_note != blank %}
+          <div class="custom-footer-note-bottom">{{ section.settings.footer_note }}</div>
+        {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id":"footer_policy_menu",
+      "label": "Footer Policies"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+        "type": "text",
+        "default":"@STEREO.FLOWER",
+        "label": "Copy text",
+        "id": "copytext"
+    },
+    {
+        "type": "url",
+        "label": "Copy text url",
+        "id":"copytext_url"
+    },
+    {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+    },
+    {
+        "type": "text",
+        "default":"info@stereoflower.com",
+        "label": "Email",
+        "id": "ft_email"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type":"richtext",
+      "id":"footer_note",
+      "label": "Footer Note"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Custom footer"
+    }
+  ]
+}
+{% endschema %}

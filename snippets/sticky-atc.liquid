@@ -1,0 +1,225 @@
+{% style %}
+sticky-atc {
+  position: fixed;
+  bottom: calc(-2 * var(--sticky-height));
+  width: 100%;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  padding: .5rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 -3px 15px 3px rgba(0, 0, 0, .1);
+      --color-button: 0, 0, 0;
+    --color-button-text: 255, 255, 255;
+}
+label.label-sticky-select{
+  position:relative;
+  flex: 0 0 auto;
+  background-color: #fff;
+  border-radius: 3px;
+  select{
+    background: transparent;
+    height: 100%;
+  }
+}
+select.custom-sticky-select {
+    background: #fff;
+    width: 100%;
+    padding: 8px 20px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    color: #000;
+    /*max-width: 215px;*/
+    margin: 0;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    outline: none;
+    outline-offset: 0;
+    box-shadow: none;
+    border-radius: 3px;
+}
+sticky-atc.active {
+  bottom: var(--sticky-postion,0);
+  
+}
+.custom-sticky-flex-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    @media(width < 749px) {
+      grid-template-columns: 1fr;
+    }
+}
+
+.custom-sticky-title-wrapper {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.product-image-item {
+    max-width: 60px;
+    line-height: 0;
+}
+
+.product-image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.product-title-wrapper h3 {
+    margin: 0;
+}
+@media(max-width:1320px){
+    .custom-sticky-flex-wrapper {
+        grid-template-columns: .50fr 1fr;
+        gap:15px;
+    }
+}
+.sticky-button-add form{
+  display: flex;
+  gap: 15px;
+  @media(width < 749px) {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
+sticky-atc .quick-add__submit{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    min-width:unset;
+
+}
+sticky-atc quantity-input.quantity {
+    width: 100%;
+
+}
+
+@media(max-width:1024px){
+    .custom-sticky-title-wrapper{display:none;}
+    .custom-sticky-flex-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+{% endstyle %}
+<sticky-atc>
+    <div class="page-width">
+    <div class="custom-sticky-flex-wrapper">
+    <div class="custom-sticky-title-wrapper small-hide">
+        <div class="product-image-wrapper">
+            {% for variant in product.variants %}
+                <div class="product-image-item{% unless variant.id == product.selected_or_first_available_variant.id %} hidden{% endunless %}">
+                    {{ variant.featured_image | default:product.featured_image | image_url: width: '120x' | image_tag }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="product-title-wrapper">
+            <h3>{{ product.title }}</h3>
+        </div>
+    </div>
+    <div class="sticky-button-add">
+        {% assign product_form_id = 'quick-add-' | append: section.id | append: product.id %}
+        <div class="quick-add no-js-hidden custom-card-button-wrapper">
+            <product-form data-section-id="{{ section.id }}">
+            {%- form 'product',
+              product,
+              id: product_form_id,
+              class: 'form',
+              novalidate: 'novalidate',
+              data-type: 'add-to-cart-form'
+            -%}
+            {%  if product.variants.size > 1 %}
+              <label class="label-sticky-select">
+                <select class="custom-sticky-select" name="id">
+                    {%  for variant in product.variants %}
+                        <option value="{{ variant.id }}"{% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}>{{ variant.title }} - {{ variant.price | money }}</option>
+                    {%  endfor %}
+                </select>
+              </label>
+            {% else %}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+                class="product-variant-id"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+            {% endif %}
+            <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ product.id }}">
+                <button class="quantity__button" name="minus" type="button">
+                <span class="visually-hidden">
+                    {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+                </span>
+                <span class="svg-wrapper">
+                    {{- 'icon-minus.svg' | inline_asset_content -}}
+                </span>
+                </button>
+                <input
+                class="quantity__input"
+                type="number"
+                name="quantity"
+                id="Quantity-{{ product.id }}"
+                data-cart-quantity="{{ cart_qty }}"
+                data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                    data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                    max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                {% endif %}
+                step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                form="{{ product_form_id }}"
+                >
+                <button class="quantity__button" name="plus" type="button">
+                <span class="visually-hidden">
+                    {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+                </span>
+                <span class="svg-wrapper">
+                    {{- 'icon-plus.svg' | inline_asset_content -}}
+                </span>
+                </button>
+            </quantity-input>
+              <button
+                id="{{ product_form_id }}-submit"
+                type="submit"
+                name="add"
+                class="quick-add__submit button button--full-width button--primary"
+                aria-haspopup="dialog"
+                aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
+                aria-live="polite"
+                data-sold-out-message="true"
+                {% if product.selected_or_first_available_variant.available == false %}
+                  disabled
+                {% endif %}
+              >
+                <span class="button__text">
+                  {%- if product.selected_or_first_available_variant.available -%}
+                    {{ 'products.product.add_to_cart' | t }}
+                  {%- else -%}
+                    {{ 'products.product.sold_out' | t }}
+                  {%- endif -%}
+                  {% if product.variants.size < 2 %} -{{product.selected_or_first_available_variant.price | money}}{% endif %}
+                </span>
+                {%- render 'loading-spinner' -%}
+              </button>
+            {%- endform -%}
+          </product-form>
+          </div>
+    </div>
+    </div>
+    </div>
+    <noscript>
+        {{ product | json }}
+    </noscript>
+</sticky-atc>
+
+  <script src="{{ 'sticky-atc.js' | asset_url }}" defer="defer"></script>

@@ -1,0 +1,345 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+    
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+        
+    }
+    .lab-results-search {
+    margin-bottom: 15px;
+}
+      .lab-search-input {
+    width: 100%;
+    max-width: 380px;
+    padding: 12px 18px;
+    border: 1.5px solid #c8cee8;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #fff;
+  }
+
+  .lab-search-input:focus {
+    border-color: #000;
+    box-shadow: 0 0 0 3px rgba(107, 72, 214, 0.12);
+  }
+
+  .lab-search-input::placeholder {
+    color: #000;
+  }
+   /* Table */
+  .lab-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .lab-table thead tr {
+    border-bottom: 2px solid #e0e4f5;
+  }
+
+  .lab-table th {
+    text-align: left;
+    padding: 10px 16px 10px 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .lab-table tbody tr {
+    border-bottom: 1px solid #eaecf5;
+    transition: background 0.15s;
+  }
+
+  .lab-table tbody tr:hover {
+    background: #f7f5ff;
+  }
+
+  .lab-table td {
+    padding: 18px 16px 14px 0;
+    vertical-align: middle;
+    line-height: 120%;
+  }
+
+  .lab-table td:first-child {
+    white-space: nowrap;
+  }
+
+  .lab-table td:nth-child(2) {
+    font-weight: 500;
+    max-width: 220px;
+  }
+
+  .lab-link {
+    color:#000;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .lab-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Highlight matched batch */
+  .lab-row.batch-match td:nth-child(3) {
+    font-weight: 700;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .lab-table thead {
+      display: none;
+    }
+
+    .lab-table,
+    .lab-table tbody,
+    .lab-table tr,
+    .lab-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .lab-table tbody tr {
+      margin-bottom: 16px;
+      border: 1px solid #eaecf5;
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .lab-table td {
+      padding: 6px 0;
+      display: flex;
+      gap: 8px;
+    }
+
+    .lab-table td::before {
+      content: attr(data-label) ": ";
+      font-weight: 700;
+      color: #000;
+      min-width: 110px;
+      flex-shrink: 0;
+    }
+  } 
+{%- endstyle -%}
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+    <div class="page-width">
+        <div class="custom-nv-main-coa-wrapper">
+            <div class="lab-results-search">
+                <input
+                    type="text"
+                    id="batch-search-{{ section.id }}"
+                    class="lab-search-input"
+                    placeholder="Search by Batch Number/Product Name"
+                    autocomplete="off"
+                />
+            </div>
+             <div class="lab-table-wrapper">
+                {% assign heading_html = '' %}
+                
+                {%- for block in section.blocks -%}
+                    {%- if block.type == 'heading' -%}
+                        {% capture heading_html %}
+                            <tr>
+                                <th>{{ block.settings.heading_1 }}</th>
+                                <th>{{ block.settings.heading_2 }}</th>
+                                <th>{{ block.settings.heading_3 }}</th>
+                                <th>{{ block.settings.heading_4 }}</th>
+                                <th>{{ block.settings.heading_5 }}</th>
+                            </tr>
+                        {% endcapture %}
+                    {% endif %}
+                {% endfor %}
+                <table class="lab-table" id="lab-table-{{ section.id }}">
+                    <thead>
+                         {{ heading_html }}
+                    </thead>
+                    <tbody>
+                    {%- for block in section.blocks -%}
+                        
+                        {%- if block.type == 'row' -%}
+                           
+                        <tr
+                            class="lab-row"
+                            data-batch="{{ block.settings.value_3 | downcase }}"
+                            data-productname="{{ block.settings.value_2 | downcase | escape }}"
+                            {{ block.shopify_attributes }}
+                        >
+                            <td data-label="Date">{{ block.settings.value_1 }}</td>
+                            <td data-label="Product Name">{{ block.settings.value_2 }}</td>
+                            <td data-label="Batch Number">{{ block.settings.value_3 }}</td>
+                            <td data-label="Test Results">
+                            {%- if block.settings.value_4_url != blank -%}
+                                <a href="{{ block.settings.value_4_url }}" target="_blank" rel="noopener" class="lab-link">{{ block.settings.value_4 }}</a>
+                            {%- else -%}
+                              {{ block.settings.value_4 }}
+                            {%- endif -%}
+                            </td>
+                            <td data-label="Best By Date">{{ block.settings.value_5 }}</td>
+                        </tr>
+                        {%- endif -%}
+                    {%- endfor -%}
+                    </tbody>
+                </table>
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+  (function () {
+    var sectionId = '{{ section.id }}';
+    var searchInput = document.getElementById('batch-search-' + sectionId);
+    var rows = document.querySelectorAll('#lab-table-' + sectionId + ' .lab-row');
+    
+    if (!searchInput) return;
+
+    searchInput.addEventListener('input', function () {
+      var query = this.value.trim().toLowerCase();
+      var visibleCount = 0;
+
+      rows.forEach(function (row) {
+        var batch = row.getAttribute('data-batch') || '';
+        var productName = row.getAttribute('data-productname') || '';
+        var match = batch.includes(query) || productName.includes(query);
+
+        row.style.display = match ? '' : 'none';
+        row.classList.toggle('batch-match', query.length > 0 && match);
+
+        if (match) visibleCount++;
+      });
+    });
+  })();
+</script>
+{% schema %}
+{
+  "name": "NV:COA section",
+  "class": "shopify-section nv-coa-section",
+  "settings": [
+    
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+        "type": "heading",
+        "name":"Heading",
+        "limit": 1,
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading_1",
+                "label": "Heading 1",
+                "default":"Date"
+            },
+            {
+                "type": "text",
+                "id": "heading_2",
+                "label": "Heading 2",
+                "default":"Product Name"
+            },
+            {
+                "type": "text",
+                "id": "heading_3",
+                "label": "Heading 3",
+                "default":"Batch Number"
+            },
+            {
+                "type": "text",
+                "id": "heading_4",
+                "label": "Heading 4",
+                "default":"Test Results"
+            },
+            {
+                "type": "text",
+                "id": "heading_5",
+                "label": "Heading 5",
+                "default":"Best By Date"
+            }
+        ]
+    },
+    {
+        "type": "row",
+        "name":"Row",
+        "settings": [
+            {
+                "type": "text",
+                "id": "value_1",
+                "label": "Value 1",
+                "default":"February 25, 2026",
+                "info": "Date"
+            },
+            {
+                "type": "text",
+                "id": "value_2",
+                "label": "Value 2",
+                "default":"Ginger Lemongrass 2mg THC: 4mg CBD per 237mL",
+                 "info": "Product Name"
+            },
+            {
+                "type": "text",
+                "id": "value_3",
+                "label": "Value 3",
+                "default":"WO6648",
+                 "info": "Batch Number"
+            },
+            {
+                "type": "text",
+                "id": "value_4",
+                "label": "Value 4",
+                "default":"Click here",
+                 "info": "Test Results"
+            },
+            {
+                "type": "url",
+                "label":"Value 4 url",
+                "id": "value_4_url"
+            },
+            {
+                "type": "text",
+                "id": "value_5",
+                "label": "Value 5",
+                "default":"01/13/2027",
+                "info": "Best By Date"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "NV:COA section"
+    }
+  ]
+}
+{% endschema %}

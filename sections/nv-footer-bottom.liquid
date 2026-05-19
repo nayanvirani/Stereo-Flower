@@ -1,0 +1,195 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.45 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.45 | round: 0 }}px;
+  }
+  
+  .section-{{ section.id }}-padding {
+    background-color:{{ section.settings.bg_color | default: "#000"}};
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  
+   {% if section.settings.bg_image != blank %}
+    .section-{{ section.id }}-padding{
+      background:url('{{ section.settings.bg_image | image_url }}');
+      background-repeat: no-repeat;
+      background-size: cover;
+       background-position: center;
+    }
+  {% endif %}
+  
+  @media(max-width:749px){
+     {% if section.settings.bg_image_m != blank %}
+        .section-{{ section.id }}-padding{
+        background:url('{{ section.settings.bg_image_m | image_url }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+         background-position: center;
+        }
+    {% endif %}
+    
+  }
+  .section-{{ section.id }}-padding .nv-footer-bottom-wrapper {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: 200px 1fr 200px;
+        align-items: center;
+    }
+
+    
+    .section-{{ section.id }}-padding .nv-footer-bottom-item.image-21-item .image-wrapper {
+        max-width: 100px;
+    }
+
+   .section-{{ section.id }}-padding .nv-footer-bottom-item.payment-icon-item .image-wrapper {
+        max-width: 200px;
+    }
+
+    .section-{{ section.id }}-padding .nv-footer-bottom-item.polciy-link-item .footer__copyright.caption {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+            line-height: 120%;
+    }
+
+   .section-{{ section.id }}-padding .nv-footer-bottom-item.polciy-link-item .footer__copyright.caption ul.policies.list-unstyled {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .section-{{ section.id }}-padding small.copyright__content a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #000;
+    }
+    @media(max-width:1279px){
+        .section-{{ section.id }}-padding .nv-footer-bottom-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+             .section-{{ section.id }}-padding .nv-footer-bottom-item.polciy-link-item .footer__copyright.caption {
+                flex-wrap:wrap;
+            }
+
+        .section-{{ section.id }}-padding .nv-footer-bottom-item.polciy-link-item .footer__copyright.caption ul.policies.list-unstyled {
+                flex-wrap:wrap;
+                justify-content: center;
+            }
+    }
+{%- endstyle -%}
+
+
+
+<div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width">
+    <div class="nv-footer-bottom-wrapper">
+        {% if section.settings.image != blank %}
+        <div class="nv-footer-bottom-item  image-21-item">
+            <div class="image-wrapper">
+                <img src="{{section.settings.image | image_url }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
+            </div>
+        </div>
+        {% endif %}
+        <div class="nv-footer-bottom-item polciy-link-item">
+             <div class="footer__copyright caption">
+                <small class="copyright__content"
+                >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+                </small>
+                <ul class="policies list-unstyled">
+                    {%- for policy in shop.policies -%}
+                    {%- if policy != blank -%}
+                        <li>
+                        <small class="copyright__content"
+                            ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
+                        >
+                        </li>
+                    {%- endif -%}
+                    {%- endfor -%}
+                </ul>
+            </div>
+        </div>
+        {% if section.settings.payment_icon != blank %}
+        <div class="nv-footer-bottom-item payment-icon-item">
+            <div class="image-wrapper">
+                <img src="{{section.settings.payment_icon | image_url }}" width="{{ section.settings.payment_icon.width }}" height="{{ section.settings.payment_icon.height }}" loading="lazy">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "NV: Footer bottom",
+  "class": "section nv-footer-bottom nv-sections",
+  "settings": [ 
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "21+ Image",
+    },
+    {
+        "type": "image_picker",
+        "id": "payment_icon",
+        "label": "Payment Icon",
+    },
+    {
+      "type": "header",
+      "content": "t:sections.image-with-text.settings.header_colors.content"
+    },        
+    {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default":"#000"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background image"
+    },
+    {
+        "type": "image_picker",
+        "id": "bg_image_m",
+        "label": "Background image (Mobile)"
+    },
+    {
+        "type": "color",
+        "id": "content_color",
+        "label": "Content Color",
+        "default":"#fff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+ 
+  "presets": [
+    {
+      "name": "NV: Footer bottom"
+      
+    }
+  ]
+}
+{% endschema %}
