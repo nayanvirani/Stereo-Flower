@@ -17,21 +17,21 @@
   
    {% if section.settings.bg_image != blank %}
     .section-{{ section.id }}-padding{
-      background:url('{{ section.settings.bg_image | image_url }}');
+      /*background:url('{{ section.settings.bg_image | image_url }}');
       background-repeat: no-repeat;
       background-size: cover;
-       background-position: center;
+       background-position: center;*/
     }
   {% endif %}
   
   @media(max-width:749px){
      {% if section.settings.bg_image_m != blank %}
-        .section-{{ section.id }}-padding{
+       /* .section-{{ section.id }}-padding{
         background:url('{{ section.settings.bg_image_m | image_url }}');
         background-repeat: no-repeat;
         background-size: cover;
          background-position: center;
-        }
+        }*/
     {% endif %}
     
   }
@@ -90,21 +90,27 @@
 
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
-  <div class="page-width">
-    <div class="nv-footer-top-wrapper">
-        {% if section.settings.title != blank %}
-            <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
-        {% endif %}
-        {% if section.settings.image != blank %}
-            <div class="image-wrapper nv-footer-top-logo-center">
-                <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
-            </div>
-        {% endif %}
-        {% if section.settings.text != blank %}
-            <div class="nv-footer-top-section-text">{{ section.settings.text }}</div>
-        {% endif %}
+  <div class="custom-full-image-wrapper">
+    <img src="{{ section.settings.bg_image | image_url }}" loading="lazy" width="{{ section.settings.bg_image.width }}" height="{{ section.settings.bg_image.height }}">
+  </div>
+  <div class="custom-full-content-wrapper">
+    <div class="page-width">
+      <div class="nv-footer-top-wrapper">
+          {% if section.settings.title != blank %}
+              <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
+          {% endif %}
+          {% if section.settings.image != blank %}
+              <div class="image-wrapper nv-footer-top-logo-center">
+                  <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
+              </div>
+          {% endif %}
+          {% if section.settings.text != blank %}
+              <div class="nv-footer-top-section-text">{{ section.settings.text }}</div>
+          {% endif %}
+      </div>
     </div>
   </div>
+  
 </div>
 {% schema %}
 {
