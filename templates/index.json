@@ -225,8 +225,8 @@
         "leftitem_p3hDPd": {
           "type": "leftitem",
           "settings": {
-            "left_icon": "shopify://shop_images/HWD-SF-ASSETS-16.webp",
-            "top_icon": "shopify://shop_images/HWD-SF-ASSETS-18.webp",
+            "left_icon": "shopify://shop_images/stereo_flower_levels_5mg.png",
+            "top_icon": "shopify://shop_images/LoFi_Asset_stereo_flower.png",
             "title": "LOW FREQUENCY",
             "title_color": "#000000",
             "sub_title": "5mg THC | 10mg CBD",
@@ -375,12 +375,14 @@
       "blocks": {
         "image_4AjU6z": {
           "type": "image",
+          "name": "Low calorie",
           "settings": {
-            "image": "shopify://shop_images/HWD-SF-ASSETS-11.webp"
+            "image": "shopify://shop_images/low_calorie_stereo_flower..png"
           }
         },
         "image_BiGQmM": {
           "type": "image",
+          "name": "thc & adaptogen infused",
           "settings": {
             "image": "shopify://shop_images/HWD-SF-ASSETS-12.webp"
           }
@@ -394,14 +396,16 @@
         },
         "image_E8qUwE": {
           "type": "image",
+          "name": "Adaptogen List",
           "settings": {
-            "image": "shopify://shop_images/HWD-SF-ASSETS-13.webp"
+            "image": "shopify://shop_images/adaptogen_stack_stereo_flower.png"
           }
         },
         "image_nCGrak": {
           "type": "image",
+          "name": "nano emulsified",
           "settings": {
-            "image": "shopify://shop_images/HWD-SF-ASSETS-14.webp"
+            "image": "shopify://shop_images/nano_emulsified_stereo_flower.png"
           }
         }
       },
