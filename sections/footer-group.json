@@ -81,9 +81,9 @@
       "name": "NV: Footer bottom",
       "settings": {
         "image": "shopify://shop_images/LOGO.png",
-        "payment_icon": "shopify://shop_images/payment-icons_2_903aa5e5-2ca2-4cf1-abc5-16987ed62b30.svg",
-        "bg_color": "#ffffff",
-        "content_color": "#fff",
+        "payment_icon": "shopify://shop_images/Card_Icons_Transparent.png",
+        "bg_color": "#212121",
+        "content_color": "#ffffff",
         "padding_top": 15,
         "padding_bottom": 15
       }
