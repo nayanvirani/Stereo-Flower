@@ -68,7 +68,7 @@
     .section-{{ section.id }}-padding small.copyright__content a {
         text-transform: uppercase;
         text-decoration: none;
-        color: #000;
+        color: {{section.settings.content_color |  default:'#fff'}};
     }
     @media(max-width:1279px){
         .section-{{ section.id }}-padding .nv-footer-bottom-wrapper {
