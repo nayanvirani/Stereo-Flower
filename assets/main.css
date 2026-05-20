@@ -371,3 +371,8 @@ span.custom-v-title {
 .slider-button span.svg-wrapper svg path {
     fill: rgb(var(--color-button-text));
 }
+
+.card__information .card__heading.h3{
+  font-family: var(--futurafont);
+  font-weight: var(--futurafontweightsemi);
+}
