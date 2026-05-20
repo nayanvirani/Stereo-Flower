@@ -92,7 +92,11 @@
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="page-width">
     <div class="nv-footer-top-wrapper">
-        {% if section.settings.title != blank %}
+       {% if section.settings.title_image != blank %}
+            <div class="image-wrapper nv-footer-top-title-image">
+                <img src="{{ section.settings.title_image | image_url }}" loading="lazy" width="{{ section.settings.title_image.width }}" height="{{section.settings.title_image.height }}" alt="{{ section.settings.title }}">
+            </div>
+          {% elsif section.settings.title != blank %}
             <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
         {% endif %}
         {% if section.settings.image != blank %}
