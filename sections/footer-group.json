@@ -37,21 +37,21 @@
           "type": "menu",
           "settings": {
             "title": "SHOP",
-            "menu": "main-menu-1"
+            "menu": "footer-shop"
           }
         },
         "menu_eDCtER": {
           "type": "menu",
           "settings": {
-            "title": "SHOP",
-            "menu": "main-menu-1"
+            "title": "Support",
+            "menu": "footer-support"
           }
         },
         "menu_jRJ4rn": {
           "type": "menu",
           "settings": {
-            "title": "SHOP",
-            "menu": "main-menu-1"
+            "title": "About",
+            "menu": "footer-about"
           }
         },
         "newsletter_7PTUWe": {
