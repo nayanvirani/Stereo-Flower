@@ -133,7 +133,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "custom_css": [
-        "h2.title {letter-spacing: 0; color: #515151;}"
+        "h2.title {letter-spacing: -0.9px; color: #515151;}"
       ],
       "settings": {
         "collection": "stereo-flower-thc-infused-sparkling-teas",
