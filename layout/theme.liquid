@@ -37,6 +37,22 @@
     <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
 
+    {{ 'Futura-CondensedMedium.ttf' | file_url | preload_tag: as: 'font' }}
+    {{ 'Futura-CondensedMedium.woff' | file_url | preload_tag: as: 'font' }}
+    {{ 'Futura-CondensedMedium.woff2' | file_url | preload_tag: as: 'font' }}
+
+    <style>
+      @font-face {
+          font-family: 'Futura';
+          src: url('{{ "Futura-CondensedMedium.woff2" | file_url}}') format('woff2'),
+              url('{{ "Futura-CondensedMedium.woff" | file_url}}') format('woff'),
+              url('{{ "Futura-CondensedMedium.ttf" | file_url}}') format('truetype');
+          font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+      }
+      
+    </style>
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -80,7 +96,8 @@
             assign background_color_contrast = background_color | color_darken: 25
           endif
         %}
-
+        --futurafont:'Futura';
+        --futurafontweight:500;
         --color-foreground: {{ scheme.settings.text.red }},{{ scheme.settings.text.green }},{{ scheme.settings.text.blue }};
         --color-background-contrast: {{ background_color_contrast.red }},{{ background_color_contrast.green }},{{ background_color_contrast.blue }};
         --color-shadow: {{ scheme.settings.shadow.red }},{{ scheme.settings.shadow.green }},{{ scheme.settings.shadow.blue }};
