@@ -132,7 +132,9 @@
     },
     "featured_collection": {
       "type": "featured-collection",
-      "custom_css": [],
+      "custom_css": [
+        "h2.title {letter-spacing: 0; color: #515151;}"
+      ],
       "settings": {
         "collection": "stereo-flower-thc-infused-sparkling-teas",
         "products_to_show": 8,
