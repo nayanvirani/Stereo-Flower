@@ -80,7 +80,8 @@
       "type": "nv-footer-bottom",
       "name": "NV: Footer bottom",
       "settings": {
-        "image": "shopify://shop_images/LOGO.png",
+        "image": "shopify://shop_images/21_Icon_ea24b05b-4f5b-4202-ae1c-3a31aa3a01f4.webp",
+        "age_text_note": "MUST BE 21+ TO PURCHASE. ENJOY RESPONSIBLY",
         "payment_icon": "shopify://shop_images/Card_Icons_Transparent.png",
         "bg_color": "#212121",
         "content_color": "#ffffff",
