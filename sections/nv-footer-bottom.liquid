@@ -52,7 +52,7 @@
     .section-{{ section.id }}-padding .nv-footer-bottom-item.image-21-item {
         display: flex;
         align-items: center;
-        color: #fff;
+        color: {{section.settings.content_color |  default:'#fff'}};
         line-height: 120%;
         font-size: 13px;
         gap:5px;
