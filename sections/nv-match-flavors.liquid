@@ -155,6 +155,28 @@
         height:48vw;
     }
   }
+{% for block in section.blocks %}
+    #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-title{
+        color:{{block.settings.title_color }};
+    }
+    #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-sub_title{
+        color:{{block.settings.sub_title_color }};
+    }
+    #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-content{
+        color:{{block.settings.content_color }};
+    }
+    @media(max-width:749px){
+         #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-title{
+            color:{{block.settings.title_color_m }};
+        }
+        #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-sub_title{
+            color:{{block.settings.sub_title_color_m }};
+        }
+        #custom-match-fl-{{ block.id }}-block .nv-match-flavor-item-content{
+            color:{{block.settings.content_color_m }};
+        }
+    }
+{% endfor %}
 {%- endstyle -%}
 
 
@@ -171,7 +193,7 @@
     <div class="nv-match-flavor-wrapper">
         {% for block in section.blocks %}
             {% if block.type == 'leftitem' %}
-                <div class="nv-match-flavor-item left-item">
+                <div class="nv-match-flavor-item left-item" id="custom-match-fl-{{ block.id }}-block">
                     {% if block.settings.left_icon != blank %}
                         <div class="image-wrapper left-icon-wrapper">
                             <img src="{{ block.settings.left_icon | image_url }}" loading="lazy" width="{{ block.settings.left_icon.width }}" height="{{ block.settings.left_icon.height }}">
@@ -184,13 +206,13 @@
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                            <div class="nv-match-flavor-item-title">{{ block.settings.title }}</div>
                         {% endif %}
                         {% if block.settings.sub_title != blank %}
-                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                            <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
                         {% endif %}
                         {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                            <div class="nv-match-flavor-item-content">{{ block.settings.content }}</div>
                         {% endif %}
                         {% if block.settings.button_text != blank and block.settings.button_url != blank %}
                             <div class="nv-match-flavor-item-button-wrapper">
@@ -212,13 +234,13 @@
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title"{% if block.settings.title_color != blank %} style="color:{{block.settings.title_color }};"{% endif %}>{{ block.settings.title }}</div>
+                            <div class="nv-match-flavor-item-title">{{ block.settings.title }}</div>
                         {% endif %}
                         {% if block.settings.sub_title != blank %}
-                            <div class="nv-match-flavor-item-sub_title"{% if block.settings.sub_title_color != blank %} style="color:{{block.settings.sub_title_color }};"{% endif %}>{{ block.settings.sub_title }}</div>
+                            <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
                         {% endif %}
                         {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content"{% if block.settings.content_color != blank %} style="color:{{block.settings.content_color }};"{% endif %}>{{ block.settings.content }}</div>
+                            <div class="nv-match-flavor-item-content">{{ block.settings.content }}</div>
                         {% endif %}
                         {% if block.settings.button_text != blank and block.settings.button_url != blank %}
                             <div class="nv-match-flavor-item-button-wrapper">
@@ -345,6 +367,12 @@
                 "default":"#000"
             },
             {
+                "type": "color",
+                "id": "title_color_m",
+                "label": "Title color (Mobile)",
+                "default":"#fff"
+            },
+            {
                 "type": "text",
                 "id": "sub_title",
                 "label": "Sub Title",
@@ -357,6 +385,12 @@
                 "default":"#000"
             },
             {
+                "type": "color",
+                "id": "sub_title_color_m",
+                "label": "Sub Title color (Mobile)",
+                "default":"#fff"
+            },
+            {
                 "type": "inline_richtext",
                 "id": "content",
                 "label": "Content"
@@ -366,6 +400,12 @@
                 "id": "content_color",
                 "label": "Content color",
                 "default":"#000"
+            },
+            {
+                "type": "color",
+                "id": "content_color_m",
+                "label": "Content color (Mobile)",
+                "default":"#fff"
             },
             {
                 "type": "text",
@@ -420,6 +460,12 @@
                 "default":"#000"
             },
             {
+                "type": "color",
+                "id": "title_color_m",
+                "label": "Title color (Mobile)",
+                "default":"#fff"
+            },
+            {
                 "type": "text",
                 "id": "sub_title",
                 "label": "Sub Title",
@@ -432,6 +478,12 @@
                 "default":"#000"
             },
             {
+                "type": "color",
+                "id": "sub_title_color_m",
+                "label": "Sub Title color (Mobile)",
+                "default":"#fff"
+            },
+            {
                 "type": "inline_richtext",
                 "id": "content",
                 "label": "Content"
@@ -441,6 +493,12 @@
                 "id": "content_color",
                 "label": "Content color",
                 "default":"#000"
+            },
+            {
+                "type": "color",
+                "id": "content_color_m",
+                "label": "Content color (Mobile)",
+                "default":"#fff"
             },
             {
                 "type": "text",
