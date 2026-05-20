@@ -16,6 +16,7 @@
       "name": "NV: Footer top",
       "settings": {
         "title": "STEREO FLOWER",
+        "title_image": "shopify://shop_images/Stereo_Flower_Text_White_Simple_Horizontal_1500px.webp",
         "image": "shopify://shop_images/Stereo_Flower_Logo_Flower_Simple_White.webp",
         "text": "DRINK UP, TUNE IN, STAY LOUD",
         "bg_color": "#121212",
