@@ -99,6 +99,9 @@
             <div class="image-wrapper">
                 <img src="{{section.settings.image | image_url }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
             </div>
+            {% if section.settings.age_text_note != blank %}
+              <div class="age-text-note uppercase">{{ section.settings.age_text_note }}</div>
+            {% endif %}
         </div>
         {% endif %}
         <div class="nv-footer-bottom-item polciy-link-item">
@@ -138,6 +141,12 @@
         "type": "image_picker",
         "id": "image",
         "label": "21+ Image",
+    },
+    {
+      "type": "inline_richtext",
+      "id": "age_text_note",
+      "label": "Age text note",
+      "default":"MUST BE 21+ TO PURCHASE. ENJOY RESPONSIBLY"
     },
     {
         "type": "image_picker",
