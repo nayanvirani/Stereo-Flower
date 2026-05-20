@@ -81,6 +81,7 @@
                     font-weight: 600;
                     line-height: 120%;
                     margin-bottom: 50px;
+                     font-family: var(--font-heading-family);
                 }
                 @media(max-width:749px){
                     #custom-nv-{{block.id}}-block .custom-nv-order-title{
@@ -96,6 +97,7 @@
                     font-weight: 600;
                     line-height: 120%;
                     margin-bottom: 20px;
+                     font-family: var(--font-heading-family);
                 }
                 @media(max-width:749px){
                     #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
@@ -137,6 +139,8 @@
                     {% if block.settings.color != blank %}
                         --color-button-text: {{ block.settings.color.red }},{{ block.settings.color.green }},{{ block.settings.color.blue }};
                     {%  endif %}
+                     font-family: var(--font-heading-family);
+                     font-weight:600;
                 }
                 @media(max-width:749px){
                     #custom-nv-{{block.id}}-block .button{
