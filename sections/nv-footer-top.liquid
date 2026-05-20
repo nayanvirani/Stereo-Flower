@@ -93,7 +93,7 @@
   <div class="page-width">
     <div class="nv-footer-top-wrapper">
        {% if section.settings.title_image != blank %}
-            <div class="image-wrapper nv-footer-top-title-image">
+            <div class="image-wrapper nv-footer-top-title-image"{% if section.settings.title_image_width > 0 %} style="max-width:{{ section.settings.title_image_width }}px;"{% endif %}>
                 <img src="{{ section.settings.title_image | image_url }}" loading="lazy" width="{{ section.settings.title_image.width }}" height="{{section.settings.title_image.height }}" alt="{{ section.settings.title }}">
             </div>
           {% elsif section.settings.title != blank %}
