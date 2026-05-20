@@ -306,7 +306,7 @@
           "type": "button",
           "settings": {
             "title": "Veriety Sampler Pack (NEW)",
-            "url": "",
+            "url": "shopify://products/5mg-thc-tea-starter-pack",
             "font_size": 20,
             "font_size_m": 16,
             "bg_color": "#7d8ccc",
