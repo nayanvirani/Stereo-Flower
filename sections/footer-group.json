@@ -20,6 +20,8 @@
         "title_image_width": 300,
         "image": "shopify://shop_images/Stereo_Flower_Logo_Flower_Simple_White.webp",
         "text": "DRINK UP, TUNE IN, STAY LOUD",
+        "text_image": "shopify://shop_images/Drink_Up_Tag_Line_1500px.webp",
+        "text_image_width": 400,
         "bg_color": "#121212",
         "content_color": "#ffffff",
         "padding_top": 36,
