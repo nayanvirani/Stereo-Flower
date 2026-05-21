@@ -41,7 +41,7 @@ body h1,body h2,body h3,body h4{
     /*font-family: "Avenir Next LT Pro";*/
     font-family:var(--futurafont);
     font-weight:var(--futurafontweightbold);
-    font-size: 20px;
+    font-size: 24px;
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 1);
 }
