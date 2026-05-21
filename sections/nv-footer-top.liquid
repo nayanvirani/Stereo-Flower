@@ -103,7 +103,7 @@
             <div class="image-wrapper nv-footer-top-title-image"{% if section.settings.title_image_width > 0 %} style="max-width:{{ section.settings.title_image_width }}px;"{% endif %}>
                 <img src="{{ section.settings.title_image | image_url }}" loading="lazy" width="{{ section.settings.title_image.width }}" height="{{section.settings.title_image.height }}" alt="{{ section.settings.title }}">
             </div>
-          {% elsif section.settings.title != blank %}
+        {% elsif section.settings.title != blank %}
             <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
         {% endif %}
         {% if section.settings.image != blank %}
@@ -111,7 +111,11 @@
                 <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
             </div>
         {% endif %}
-        {% if section.settings.text != blank %}
+         {% if section.settings.text_image != blank %}
+            <div class="image-wrapper nv-footer-top-text-image"{% if section.settings.text_image_width > 0 %} style="max-width:{{ section.settings.text_image_width }}px;"{% endif %}>
+                <img src="{{ section.settings.text_image | image_url }}" loading="lazy" width="{{ section.settings.text_image.width }}" height="{{section.settings.text_image.height }}" alt="{{ section.settings.text }}">
+            </div>
+        {% elsif section.settings.text != blank %}
             <div class="nv-footer-top-section-text">{{ section.settings.text }}</div>
         {% endif %}
     </div>
@@ -149,6 +153,17 @@
         "id": "text",
         "label": "Text",
         "default":"DRINK UP, TUNE IN, STAY LOUD"
+    },
+    {
+        "type": "image_picker",
+        "id": "text_image",
+        "label": "Text Image",
+        "info": "If you want to use image instead of Text"
+    },
+    {
+        "type": "number",
+        "id": "text_image_width",
+        "label": "Text image width",
     },
     {
       "type": "header",
