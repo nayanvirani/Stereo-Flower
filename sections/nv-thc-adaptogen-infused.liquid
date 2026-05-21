@@ -149,6 +149,16 @@
         margin-bottom:{{section.settings.margin_bottom_m | default:0 }}px;
       }
     }
+
+  @media(min-width:750px) and (max-width:1023px){
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item-title {
+        font-size: 20px !important;
+    }
+
+    .section-{{ section.id }}-padding .nv-thc-adaptogen-item-content {
+        font-size: 20px !important;
+    }
+  }
 {%- endstyle -%}
 
 
