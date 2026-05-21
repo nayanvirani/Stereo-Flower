@@ -95,8 +95,8 @@
                 #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
                     font-size:{{ block.settings.font_size }}px;
                     color:{{ block.settings.color }};
-                   font-family: var(--futurafont);
-          font-weight: var(--futurafontweightbold);
+                    font-family: var(--futurafont);
+                    font-weight: var(--futurafontweightbold);
                     line-height: 100%;
                     margin-bottom: 20px;
                     letter-spacing: -0.04em;
@@ -115,6 +115,9 @@
                     color:{{ block.settings.color }};
                     line-height: 140%;
                     margin-bottom: 20px;
+                    font-family: var(--futurafont);
+                    font-weight: var(--futurafontweightsemi);
+                    letter-spacing: 0.10%;
                 }
                 #custom-nv-{{block.id}}-block .custom-nv-order-content p{
                     margin-top:0;
@@ -142,8 +145,9 @@
                     {% if block.settings.color != blank %}
                         --color-button-text: {{ block.settings.color.red }},{{ block.settings.color.green }},{{ block.settings.color.blue }};
                     {%  endif %}
-                     font-family: var(--font-heading-family);
-                     font-weight:600;
+                     font-family: var(--futurafont);
+                    font-weight: var(--futurafontweightsemi);
+                    letter-spacing: 0.10%;
                 }
                 @media(max-width:749px){
                     #custom-nv-{{block.id}}-block .button{
