@@ -36,7 +36,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/SF-WEB-r6-Banner_Desktop.webp",
-            "image_m": "shopify://shop_images/SF-WEB-r6-Banner_Mobile.webp",
             "image_overlay_opacity": 0,
             "heading": "",
             "heading_size": "h1",
