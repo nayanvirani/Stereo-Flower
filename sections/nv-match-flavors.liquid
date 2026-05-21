@@ -106,9 +106,12 @@
             padding-top: {{ section.settings.padding_top }}px;
             padding-bottom: {{ section.settings.padding_bottom }}px;
         }
-        .section-{{ section.id }}-padding h2.title{
-            font-size:69px;
-       }
+       
+    }
+    @media(min-width:1024px){
+         .section-{{ section.id }}-padding h2.title{
+                font-size:69px;
+        }
     }
   @media(max-width:749px){
     
