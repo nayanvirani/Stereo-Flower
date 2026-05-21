@@ -45,9 +45,7 @@ body h1,body h2,body h3,body h4{
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 1);
     font-stretch: condensed;
-    line-height: 75px;
-    letter-spacing: 0;
-    word-spacing: 65px;
+    letter-spacing: 0.065em;
 }
 .avenir-pro-font{
      /*font-family: "Avenir Next LT Pro";*/
