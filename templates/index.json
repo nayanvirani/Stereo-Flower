@@ -297,18 +297,18 @@
           "type": "subheading",
           "settings": {
             "title": "5MG THC PER CAN",
-            "font_size": 32,
+            "font_size": 34,
             "font_size_m": 24,
-            "color": "#000000"
+            "color": "#4a4a4a"
           }
         },
         "content_84yqtY": {
           "type": "content",
           "settings": {
             "content": "<p><a href=\"https://www.stereoflower.com/products/blood-orange-hibiscus-sparkling-black-tea-5mg-thc-per-can\">Blood Orange Hibiscus Sparkling Black Tea | 5mg THC Per Can</a></p><p><a href=\"/products/yuzu-mint-sparkling-green-tea-5mg-thc-per-can\" title=\"Yuzu Mint Sparkling Green Tea | 5mg THC Per Can\">Yuzu Mint Sparkling Green Tea | 5mg THC Per Can</a></p><p><a href=\"/products/clementine-vanilla-sparkling-white-tea-5mg-thc-per-can\" title=\"Clementine Vanilla Sparkling White Tea | 5mg THC Per Can\">Clementine Vanilla Sparkling White Tea | 5mg THC Per Can</a></p>",
-            "font_size": 20,
+            "font_size": 30,
             "font_size_m": 16,
-            "color": "#515151"
+            "color": "#4a4a4a"
           }
         },
         "button_GgrhkW": {
@@ -316,7 +316,7 @@
           "settings": {
             "title": "Variety Sampler Pack (5mg) (NEW)",
             "url": "shopify://products/5mg-thc-tea-starter-pack",
-            "font_size": 20,
+            "font_size": 30,
             "font_size_m": 16,
             "bg_color": "#7d8ccc",
             "color": "#ffffff",
@@ -334,18 +334,18 @@
           "type": "subheading",
           "settings": {
             "title": "10MG THC PER CAN",
-            "font_size": 32,
+            "font_size": 34,
             "font_size_m": 24,
-            "color": "#000000"
+            "color": "#4a4a4a"
           }
         },
         "content_KfrUiD": {
           "type": "content",
           "settings": {
             "content": "<p><a href=\"/products/blood-orange-hibiscus-sparkling-black-tea-10mg-thc-per-can\" title=\"Blood Orange Hibiscus Sparkling Black Tea | 10mg THC Per Can\">Blood Orange Hibiscus Sparkling Black Tea | 10mg THC Per Can</a></p><p><a href=\"/products/yuzu-mint-sparkling-green-tea-10mg-thc-per-can\" title=\"Yuzu Mint Sparkling Green Tea | 10mg THC Per Can\">Yuzu Mint Sparkling Green Tea | 10mg THC Per Can</a></p><p><a href=\"/products/clementine-vanilla-sparkling-white-tea-10mg-thc-per-can\" title=\"Clementine Vanilla Sparkling White Tea | 10mg THC Per Can\">Clementine Vanilla Sparkling White Tea | 10mg THC Per Can</a></p>",
-            "font_size": 20,
+            "font_size": 30,
             "font_size_m": 16,
-            "color": "#515151"
+            "color": "#4a4a4a"
           }
         },
         "button_FCtYjY": {
@@ -353,7 +353,7 @@
           "settings": {
             "title": "Variety Sampler Pack (10mg) (NEW)",
             "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
-            "font_size": 20,
+            "font_size": 30,
             "font_size_m": 16,
             "bg_color": "#30e472",
             "color": "#ffffff",
