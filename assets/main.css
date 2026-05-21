@@ -39,7 +39,8 @@ body h1,body h2,body h3,body h4{
 
 .header__menu-item {
     /*font-family: "Avenir Next LT Pro";*/
-     font-weight: bold;
+    font-family:var(--futurafont);
+    font-weight:var(--futurafontweightbold);
     font-size: 20px;
     text-transform: uppercase;
     color: rgba(var(--color-foreground), 1);
