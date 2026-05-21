@@ -207,7 +207,7 @@
       "name": "NV: THC Adaptogen Infused",
       "settings": {
         "title": "THC & Adaptogen Infused",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "bg_image": "shopify://shop_images/HWD-SF-ASSETS-04.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
         "padding_top": 90,
@@ -273,7 +273,7 @@
       "name": "NV: Match Flavors",
       "settings": {
         "title": "MATCH ANY FLAVOR TO YOUR FREQUENCY",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "bg_image": "shopify://shop_images/HWD-SF-ASSETS-02.webp",
         "bg_image_m": "shopify://shop_images/stereo_flower_flavor_frequency_mobile.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
