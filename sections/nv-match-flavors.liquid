@@ -46,7 +46,7 @@
         grid-template-columns: 1fr 30px;
     }
 
-    .section-{{ section.id }}-padding .nv-match-flavor-item-content {
+    .section-{{ section.id }}-padding .nv-match-flavor-item-content-wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -246,7 +246,7 @@
                             <img src="{{ block.settings.left_icon | image_url }}" loading="lazy" width="{{ block.settings.left_icon.width }}" height="{{ block.settings.left_icon.height }}">
                         </div>
                     {% endif %}
-                    <div class="nv-match-flavor-item-content">
+                    <div class="nv-match-flavor-item-content-wrapper">
                         {% if block.settings.top_icon != blank %}
                             <div class="image-wrapper top-icon-wrapper">
                                 <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
@@ -274,7 +274,7 @@
             {% elsif block.type == 'rightitem' %}
                 <div class="nv-match-flavor-item right-item" id="custom-match-fl-{{ block.id }}-block">
                     
-                    <div class="nv-match-flavor-item-content">
+                    <div class="nv-match-flavor-item-content-wrapper">
                         {% if block.settings.top_icon != blank %}
                             <div class="image-wrapper top-icon-wrapper">
                                 <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
