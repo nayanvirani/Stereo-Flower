@@ -190,20 +190,6 @@
         "disabled": false,
         "settings": {}
       },
-      "15885745614559378752": {
-        "type": "shopify://apps/accessibly/blocks/app-embed/4b59303e-1141-4c8a-945f-bf4adb516864",
-        "disabled": false,
-        "settings": {
-          "themeColor": "#574CD5",
-          "iconColor": "#574CD5",
-          "showLogo": true,
-          "topBottomPosition": 30,
-          "rightLeftPosition": 10,
-          "iconSize": "small",
-          "iconCustomSize": 50,
-          "position": "middle-right"
-        }
-      },
       "0987204424379305932": {
         "type": "shopify://apps/air-reviews-1/blocks/app-embed/c4e1e9ca-4d46-4e76-bc39-7e42417cb327",
         "disabled": false,
@@ -223,6 +209,20 @@
         "type": "shopify://apps/onward/blocks/onward-protection-embed/b53f9cdb-2bd0-4ef4-be64-bb0b8b7f7dff",
         "disabled": false,
         "settings": {}
+      },
+      "15885745614559378752": {
+        "type": "shopify://apps/accessibly/blocks/app-embed/4b59303e-1141-4c8a-945f-bf4adb516864",
+        "disabled": false,
+        "settings": {
+          "themeColor": "#574cd5",
+          "iconColor": "#574cd5",
+          "showLogo": true,
+          "topBottomPosition": 0,
+          "rightLeftPosition": 5,
+          "iconSize": "small",
+          "iconCustomSize": 20,
+          "position": "bottom-right"
+        }
       }
     },
     "color_schemes": {

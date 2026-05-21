@@ -102,10 +102,10 @@ body h1,body h2,body h3,body h4{
    height:auto;
    object-fit:contain;
 }
-body #accessiblyAppWidgetButton.accessibly-app-widget-button-container.middle-right {
+/*body #accessiblyAppWidgetButton.accessibly-app-widget-button-container.middle-right {
     top: 35% !important;
     transform: translateY(-35%) !important;
-}
+}*/
 
 @media(min-width:750px){
     .desktop-hide{
