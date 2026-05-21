@@ -40,6 +40,10 @@
     {{ 'Futura-CondensedMedium.ttf' | file_url | preload_tag: as: 'font' }}
     {{ 'Futura-CondensedMedium.woff' | file_url | preload_tag: as: 'font' }}
     {{ 'Futura-CondensedMedium.woff2' | file_url | preload_tag: as: 'font' }}
+    {{ 'Futura-CondensedExtraBold.ttf' | file_url | preload_tag: as: 'font' }}
+    {{ 'Futura-CondensedExtraBold.woff' | file_url | preload_tag: as: 'font' }}
+    {{ 'Futura-CondensedExtraBold.woff2' | file_url | preload_tag: as: 'font' }}
+   
 
     <style>
       @font-face {
@@ -48,6 +52,15 @@
               url('{{ "Futura-CondensedMedium.woff" | file_url}}') format('woff'),
               url('{{ "Futura-CondensedMedium.ttf" | file_url}}') format('truetype');
           font-weight: 500;
+          font-style: normal;
+          font-display: swap;
+      }
+       @font-face {
+          font-family: 'Futura';
+          src: url('{{ "Futura-CondensedExtraBold.woff2" | file_url}}') format('woff2'),
+              url('{{ "Futura-CondensedExtraBold.woff" | file_url}}') format('woff'),
+              url('{{ "Futura-CondensedExtraBold.ttf" | file_url}}') format('truetype');
+          font-weight: bold;
           font-style: normal;
           font-display: swap;
       }
