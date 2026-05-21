@@ -53,21 +53,7 @@
         padding: 2rem;
         text-align: center;
     }
-   .section-{{ section.id }}-padding .custom-nv-order-title {
-        font-size: 54px;
-    }
-
-    .section-{{ section.id }}-padding.custom-nv-order-subtitle {
-        font-size: 24px;
-    }
-
-    .section-{{ section.id }}-padding.custom-nv-order-content {
-        font-size: 20px;
-    }
-
-    .section-{{ section.id }}-padding a.button.button--primary.button--full-width {
-        font-size: 20px;
-    }
+   
 }
   @media(max-width:749px){
     .section-{{ section.id }}-padding .nv-order-the-set-wrapper {
@@ -181,6 +167,23 @@
             }
     {% endcase %}
 {% endfor %}
+@media(min-width:750px) and (max-width:1024px){
+    .section-{{ section.id }}-padding .custom-nv-order-title {
+        font-size: 54px;
+    }
+
+    .section-{{ section.id }}-padding.custom-nv-order-subtitle {
+        font-size: 24px;
+    }
+
+    .section-{{ section.id }}-padding.custom-nv-order-content {
+        font-size: 20px;
+    }
+
+    .section-{{ section.id }}-padding a.button.button--primary.button--full-width {
+        font-size: 20px;
+    }
+}
 {%- endstyle -%}
 
 
