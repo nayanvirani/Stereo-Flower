@@ -34,6 +34,37 @@
         padding: 5rem;
         text-align: center;
     }
+    .section-{{ section.id }}-padding .custom-nv-order-title{
+        font-weight: 600;
+        line-height: 100%;
+        margin-bottom: 50px;
+        font-family: var(--font-heading-family);
+        letter-spacing: -0.04em;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-subtitle{
+        font-family: var(--futurafont);
+        font-weight: var(--futurafontweightbold);
+        line-height: 100%;
+        margin-bottom: 20px;
+        letter-spacing: -0.04em;
+            
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-content{
+        line-height: 140%;
+        margin-bottom: 20px;
+        font-family: var(--futurafont);
+        font-weight: var(--futurafontweightsemi);
+        letter-spacing: 0.10%;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-content p{
+        margin-top:0;
+        margin-bottom:10px;
+    }
+    .section-{{ section.id }}-padding .button{
+            font-family: var(--futurafont);
+        font-weight: var(--futurafontweightsemi);
+        letter-spacing: 0.10%;
+    }
 @media(max-width:1280px){
     .section-{{ section.id }}-padding .nv-order-the-set-wrapper {
         gap: 3rem;
@@ -77,11 +108,6 @@
             {% if block.settings.heading != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-title{
                     color:{{ block.settings.color }};
-                    font-weight: 600;
-                    line-height: 100%;
-                    margin-bottom: 50px;
-                     font-family: var(--font-heading-family);
-                         letter-spacing: -0.04em;
                 }
               
             {% endif %}
@@ -89,12 +115,6 @@
             {% if block.settings.title != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
                     color:{{ block.settings.color }};
-                    font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightbold);
-                    line-height: 100%;
-                    margin-bottom: 20px;
-                    letter-spacing: -0.04em;
-                     
                 }
                 
             {% endif %}
@@ -102,15 +122,6 @@
             {% if block.settings.content != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-content{
                     color:{{ block.settings.color }};
-                    line-height: 140%;
-                    margin-bottom: 20px;
-                    font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightsemi);
-                    letter-spacing: 0.10%;
-                }
-                #custom-nv-{{block.id}}-block .custom-nv-order-content p{
-                    margin-top:0;
-                    margin-bottom:10px;
                 }
                 #custom-nv-{{block.id}}-block .custom-nv-order-content a{
                     color:{{ block.settings.color }};
@@ -129,9 +140,6 @@
                     {% if block.settings.color != blank %}
                         --color-button-text: {{ block.settings.color.red }},{{ block.settings.color.green }},{{ block.settings.color.blue }};
                     {%  endif %}
-                     font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightsemi);
-                    letter-spacing: 0.10%;
                 }
                 
             {% endif %}
@@ -149,19 +157,19 @@
 {% endfor %}
 @media(min-width:750px) and (max-width:1024px){
     .section-{{ section.id }}-padding .custom-nv-order-title {
-        font-size: 54px !important;
+        font-size: 54px;
     }
 
     .section-{{ section.id }}-padding .custom-nv-order-subtitle {
-        font-size: 24px !important;
+        font-size: 24px;
     }
 
     .section-{{ section.id }}-padding .custom-nv-order-content {
-        font-size: 20px !important;
+        font-size: 20px;
     }
 
-    .section-{{ section.id }}-padding a.button.button--primary.button--full-width {
-        font-size: 20px !important;
+    .section-{{ section.id }}-padding .button{
+        font-size: 20px;
     }
 }
 {%- endstyle -%}
