@@ -275,7 +275,7 @@
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title">{{ block.settings.title }}</div>
+                            <div class="nv-match-flavor-item-title">{{ block.settings.title | replace:'__BREAKLINE__','<br/>' }}</div>
                         {% endif %}
                         {% if block.settings.sub_title != blank %}
                             <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
@@ -303,7 +303,7 @@
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
-                            <div class="nv-match-flavor-item-title">{{ block.settings.title }}</div>
+                            <div class="nv-match-flavor-item-title">{{ block.settings.title | replace:'__BREAKLINE__','<br/>' }}</div>
                         {% endif %}
                         {% if block.settings.sub_title != blank %}
                             <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
