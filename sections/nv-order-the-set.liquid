@@ -200,7 +200,7 @@
                 {% case block.type %}
                     {% when 'heading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
-                            <div class="custom-nv-order-title">{{ block.settings.heading }}</div>
+                            <div class="custom-nv-order-title">{{ block.settings.heading | replace:'__BREAKLINE__','<br/>' }}</div>
                         </div>
                     {% when 'subheading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
