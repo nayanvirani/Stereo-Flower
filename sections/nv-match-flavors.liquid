@@ -285,7 +285,7 @@
                             <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
                         {% endif %}
                         {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content">{{ block.settings.content }}</div>
+                            <div class="nv-match-flavor-item-content">{{ block.settings.content | replace:'__BREAKLINE__','<br/>' }}</div>
                         {% endif %}
                         {% if block.settings.button_text != blank and block.settings.button_url != blank %}
                             <div class="nv-match-flavor-item-button-wrapper">
@@ -313,7 +313,7 @@
                             <div class="nv-match-flavor-item-sub_title">{{ block.settings.sub_title }}</div>
                         {% endif %}
                         {% if block.settings.content != blank %}
-                            <div class="nv-match-flavor-item-content">{{ block.settings.content }}</div>
+                            <div class="nv-match-flavor-item-content">{{ block.settings.content | replace:'__BREAKLINE__','<br/>' }}</div>
                         {% endif %}
                         {% if block.settings.button_text != blank and block.settings.button_url != blank %}
                             <div class="nv-match-flavor-item-button-wrapper">
