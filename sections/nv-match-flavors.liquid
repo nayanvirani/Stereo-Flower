@@ -57,7 +57,7 @@
 
    
     .section-{{ section.id }}-padding .nv-match-flavor-item-title {
-        font-weight: 600;
+        font-weight: 700;
         line-height: 100%;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -107,11 +107,7 @@
         }
        
     }
-    @media(min-width:1400px){
-        .section-{{ section.id }}-padding h2.title{
-                font-size:69px;
-        }
-    }
+    
   @media(max-width:749px){
     
      {% if section.settings.bg_image_m != blank %}
@@ -245,6 +241,14 @@
     .section-{{ section.id }}-padding .nv-match-flavor-item-title {
         font-size: 20px;
     }
+}
+@media(min-width:1400px){
+    .section-{{ section.id }}-padding h2.title{
+            font-size:69px;
+    }
+     .section-{{ section.id }}-padding .nv-match-flavor-item-title {
+        font-size:73px;
+     }
 }
 {%- endstyle -%}
 
