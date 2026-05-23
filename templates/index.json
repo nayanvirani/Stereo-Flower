@@ -293,6 +293,13 @@
             "heading_content_color": "#000000"
           }
         },
+        "spacing_tL8TJc": {
+          "type": "spacing",
+          "settings": {
+            "space_height": 50,
+            "space_height_m": 32
+          }
+        },
         "subheading_iwyxkW": {
           "type": "subheading",
           "settings": {
@@ -330,8 +337,8 @@
         "spacing_J6qxe7": {
           "type": "spacing",
           "settings": {
-            "space_height": 100,
-            "space_height_m": 50
+            "space_height": 20,
+            "space_height_m": 15
           }
         },
         "subheading_hyP4QR": {
@@ -371,6 +378,7 @@
       },
       "block_order": [
         "heading_AMXAhN",
+        "spacing_tL8TJc",
         "subheading_iwyxkW",
         "content_84yqtY",
         "button_GgrhkW",
