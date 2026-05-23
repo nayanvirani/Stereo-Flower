@@ -237,13 +237,13 @@
             "sub_title": "5mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "Low volume for a mellow, __BREAKLINE__ steady time.",
+            "content": "",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
             "button_url": "https://www.stereoflower.com/collections/5mg-thc-sparkling-teas",
-            "button_bg_color": "#000000",
-            "button_color": "#ffffff"
+            "button_bg_color": "#e9d2b9",
+            "button_color": "#968bdc"
           }
         },
         "rightitem_VEmkfh": {
@@ -256,7 +256,7 @@
             "sub_title": "10mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "Turn up the volume for an extra __BREAKLINE__ good time.",
+            "content": "",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
