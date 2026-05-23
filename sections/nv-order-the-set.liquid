@@ -218,9 +218,11 @@
                 {% endif %}
             }
             @media(max-width:749px){
+                {%  if forloop.index == 3 %}
                 #custom-nv-{{block.id}}-block {
                     padding-bottom:{{block.settings.space_height_m | default:20 }}px;
                 }
+                {% endif %}
             }
     {% endcase %}
 {% endfor %}
