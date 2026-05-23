@@ -19,9 +19,15 @@
       background-repeat: no-repeat;
       background-size: cover;
        background-position: center;
-           min-height: 30vw;
+          
     }
   {% endif %}
+  .section-{{ section.id }}-padding  .nv-trust-bulders-wrapper {
+    min-height: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
   .section-{{ section.id }}-padding .nv-trust-bulders-items{
     display:grid;
     grid-template-columns:repeat({{section.settings.desktop_grid | default:6}},1fr);
