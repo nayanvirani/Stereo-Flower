@@ -135,14 +135,14 @@
     "featured_collection": {
       "type": "featured-collection",
       "custom_css": [
-        "h2.title {letter-spacing: -0.04em; color: #4a4a4a; font-weight: 700; line-height: 100%;}",
-        "@media (min-width: 1400px) {h2.title {font-size: 69px; }}"
+        "h2.title {letter-spacing: -0.04em; color: #4a4a4a; font-weight: bold; line-height: 100%;}",
+        "@media (min-width: 750px) {/*h2.title {font-size: 69px; }*/}"
       ],
       "settings": {
         "collection": "stereo-flower-thc-infused-sparkling-teas",
         "products_to_show": 8,
         "title": "CATCH THE HEADLINERS",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -209,8 +209,8 @@
       "name": "NV: THC Adaptogen Infused",
       "settings": {
         "title": "THC & Adaptogen Infused",
-        "heading_size": "h1",
-        "bg_image": "shopify://shop_images/INFUSED.webp",
+        "heading_size": "h0",
+        "bg_image": "shopify://shop_images/HWD-SF-ASSETS-04.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
         "padding_top": 90,
         "padding_bottom": 90,
@@ -230,39 +230,39 @@
         "leftitem_p3hDPd": {
           "type": "leftitem",
           "settings": {
-            "top_icon": "shopify://shop_images/Group_13.webp",
-            "title": "LOW __BREAKLINE__ FREQUENCY",
+            "top_icon": "shopify://shop_images/LoFi_Asset_Small_e8c0e67f-90a3-4ee0-b7db-bd32c9de2351.png",
+            "title": "LOW FREQUENCY",
             "title_color": "#4a4a4a",
             "title_color_m": "#ffffff",
             "sub_title": "5mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "",
+            "content": "Low volume for a mellow steady time.",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
             "button_url": "https://www.stereoflower.com/collections/5mg-thc-sparkling-teas",
-            "button_bg_color": "#e9d2b9",
-            "button_color": "#968bdc"
+            "button_bg_color": "#000000",
+            "button_color": "#ffffff"
           }
         },
         "rightitem_VEmkfh": {
           "type": "rightitem",
           "settings": {
-            "top_icon": "shopify://shop_images/Group_12.webp",
-            "title": "HIGH __BREAKLINE__ FREQUENCY",
+            "top_icon": "shopify://shop_images/HWD-SF-ASSETS-19.webp",
+            "title": "HIGH FREQUENCY",
             "title_color": "#4a4a4a",
             "title_color_m": "#ffffff",
             "sub_title": "10mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "",
+            "content": "Turn up the volume for an extra good time.",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
             "button_url": "https://www.stereoflower.com/collections/10mg-thc-sparkling-teas",
-            "button_bg_color": "#545724",
-            "button_color": "#f3ec44"
+            "button_bg_color": "#000000",
+            "button_color": "#ffffff"
           }
         }
       },
@@ -273,7 +273,7 @@
       "name": "NV: Match Flavors",
       "settings": {
         "title": "MATCH ANY FLAVOR TO YOUR FREQUENCY",
-        "heading_size": "h1",
+        "heading_size": "h0",
         "bg_image": "shopify://shop_images/HWD-SF-ASSETS-02.webp",
         "bg_image_m": "shopify://shop_images/stereo_flower_flavor_frequency_mobile.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
@@ -284,27 +284,19 @@
     "nv_order_the_set_bPkdTb": {
       "type": "nv-order-the-set",
       "blocks": {
-        "image_wxxzwK": {
+        "image_HPxRe4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Newtag.webp",
-            "image_width": 100
+            "image": "shopify://shop_images/Newtag.webp"
           }
         },
         "heading_AMXAhN": {
           "type": "heading",
           "settings": {
-            "heading": "ORDER THE __BREAKLINE__ FULL SET",
+            "heading": "ORDER THE FULL SET",
             "color": "#4a4a4a",
             "heading_content": "VARITEY SAMPLER 4 PACK",
-            "heading_content_color": "#4a4a4a"
-          }
-        },
-        "spacing_tL8TJc": {
-          "type": "spacing",
-          "settings": {
-            "space_height": 50,
-            "space_height_m": 32
+            "heading_content_color": "#000000"
           }
         },
         "subheading_iwyxkW": {
@@ -312,14 +304,14 @@
           "settings": {
             "title": "5MG THC PER CAN",
             "color": "#4a4a4a",
-            "button": "SHOP NOW",
-            "url": "shopify://products/5mg-thc-tea-starter-pack",
-            "button_bg_color": "#d5f9ed",
-            "button_color": "#4a4a4a",
+            "button": "",
+            "url": "",
+            "button_bg_color": "#000000",
+            "button_color": "#ffffff",
             "button_border_radius": 40,
             "block_border_radius": 10,
-            "block_border_size": 5,
-            "border_color": "#e8e9ed"
+            "block_border_size": 2,
+            "border_color": "#000000"
           }
         },
         "content_84yqtY": {
@@ -332,7 +324,6 @@
         },
         "button_GgrhkW": {
           "type": "button",
-          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (5mg) (NEW)",
             "url": "shopify://products/5mg-thc-tea-starter-pack",
@@ -344,8 +335,8 @@
         "spacing_J6qxe7": {
           "type": "spacing",
           "settings": {
-            "space_height": 20,
-            "space_height_m": 15
+            "space_height": 100,
+            "space_height_m": 50
           }
         },
         "subheading_hyP4QR": {
@@ -353,14 +344,14 @@
           "settings": {
             "title": "10MG THC PER CAN",
             "color": "#4a4a4a",
-            "button": "SHOP NOW",
-            "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
-            "button_bg_color": "#f3ee6f",
-            "button_color": "#4a4a4a",
+            "button": "",
+            "url": "",
+            "button_bg_color": "#000000",
+            "button_color": "#ffffff",
             "button_border_radius": 40,
             "block_border_radius": 10,
-            "block_border_size": 5,
-            "border_color": "#e8e9ed"
+            "block_border_size": 2,
+            "border_color": "#000000"
           }
         },
         "content_KfrUiD": {
@@ -373,7 +364,6 @@
         },
         "button_FCtYjY": {
           "type": "button",
-          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (10mg) (NEW)",
             "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
@@ -384,9 +374,8 @@
         }
       },
       "block_order": [
-        "image_wxxzwK",
+        "image_HPxRe4",
         "heading_AMXAhN",
-        "spacing_tL8TJc",
         "subheading_iwyxkW",
         "content_84yqtY",
         "button_GgrhkW",
@@ -456,7 +445,7 @@
         "heading_size": "h1",
         "content": "",
         "section_color_scheme": "",
-        "bg_image": "shopify://shop_images/drink-bg.webp",
+        "bg_image": "shopify://shop_images/HWD-SF-ASSETS-01.webp",
         "padding_top": 150,
         "padding_bottom": 150,
         "desktop_grid": 5,
