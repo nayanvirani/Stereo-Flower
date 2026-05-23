@@ -118,6 +118,13 @@
                 #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
                     color:{{ block.settings.color }};
                 }
+                #custom-nv-{{block.id}}-block{
+                    {%  if block.settings.block_border_size > 0 %}
+                        border:{{ block.settings.block_border_size }}px solid {{block.settings.border_color }}px;
+                    {% endif %}
+                    border-radius:{{ block.settings.block_border_radius | default:0 }}px;
+                }
+                
                 #custom-nv-{{block.id}}-block .button{
                     color:{{ block.settings.button_color }};
                     border-color:{{block.settings.button_color }};
