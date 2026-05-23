@@ -284,6 +284,13 @@
     "nv_order_the_set_bPkdTb": {
       "type": "nv-order-the-set",
       "blocks": {
+        "image_wxxzwK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Newtag.webp",
+            "image_width": 100
+          }
+        },
         "heading_AMXAhN": {
           "type": "heading",
           "settings": {
@@ -377,6 +384,7 @@
         }
       },
       "block_order": [
+        "image_wxxzwK",
         "heading_AMXAhN",
         "spacing_tL8TJc",
         "subheading_iwyxkW",
