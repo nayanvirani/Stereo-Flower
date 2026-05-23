@@ -118,7 +118,18 @@
                 #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
                     color:{{ block.settings.color }};
                 }
-                
+                #custom-nv-{{block.id}}-block .button{
+                    color:{{ block.settings.button_color }};
+                    border-color:{{block.settings.button_color }};
+                    --buttons-radius: {{block.settings.button_border_radius}}px;
+                    --buttons-radius-outset: {{block.settings.button_border_radius}}px;
+                    {% if block.settings.button_bg_color != blank %}
+                        --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                    {%  endif %}
+                    {% if block.settings.color != blank %}
+                        --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                    {%  endif %}
+                }
             {% endif %}
         {% when 'content' %}
             {% if block.settings.content != blank %}
@@ -208,10 +219,16 @@
                     {% when 'heading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                             <div class="custom-nv-order-title">{{ block.settings.heading | replace:'__BREAKLINE__','<br/>' }}</div>
+                            {% if block.settings.heading_content != blank %}
+                                <div class="custom-heading-content-block" {% if block.settings.heading_content_color != blank %} style="color:{{block.settings.heading_content_color}};"{% endif %}>{{block.settings.heading_content }}</div>
+                            {% endif %}
                         </div>
                     {% when 'subheading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                             <div class="custom-nv-order-subtitle">{{ block.settings.title }}</div>
+                            {% if block.settings.button != blank %}
+                                <a class="button button--primary" href="{{ block.settings.url }}">{{ block.settings.button }}</a>
+                            {% endif %}
                         </div>
                     {% when 'content' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
@@ -316,6 +333,18 @@
                 "id": "color",
                 "default":"#000",
                 "label": "Color"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "heading_content",
+                "label": "Heading content",
+                "default":"VARITEY SAMPLER 4 PACK"
+            },
+            {
+                "type": "color",
+                "id": "heading_content_color",
+                "default":"#000",
+                "label": "Heading content Color"
             }
         ]
     },
@@ -334,7 +363,61 @@
                 "id": "color",
                 "default":"#000",
                 "label": "Color"
-            }
+            },
+            {
+                "type": "header",
+                "content": "Button Settings"
+            },
+            {
+                "type": "text",
+                "id":"button",
+                "label": "Button"
+            },
+            {
+                "type": "url",
+                "id":"url",
+                "label": "URL"
+            },
+            {
+                "type": "color",
+                "id": "button_bg_color",
+                "default":"#000",
+                "label": "Button BG Color"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "default":"#fff",
+                "label": "Button Color"
+            },
+            {
+                "type": "number",
+                "id": "button_border_radius",
+                "label": "Border radius",
+                "default":40
+            },
+            {
+                "type": "header",
+                "content": "Block Settings"
+            },
+            {
+                "type": "number",
+                "id": "block_border_radius",
+                "label": "Border radius",
+                "default":10
+            },
+            {
+                "type": "number",
+                "id": "block_border_size",
+                "label": "Border size",
+                "default":2
+            },
+            {
+                "type": "color",
+                "id": "border_color",
+                "default":"#000",
+                "label": "Border Color"
+            },
         ]
     },
     {
@@ -372,7 +455,7 @@
                 "type": "color",
                 "id": "bg_color",
                 "default":"#000",
-                "label": "Color"
+                "label": "BG Color"
             },
             {
                 "type": "color",
