@@ -288,14 +288,24 @@
           "type": "heading",
           "settings": {
             "heading": "ORDER THE __BREAKLINE__ FULL SET",
-            "color": "#4a4a4a"
+            "color": "#4a4a4a",
+            "heading_content": "VARITEY SAMPLER 4 PACK",
+            "heading_content_color": "#000000"
           }
         },
         "subheading_iwyxkW": {
           "type": "subheading",
           "settings": {
             "title": "5MG THC PER CAN",
-            "color": "#4a4a4a"
+            "color": "#4a4a4a",
+            "button": "SHOP NOW",
+            "url": "shopify://products/5mg-thc-tea-starter-pack",
+            "button_bg_color": "#d5f9ed",
+            "button_color": "#4a4a4a",
+            "button_border_radius": 40,
+            "block_border_radius": 10,
+            "block_border_size": 2,
+            "border_color": "#e8e9ed"
           }
         },
         "content_84yqtY": {
@@ -308,6 +318,7 @@
         },
         "button_GgrhkW": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (5mg) (NEW)",
             "url": "shopify://products/5mg-thc-tea-starter-pack",
@@ -327,7 +338,15 @@
           "type": "subheading",
           "settings": {
             "title": "10MG THC PER CAN",
-            "color": "#4a4a4a"
+            "color": "#4a4a4a",
+            "button": "SHOP NOW",
+            "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
+            "button_bg_color": "#f3ee6f",
+            "button_color": "#4a4a4a",
+            "button_border_radius": 40,
+            "block_border_radius": 10,
+            "block_border_size": 2,
+            "border_color": "#e8e9ed"
           }
         },
         "content_KfrUiD": {
@@ -340,6 +359,7 @@
         },
         "button_FCtYjY": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (10mg) (NEW)",
             "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
