@@ -279,6 +279,12 @@
         <div class="nv-order-set-item right-item">
             {% for block in section.blocks %}
                 {% case block.type %}
+                    {% when 'image' %}
+                        <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
+                                <div class="image--wrapper custom-image-b-rapper" {% if block.settings.image_width > 0 %} style="max-width:{{block.settings.image_width}}px;"{% endif %}>
+                                    <img src="{{block.settings.image | image_url }}" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" loading="lazy">
+                                </div>
+                        </div>
                     {% when 'heading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                             <div class="custom-nv-order-title">{{ block.settings.heading | replace:'__BREAKLINE__','<br/>' }}</div>
@@ -363,6 +369,22 @@
     }
   ],
   "blocks": [
+    {
+        "type": "image",
+        "name":"Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+            },
+            {
+                "type": "number",
+                "id": "image_width",
+                "label": "Image Width"
+            }
+        ]
+    },
     {
         "type":"spacing",
         "name":"Spacing",
