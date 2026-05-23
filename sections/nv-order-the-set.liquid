@@ -206,9 +206,11 @@
                 padding-bottom:{{block.settings.space_height | default:20 }}px;
             }
             @media(min-width:750px) and (max-width:1023px){
+                 {%  if forloop.index == 3 %}
                 #custom-nv-{{block.id}}-block {
                 padding-bottom:{{block.settings.space_height | times: 0.45 | round: 0 }}px;
                 }
+                {% endif %}
             }
             @media(min-width:1024px) and (max-width:1280px){
                 {%  if forloop.index == 3 %}
