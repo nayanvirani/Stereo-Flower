@@ -36,7 +36,7 @@
     .section-{{ section.id }}-padding .nv-match-flavor-item-content-wrapper {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         text-align: center;
         letter-spacing: 0;
@@ -111,9 +111,6 @@
         width: calc(50% - 5%);
         flex:0 0 calc(50% - 5%);
     }
-     .section-{{ section.id }}-padding .nv-match-flavor-item.right-item {
-        grid-template-columns: 1fr 15px;
-    }
     .section-{{ section.id }}-padding .nv-match-flavor-item-title {
         font-size: 18px;
         margin-top:15px;
@@ -128,11 +125,9 @@
         font-size: 14px;
     }
     .section-{{ section.id }}-padding .image-wrapper.top-icon-wrapper {
-        max-width: 40px;
+        max-width: 75px;
     }
-    .section-{{ section.id }}-padding .nv-match-flavor-item.right-item .image-wrapper.top-icon-wrapper {
-            max-width: 57px;
-        }
+    
      .section-{{ section.id }}-padding .nv-match-flavor-item-button-wrapper {
         margin-top: 15px;
     }
@@ -151,24 +146,24 @@
         line-height: 100%;
     }
    .section-{{ section.id }}-padding .nv-match-flavor-wrapper{
-        height: 30vh;
+        min-height: 30vh;
         align-items: flex-start;
         position: relative;
     }
   }
   @media(min-width:750px){
     .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
-        height:51vw;
+        min-height:51vw;
     }
   }
   @media(min-width:1024px){
     .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
-       height:48vw;
+       min-height:48vw;
     }
   }
   @media(min-width:1280px){
     .section-{{ section.id }}-padding .nv-match-flavor-wrapper {
-        height:48vw;
+        min-height:48vw;
     }
   }
 {% for block in section.blocks %}
@@ -233,7 +228,7 @@
 }
 @media(max-width:560px){
     .section-{{ section.id }}-padding .nv-match-flavor-wrapper{
-        height: 30vh;
+        min-height: 30vh;
     }
    .section-{{ section.id }}-padding .nv-match-flavor-item-content {
         display: none;
