@@ -120,7 +120,7 @@
                 }
                 #custom-nv-{{block.id}}-block{
                     {%  if block.settings.block_border_size > 0 %}
-                        border:{{ block.settings.block_border_size }}px solid {{block.settings.border_color }}px;
+                        border:{{ block.settings.block_border_size }}px solid {{block.settings.border_color }};
                     {% endif %}
                     border-radius:{{ block.settings.block_border_radius | default:0 }}px;
                 }
