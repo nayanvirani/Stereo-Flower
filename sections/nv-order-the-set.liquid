@@ -281,7 +281,7 @@
                 {% case block.type %}
                     {% when 'image' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
-                                <div class="image--wrapper custom-image-b-rapper" {% if block.settings.image_width > 0 %} style="max-width:{{block.settings.image_width}}px;"{% endif %}>
+                                <div class="image--wrapper custom-image-b-rapper" {% if block.settings.image_width > 0 %} style="margin:0 auto;max-width:{{block.settings.image_width}}px;"{% endif %}>
                                     <img src="{{block.settings.image | image_url }}" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" loading="lazy">
                                 </div>
                         </div>
