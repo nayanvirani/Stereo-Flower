@@ -31,8 +31,61 @@
     }
 
     .section-{{ section.id }}-padding .nv-order-set-item.right-item {
-        padding: 5rem;
         text-align: center;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-title{
+        font-weight: 700;
+        line-height: 100%;
+        font-family: var(--font-heading-family);
+        letter-spacing: -0.04em;
+        font-size:98px;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-subtitle{
+        font-family: var(--futurafont);
+        font-weight: var(--futurafontweightbold);
+        line-height: 100%;
+        margin-bottom: 20px;
+        letter-spacing: -0.04em;
+        font-size:34px;
+            
+    }
+   .section-{{ section.id }}-padding .custom-heading-content-block {
+       font-family: var(--font-heading-family);
+        font-weight: var(--futurafontweightsemi);
+        line-height: 100%;
+        margin-bottom: 20px;
+        letter-spacing: -0.04em;
+        font-size:30px;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-content{
+        line-height: 140%;
+        margin-bottom: 20px;
+        font-family: var(--futurafont);
+        font-weight: var(--futurafontweightsemi);
+        letter-spacing: 0.10%;
+        font-size:30px;
+    }
+    .section-{{ section.id }}-padding .custom-nv-order-content p{
+        margin-top:0;
+        margin-bottom:10px;
+    }
+    .section-{{ section.id }}-padding .button{
+        font-family: var(--font-heading-family);
+        font-weight: var(--futurafontweightsemi);
+        letter-spacing: 0.10%;
+        font-size:30px;
+    }
+    .section-{{ section.id }}-padding .image--wrapper.custom-image-b-rapper{
+        line-height:0;
+        max-width:100px;
+        margin:0 auto;
+        margin-bottom:10px;
+    }
+     .section-{{ section.id }}-padding .image--wrapper.custom-image-b-rapper img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
     }
 @media(max-width:1280px){
     .section-{{ section.id }}-padding .nv-order-the-set-wrapper {
@@ -68,7 +121,9 @@
          background-position: center;
         }
     {% endif %}
-    
+    .section-{{ section.id }}-padding .image--wrapper.custom-image-b-rapper{
+            max-width:50px;
+        } 
   }
 
 {% for block in section.blocks %}
@@ -76,66 +131,63 @@
         {% when 'heading' %}
             {% if block.settings.heading != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-title{
-                    font-size:{{ block.settings.font_size }}px;
                     color:{{ block.settings.color }};
-                    font-weight: 600;
-                    line-height: 100%;
-                    margin-bottom: 50px;
-                     font-family: var(--font-heading-family);
-                         letter-spacing: -0.04em;
                 }
-                @media(max-width:749px){
-                    #custom-nv-{{block.id}}-block .custom-nv-order-title{
-                        font-size:{{ block.settings.font_size_m }}px;
-                    }
-                }
+              
             {% endif %}
         {% when 'subheading' %}
             {% if block.settings.title != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
-                    font-size:{{ block.settings.font_size }}px;
                     color:{{ block.settings.color }};
-                    font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightbold);
-                    line-height: 100%;
-                    margin-bottom: 20px;
-                    letter-spacing: -0.04em;
-                     
                 }
+                #custom-nv-{{block.id}}-block{
+                    {%  if block.settings.block_border_size > 0 %}
+                        border:{{ block.settings.block_border_size }}px solid {{block.settings.border_color }};
+                    {% endif %}
+                    border-radius:{{ block.settings.block_border_radius | default:0 }}px;
+                    padding: 30px 15px;
+                }
+                @media(min-width:750px) and (max-width:1023px){
+                        #custom-nv-{{block.id}}-block {
+                            padding: 15px;
+                        }
+                }
+                 @media(min-width:1024px) and (max-width:1280px){
+                    #custom-nv-{{block.id}}-block {
+                            padding: 15px;
+                        }
+                 }
                 @media(max-width:749px){
-                    #custom-nv-{{block.id}}-block .custom-nv-order-subtitle{
-                        font-size:{{ block.settings.font_size_m }}px;
-                    }
+                        #custom-nv-{{block.id}}-block {
+                            padding: 15px;
+                        }
+                }
+                #custom-nv-{{block.id}}-block .button{
+                    color:{{ block.settings.button_color }};
+                    border:2px solid {{block.settings.button_color }};
+                    --buttons-radius: {{block.settings.button_border_radius}}px;
+                    --buttons-radius-outset: {{block.settings.button_border_radius}}px;
+                    {% if block.settings.button_bg_color != blank %}
+                        --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
+                    {%  endif %}
+                    {% if block.settings.color != blank %}
+                        --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
+                    {%  endif %}
                 }
             {% endif %}
         {% when 'content' %}
             {% if block.settings.content != blank %}
                 #custom-nv-{{block.id}}-block .custom-nv-order-content{
-                    font-size:{{ block.settings.font_size }}px;
                     color:{{ block.settings.color }};
-                    line-height: 140%;
-                    margin-bottom: 20px;
-                    font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightsemi);
-                    letter-spacing: 0.10%;
-                }
-                #custom-nv-{{block.id}}-block .custom-nv-order-content p{
-                    margin-top:0;
-                    margin-bottom:10px;
                 }
                 #custom-nv-{{block.id}}-block .custom-nv-order-content a{
                     color:{{ block.settings.color }};
                 }
-                @media(max-width:749px){
-                    #custom-nv-{{block.id}}-block .custom-nv-order-content{
-                        font-size:{{ block.settings.font_size_m }}px;
-                    }
-                }
+                
             {% endif %}
         {% when 'button' %}
             {% if block.settings.title != blank %}
                 #custom-nv-{{block.id}}-block .button{
-                    font-size:{{ block.settings.font_size }}px;
                     color:{{ block.settings.color }};
                     --buttons-radius: {{block.settings.border_radius}}px;
                     --buttons-radius-outset: {{block.settings.border_radius}}px;
@@ -145,20 +197,25 @@
                     {% if block.settings.color != blank %}
                         --color-button-text: {{ block.settings.color.red }},{{ block.settings.color.green }},{{ block.settings.color.blue }};
                     {%  endif %}
-                     font-family: var(--futurafont);
-                    font-weight: var(--futurafontweightsemi);
-                    letter-spacing: 0.10%;
                 }
-                @media(max-width:749px){
-                    #custom-nv-{{block.id}}-block .button{
-                        font-size:{{ block.settings.font_size_m }}px;
-                    }
-                }
+                
             {% endif %}
         {% when 'spacing' %}
             #custom-nv-{{block.id}}-block {
                 display:block;
                 padding-bottom:{{block.settings.space_height | default:20 }}px;
+            }
+            @media(min-width:750px) and (max-width:1023px){
+                #custom-nv-{{block.id}}-block {
+                padding-bottom:{{block.settings.space_height | times: 0.45 | round: 0 }}px;
+                }
+            }
+            @media(min-width:1024px) and (max-width:1280px){
+                {%  if forloop.index == 3 %}
+                 #custom-nv-{{block.id}}-block {
+                    padding-bottom:{{block.settings.space_height | times: 0.45 | round: 0 }}px;
+                }
+                {% endif %}
             }
             @media(max-width:749px){
                 #custom-nv-{{block.id}}-block {
@@ -167,21 +224,79 @@
             }
     {% endcase %}
 {% endfor %}
-@media(min-width:750px) and (max-width:1024px){
+@media(min-width:750px) and (max-width:1023px){
     .section-{{ section.id }}-padding .custom-nv-order-title {
-        font-size: 54px !important;
+        font-size: 40px;
     }
 
     .section-{{ section.id }}-padding .custom-nv-order-subtitle {
-        font-size: 24px !important;
+        font-size: 20px;
+         margin-bottom: 10px;
     }
 
     .section-{{ section.id }}-padding .custom-nv-order-content {
-        font-size: 20px !important;
+        font-size: 18px;
     }
 
-    .section-{{ section.id }}-padding a.button.button--primary.button--full-width {
-        font-size: 20px !important;
+    .section-{{ section.id }}-padding .button{
+        font-size: 16px;
+        min-height:auto;
+        padding:5px 20px;
+    }
+    .section-{{ section.id }}-padding .custom-heading-content-block{
+        font-size: 20px;
+    }
+    .section-{{ section.id }}-padding .image--wrapper.custom-image-b-rapper{
+        max-width:50px;
+    } 
+    
+}
+@media(min-width:1024px) and (max-width:1280px){
+    .section-{{ section.id }}-padding .image--wrapper.custom-image-b-rapper{
+        max-width:75px;
+    } 
+}
+@media(min-width:1024px) and (max-width:1399px){
+    .section-{{ section.id }}-padding .custom-nv-order-title {
+        font-size: 54px;
+    }
+
+    .section-{{ section.id }}-padding .custom-nv-order-subtitle {
+        font-size: 24px;
+    }
+
+    .section-{{ section.id }}-padding .custom-nv-order-content {
+        font-size: 20px;
+    }
+
+    .section-{{ section.id }}-padding .button{
+        font-size: 20px;
+    }
+    .section-{{ section.id }}-padding .custom-heading-content-block{
+        font-size: 24px;
+    }
+}
+@media(max-width:749px){
+    .section-{{ section.id }}-padding .custom-nv-order-title {
+        font-size: 32px;
+    }
+
+    .section-{{ section.id }}-padding .custom-nv-order-subtitle {
+        font-size: 20px;
+         margin-bottom: 10px;
+    }
+
+    .section-{{ section.id }}-padding .custom-nv-order-content {
+        font-size: 16px;
+    }
+
+    .section-{{ section.id }}-padding .button{
+        font-size: 16px;
+         min-height:auto;
+        padding:5px 20px;
+    }
+    .section-{{ section.id }}-padding .custom-heading-content-block{
+        font-size: 20px;
     }
 }
 {%- endstyle -%}
@@ -198,13 +313,25 @@
         <div class="nv-order-set-item right-item">
             {% for block in section.blocks %}
                 {% case block.type %}
+                    {% when 'image' %}
+                        <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
+                                <div class="image--wrapper custom-image-b-rapper" >
+                                    <img src="{{block.settings.image | image_url }}" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" loading="lazy">
+                                </div>
+                        </div>
                     {% when 'heading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
-                            <div class="custom-nv-order-title">{{ block.settings.heading }}</div>
+                            <div class="custom-nv-order-title">{{ block.settings.heading | replace:'__BREAKLINE__','<br/>' }}</div>
+                            {% if block.settings.heading_content != blank %}
+                                <div class="custom-heading-content-block" {% if block.settings.heading_content_color != blank %} style="color:{{block.settings.heading_content_color}};"{% endif %}>{{block.settings.heading_content }}</div>
+                            {% endif %}
                         </div>
                     {% when 'subheading' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                             <div class="custom-nv-order-subtitle">{{ block.settings.title }}</div>
+                            {% if block.settings.button != blank %}
+                                <a class="button button--primary" href="{{ block.settings.url }}">{{ block.settings.button }}</a>
+                            {% endif %}
                         </div>
                     {% when 'content' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
@@ -212,7 +339,7 @@
                         </div>
                     {% when 'button' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
-                            <a class="button button--primary button--full-width" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+                            <a class="button button--primary" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
                         </div>
                     {% when 'spacing' %}
                         <div id="custom-nv-{{block.id}}-block"></div>
@@ -277,6 +404,17 @@
   ],
   "blocks": [
     {
+        "type": "image",
+        "name":"Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image",
+            }
+        ]
+    },
+    {
         "type":"spacing",
         "name":"Spacing",
         "settings": [
@@ -305,22 +443,22 @@
                 "default":"ORDER THE FULL SET"
             },
             {
-                "type": "number",
-                "id": "font_size",
-                "label": "Font size",
-                "default":40
-            },
-            {
-                "type": "number",
-                "id": "font_size_m",
-                "label": "Font size (Mobile)",
-                "default":32
-            },
-            {
                 "type": "color",
                 "id": "color",
                 "default":"#000",
                 "label": "Color"
+            },
+            {
+                "type": "inline_richtext",
+                "id": "heading_content",
+                "label": "Heading content",
+                "default":"VARITEY SAMPLER 4 PACK"
+            },
+            {
+                "type": "color",
+                "id": "heading_content_color",
+                "default":"#000",
+                "label": "Heading content Color"
             }
         ]
     },
@@ -335,23 +473,65 @@
                 "default":"5MG THC PER CAN"
             },
             {
-                "type": "number",
-                "id": "font_size",
-                "label": "Font size",
-                "default":32
-            },
-            {
-                "type": "number",
-                "id": "font_size_m",
-                "label": "Font size (Mobile)",
-                "default":24
-            },
-            {
                 "type": "color",
                 "id": "color",
                 "default":"#000",
                 "label": "Color"
-            }
+            },
+            {
+                "type": "header",
+                "content": "Button Settings"
+            },
+            {
+                "type": "text",
+                "id":"button",
+                "label": "Button"
+            },
+            {
+                "type": "url",
+                "id":"url",
+                "label": "URL"
+            },
+            {
+                "type": "color",
+                "id": "button_bg_color",
+                "default":"#000",
+                "label": "Button BG Color"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "default":"#fff",
+                "label": "Button Color"
+            },
+            {
+                "type": "number",
+                "id": "button_border_radius",
+                "label": "Border radius",
+                "default":40
+            },
+            {
+                "type": "header",
+                "content": "Block Settings"
+            },
+            {
+                "type": "number",
+                "id": "block_border_radius",
+                "label": "Border radius",
+                "default":10
+            },
+            {
+                "type": "number",
+                "id": "block_border_size",
+                "label": "Border size",
+                "default":2
+            },
+            {
+                "type": "color",
+                "id": "border_color",
+                "default":"#000",
+                "label": "Border Color"
+            },
         ]
     },
     {
@@ -362,18 +542,6 @@
                 "type": "richtext",
                 "id":"content",
                 "label": "Content"
-            },
-            {
-                "type": "number",
-                "id": "font_size",
-                "label": "Font size",
-                "default":32
-            },
-            {
-                "type": "number",
-                "id": "font_size_m",
-                "label": "Font size (Mobile)",
-                "default":24
             },
             {
                 "type": "color",
@@ -398,22 +566,10 @@
                 "label": "URL"
             },
             {
-                "type": "number",
-                "id": "font_size",
-                "label": "Font size",
-                "default":20
-            },
-            {
-                "type": "number",
-                "id": "font_size_m",
-                "label": "Font size (Mobile)",
-                "default":16
-            },
-            {
                 "type": "color",
                 "id": "bg_color",
                 "default":"#000",
-                "label": "Color"
+                "label": "BG Color"
             },
             {
                 "type": "color",

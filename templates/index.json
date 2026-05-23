@@ -135,14 +135,14 @@
     "featured_collection": {
       "type": "featured-collection",
       "custom_css": [
-        "h2.title {letter-spacing: -0.04em; color: #4a4a4a; font-weight: bold; line-height: 100%;}",
-        "@media (min-width: 750px) {/*h2.title {font-size: 69px; }*/}"
+        "h2.title {letter-spacing: -0.04em; color: #4a4a4a; font-weight: 700; line-height: 100%;}",
+        "@media (min-width: 1400px) {h2.title {font-size: 69px; }}"
       ],
       "settings": {
         "collection": "stereo-flower-thc-infused-sparkling-teas",
         "products_to_show": 8,
         "title": "CATCH THE HEADLINERS",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -209,8 +209,8 @@
       "name": "NV: THC Adaptogen Infused",
       "settings": {
         "title": "THC & Adaptogen Infused",
-        "heading_size": "h0",
-        "bg_image": "shopify://shop_images/HWD-SF-ASSETS-04.webp",
+        "heading_size": "h1",
+        "bg_image": "shopify://shop_images/INFUSED.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
         "padding_top": 90,
         "padding_bottom": 90,
@@ -230,41 +230,39 @@
         "leftitem_p3hDPd": {
           "type": "leftitem",
           "settings": {
-            "left_icon": "shopify://shop_images/stereo_flower_levels_5mg.png",
-            "top_icon": "shopify://shop_images/LoFi_Asset_Small_e8c0e67f-90a3-4ee0-b7db-bd32c9de2351.png",
-            "title": "LOW FREQUENCY",
+            "top_icon": "shopify://shop_images/Group_13.webp",
+            "title": "LOW __BREAKLINE__ FREQUENCY",
             "title_color": "#4a4a4a",
             "title_color_m": "#ffffff",
             "sub_title": "5mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "Low volume for a mellow steady time.",
+            "content": "",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
             "button_url": "https://www.stereoflower.com/collections/5mg-thc-sparkling-teas",
-            "button_bg_color": "#000000",
-            "button_color": "#ffffff"
+            "button_bg_color": "#e9d2b9",
+            "button_color": "#968bdc"
           }
         },
         "rightitem_VEmkfh": {
           "type": "rightitem",
           "settings": {
-            "right_icon": "shopify://shop_images/HWD-SF-ASSETS-15.webp",
-            "top_icon": "shopify://shop_images/HWD-SF-ASSETS-19.webp",
-            "title": "HIGH FREQUENCY",
+            "top_icon": "shopify://shop_images/Group_12.webp",
+            "title": "HIGH __BREAKLINE__ FREQUENCY",
             "title_color": "#4a4a4a",
             "title_color_m": "#ffffff",
             "sub_title": "10mg THC | 10mg CBD",
             "sub_title_color": "#4a4a4a",
             "sub_title_color_m": "#ffffff",
-            "content": "Turn up the volume for an extra good time.",
+            "content": "",
             "content_color": "#4a4a4a",
             "content_color_m": "#ffffff",
             "button_text": "SHOP NOW",
             "button_url": "https://www.stereoflower.com/collections/10mg-thc-sparkling-teas",
-            "button_bg_color": "#000000",
-            "button_color": "#ffffff"
+            "button_bg_color": "#545724",
+            "button_color": "#f3ec44"
           }
         }
       },
@@ -275,7 +273,7 @@
       "name": "NV: Match Flavors",
       "settings": {
         "title": "MATCH ANY FLAVOR TO YOUR FREQUENCY",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "bg_image": "shopify://shop_images/HWD-SF-ASSETS-02.webp",
         "bg_image_m": "shopify://shop_images/stereo_flower_flavor_frequency_mobile.webp",
         "section_color_scheme": "scheme-cfc8468a-2d2a-43a6-bf35-13a32947db8d",
@@ -286,22 +284,42 @@
     "nv_order_the_set_bPkdTb": {
       "type": "nv-order-the-set",
       "blocks": {
+        "image_wxxzwK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Newtag.webp",
+            "image_width": 100
+          }
+        },
         "heading_AMXAhN": {
           "type": "heading",
           "settings": {
-            "heading": "ORDER THE FULL SET",
-            "font_size": 69,
-            "font_size_m": 32,
-            "color": "#4a4a4a"
+            "heading": "ORDER THE __BREAKLINE__ FULL SET",
+            "color": "#4a4a4a",
+            "heading_content": "VARITEY SAMPLER 4 PACK",
+            "heading_content_color": "#4a4a4a"
+          }
+        },
+        "spacing_tL8TJc": {
+          "type": "spacing",
+          "settings": {
+            "space_height": 50,
+            "space_height_m": 32
           }
         },
         "subheading_iwyxkW": {
           "type": "subheading",
           "settings": {
             "title": "5MG THC PER CAN",
-            "font_size": 34,
-            "font_size_m": 24,
-            "color": "#4a4a4a"
+            "color": "#4a4a4a",
+            "button": "SHOP NOW",
+            "url": "shopify://products/5mg-thc-tea-starter-pack",
+            "button_bg_color": "#d5f9ed",
+            "button_color": "#4a4a4a",
+            "button_border_radius": 40,
+            "block_border_radius": 10,
+            "block_border_size": 5,
+            "border_color": "#e8e9ed"
           }
         },
         "content_84yqtY": {
@@ -309,18 +327,15 @@
           "disabled": true,
           "settings": {
             "content": "<p><a href=\"https://www.stereoflower.com/products/blood-orange-hibiscus-sparkling-black-tea-5mg-thc-per-can\">Blood Orange Hibiscus Sparkling Black Tea | 5mg THC Per Can</a></p><p><a href=\"/products/yuzu-mint-sparkling-green-tea-5mg-thc-per-can\" title=\"Yuzu Mint Sparkling Green Tea | 5mg THC Per Can\">Yuzu Mint Sparkling Green Tea | 5mg THC Per Can</a></p><p><a href=\"/products/clementine-vanilla-sparkling-white-tea-5mg-thc-per-can\" title=\"Clementine Vanilla Sparkling White Tea | 5mg THC Per Can\">Clementine Vanilla Sparkling White Tea | 5mg THC Per Can</a></p>",
-            "font_size": 30,
-            "font_size_m": 16,
             "color": "#4a4a4a"
           }
         },
         "button_GgrhkW": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (5mg) (NEW)",
             "url": "shopify://products/5mg-thc-tea-starter-pack",
-            "font_size": 30,
-            "font_size_m": 16,
             "bg_color": "#7d8ccc",
             "color": "#ffffff",
             "border_radius": 40
@@ -329,17 +344,23 @@
         "spacing_J6qxe7": {
           "type": "spacing",
           "settings": {
-            "space_height": 100,
-            "space_height_m": 50
+            "space_height": 20,
+            "space_height_m": 15
           }
         },
         "subheading_hyP4QR": {
           "type": "subheading",
           "settings": {
             "title": "10MG THC PER CAN",
-            "font_size": 34,
-            "font_size_m": 24,
-            "color": "#4a4a4a"
+            "color": "#4a4a4a",
+            "button": "SHOP NOW",
+            "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
+            "button_bg_color": "#f3ee6f",
+            "button_color": "#4a4a4a",
+            "button_border_radius": 40,
+            "block_border_radius": 10,
+            "block_border_size": 5,
+            "border_color": "#e8e9ed"
           }
         },
         "content_KfrUiD": {
@@ -347,18 +368,15 @@
           "disabled": true,
           "settings": {
             "content": "<p><a href=\"/products/blood-orange-hibiscus-sparkling-black-tea-10mg-thc-per-can\" title=\"Blood Orange Hibiscus Sparkling Black Tea | 10mg THC Per Can\">Blood Orange Hibiscus Sparkling Black Tea | 10mg THC Per Can</a></p><p><a href=\"/products/yuzu-mint-sparkling-green-tea-10mg-thc-per-can\" title=\"Yuzu Mint Sparkling Green Tea | 10mg THC Per Can\">Yuzu Mint Sparkling Green Tea | 10mg THC Per Can</a></p><p><a href=\"/products/clementine-vanilla-sparkling-white-tea-10mg-thc-per-can\" title=\"Clementine Vanilla Sparkling White Tea | 10mg THC Per Can\">Clementine Vanilla Sparkling White Tea | 10mg THC Per Can</a></p>",
-            "font_size": 30,
-            "font_size_m": 16,
             "color": "#4a4a4a"
           }
         },
         "button_FCtYjY": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "title": "Variety Sampler Pack (10mg) (NEW)",
             "url": "shopify://products/10mg-thc-tea-starter-pack-stereo-flower-sparkling-tea",
-            "font_size": 30,
-            "font_size_m": 16,
             "bg_color": "#30e472",
             "color": "#ffffff",
             "border_radius": 40
@@ -366,7 +384,9 @@
         }
       },
       "block_order": [
+        "image_wxxzwK",
         "heading_AMXAhN",
+        "spacing_tL8TJc",
         "subheading_iwyxkW",
         "content_84yqtY",
         "button_GgrhkW",
@@ -436,7 +456,7 @@
         "heading_size": "h1",
         "content": "",
         "section_color_scheme": "",
-        "bg_image": "shopify://shop_images/HWD-SF-ASSETS-01.webp",
+        "bg_image": "shopify://shop_images/drink-bg.webp",
         "padding_top": 150,
         "padding_bottom": 150,
         "desktop_grid": 5,

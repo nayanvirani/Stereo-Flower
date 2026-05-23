@@ -59,10 +59,10 @@ body h1,body h2,body h3,body h4{
     font-size: 20px;
   }
 }
-@media(min-width:1560px){
+@media(min-width:1400px){
   .header__menu-item {
     /*font-family: "Avenir Next LT Pro";*/
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 .avenir-pro-font{
