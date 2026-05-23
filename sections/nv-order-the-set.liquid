@@ -133,7 +133,16 @@
                     border-radius:{{ block.settings.block_border_radius | default:0 }}px;
                     padding: 30px 15px;
                 }
-                
+                @media(min-width:750px) and (max-width:1023px){
+                        #custom-nv-{{block.id}}-block {
+                            padding: 30px 15px;
+                        }
+                }
+                @media(max-width:749px){
+                        #custom-nv-{{block.id}}-block {
+                            padding: 15px;
+                        }
+                }
                 #custom-nv-{{block.id}}-block .button{
                     color:{{ block.settings.button_color }};
                     border:1px solid {{block.settings.button_color }};
