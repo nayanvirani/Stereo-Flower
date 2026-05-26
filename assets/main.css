@@ -399,9 +399,9 @@ span.custom-v-title {
 }
 
 .futura-alt-font {
-   font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif !important;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 400 !important;
   font-style: normal;
 }
 
