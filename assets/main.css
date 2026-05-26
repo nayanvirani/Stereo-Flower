@@ -397,3 +397,18 @@ span.custom-v-title {
   font-family: var(--futurafont);
   font-weight: var(--futurafontweightsemi);
 }
+
+.klaviyo-form-teaser,
+[class*="klaviyo-form"] button {
+  background-image: url("https://cdn.shopify.com/s/files/1/0956/8344/5049/files/test-pop.webp") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  width: 120px !important;
+  height: 120px !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: transparent !important;
+  font-size: 0 !important;
+}
