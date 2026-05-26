@@ -398,6 +398,13 @@ span.custom-v-title {
   font-weight: var(--futurafontweightsemi);
 }
 
+.questrial-regular {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 /*
 span.needsclick.Teaser-pointer-Hn1zd.kl-private-reset-css-Xuajs1 .needsclick.go1596356512.kl-private-reset-css-Xuajs1 {
   background-image: url("https://cdn.shopify.com/s/files/1/0956/8344/5049/files/test-pop.webp") !important;
