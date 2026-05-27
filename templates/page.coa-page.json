@@ -93,18 +93,6 @@
             "heading_5": "Best By Date"
           }
         },
-        "row_YK7f9D": {
-          "type": "row",
-          "name": "YM:4/20/26",
-          "settings": {
-            "value_1": "April 3, 2026",
-            "value_2": "Yuzu Mint 5mg THC: 10mg CBD per 355mL",
-            "value_3": "26110.1",
-            "value_4": "Click here",
-            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Yuzu_Mint_5mg_THC_10mg_CBD.pdf?v=1779901990",
-            "value_5": "4/2/2027"
-          }
-        },
         "row_DbH4fC": {
           "type": "row",
           "name": "BOH:4/20/26",
@@ -127,6 +115,18 @@
             "value_4": "Click here",
             "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Clementine_Vanilla_5mg_THC_10mg_CBD.pdf?v=1777483195",
             "value_5": "4/17/2027"
+          }
+        },
+        "row_YK7f9D": {
+          "type": "row",
+          "name": "YM:4/3/26",
+          "settings": {
+            "value_1": "April 3, 2026",
+            "value_2": "Yuzu Mint 5mg THC: 10mg CBD per 355mL",
+            "value_3": "26110.1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Yuzu_Mint_5mg_THC_10mg_CBD.pdf?v=1779901990",
+            "value_5": "4/2/2027"
           }
         },
         "row_4RK8rc": {
@@ -204,9 +204,9 @@
       },
       "block_order": [
         "heading_AtmwMm",
-        "row_YK7f9D",
         "row_DbH4fC",
         "row_pLBKPp",
+        "row_YK7f9D",
         "row_4RK8rc",
         "row_FnU86i",
         "row_BfDLq9",
