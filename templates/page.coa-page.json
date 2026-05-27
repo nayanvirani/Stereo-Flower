@@ -1,1 +1,231 @@
-{"sections":{"image_banner_GYVWTT":{"type":"image-banner","blocks":{"heading_YFGVE3":{"type":"heading","settings":{"heading":"BEVERAGE LAB RESULTS","heading_size":"h1"}},"text_bqUizd":{"type":"text","settings":{"text":"<strong>Check out the third party lab results in our Certificate of Analysis (COA) library<\/strong>","text_style":"subtitle"}},"buttons_GyLRxE":{"type":"buttons","disabled":true,"settings":{"button_label_1":"Button label","button_link_1":"","button_style_secondary_1":false,"button_label_2":"Button label","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_YFGVE3","text_bqUizd","buttons_GyLRxE"],"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Untitled-ert1.webp","image_overlay_opacity":0,"image_height":"adapt","image_behavior":"none","desktop_content_position":"middle-center","desktop_content_alignment":"center","show_text_box":false,"color_scheme":"scheme-3","stack_images_on_mobile":true,"mobile_content_alignment":"center","show_text_below":false}},"nv_image_banner_H38EYR":{"type":"nv-image-banner","disabled":true,"name":"NV:Image banner","settings":{"fullwidth":true,"image":"shopify:\/\/shop_images\/Background_ART_2.png","url":"","section_color_scheme":"","padding_top":0,"padding_bottom":0}},"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"nv_coa_section_n7CkRN":{"type":"nv-coa-section","blocks":{"heading_AtmwMm":{"type":"heading","settings":{"heading_1":"Test Date","heading_2":"Product Name","heading_3":"Batch Number","heading_4":"Test Results","heading_5":"Best By Date"}},"row_YK7f9D":{"type":"row","name":"BOH:4\/20\/26","settings":{"value_1":"April 20, 2026","value_2":"Blood Orange Hibiscus 5mg THC: 10mg CBD per 355mL","value_3":"26100.1","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/Stereo_Flower_Blood_Orange_Hibiscus_5mg_THC_10mg_CBD.pdf?v=1777483196","value_5":"4\/17\/2027"}},"row_pLBKPp":{"type":"row","name":"CV:4\/20\/26","settings":{"value_1":"April 20, 2026","value_2":"Clementine Vanilla 5mg THC: 10mg CBD per 355mL","value_3":"26100","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/Stereo_Flower_Clementine_Vanilla_5mg_THC_10mg_CBD.pdf?v=1777483195","value_5":"4\/17\/2027"}},"row_4RK8rc":{"type":"row","name":"BOH(10mg):4\/3\/26","settings":{"value_1":"April 3, 2026","value_2":"Blood Orange Hibiscus 10mg THC: 10mg CBD per 355mL","value_3":"26098","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/260402TRI002.004_-_Stereo_Flower_Blood_Orange_Hibiscus_10mg_THC_10mg_CBD.pdf?v=1776456942","value_5":"4\/2\/2027"}},"row_FnU86i":{"type":"row","name":"CV(10mg):4\/3\/26","settings":{"value_1":"April 3, 2026","value_2":"Clementine Vanilla 10mg THC: 10mg CBD per 355mL","value_3":"26099","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/260402TRI002.002_-_Stereo_Flower_Clementine_Vanilla_10mg_THC_10mg_CBD.pdf?v=1776456942","value_5":"4\/2\/2027"}},"row_BfDLq9":{"type":"row","name":"YM:2\/6\/26","settings":{"value_1":"April 3, 2026","value_2":"Yuzu Mint 10mg THC: 10mg CBD per 355mL","value_3":"26099","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/260402TRI002.006_Stereo_Flower_Yuzu_Mint_10mg_THC_10mg_CBD.pdf?v=1776456943","value_5":"4\/2\/2027"}},"row_TMCqY4":{"type":"row","name":"BOH:2\/6\/26","settings":{"value_1":"February 6, 2026","value_2":"Blood Orange Hibiscus 5mg THC: 10mg CBD per 355mL","value_3":"1","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/Blood_Orange_Hibiscus_Stereo_Flower_COA_2_6_2026.pdf?v=1772209168","value_5":"2\/4\/2027"}},"row_zE4yRh":{"type":"row","name":"CV:2\/6\/26","settings":{"value_1":"February 6, 2026","value_2":"Clementine Vanilla 5mg THC: 10mg CBD per 355mL","value_3":"1","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/Clementine_Vanilla_Stereo_Flower_COA_2_6_2026.pdf?v=1772135495","value_5":"2\/4\/2027"}},"row_R7xbiY":{"type":"row","name":"YM:2\/6\/26","settings":{"value_1":"February 6, 2026","value_2":"Yuzu Mint 5mg THC: 10mg CBD per 355mL","value_3":"1","value_4":"Click here","value_4_url":"https:\/\/cdn.shopify.com\/s\/files\/1\/0956\/8344\/5049\/files\/Yuzu_Mint_Stereo_Flower_COA_2_6_2026.pdf?v=1772135495","value_5":"2\/4\/2027"}}},"block_order":["heading_AtmwMm","row_YK7f9D","row_pLBKPp","row_4RK8rc","row_FnU86i","row_BfDLq9","row_TMCqY4","row_zE4yRh","row_R7xbiY"],"name":"NV:COA section","settings":{"section_color_scheme":"","padding_top":36,"padding_bottom":36}}},"order":["image_banner_GYVWTT","nv_image_banner_H38EYR","main","nv_coa_section_n7CkRN"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner_GYVWTT": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_YFGVE3": {
+          "type": "heading",
+          "settings": {
+            "heading": "BEVERAGE LAB RESULTS",
+            "heading_size": "h1"
+          }
+        },
+        "text_bqUizd": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Check out the third party lab results in our Certificate of Analysis (COA) library</strong>",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_GyLRxE": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_YFGVE3",
+        "text_bqUizd",
+        "buttons_GyLRxE"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Untitled-ert1.webp",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "nv_image_banner_H38EYR": {
+      "type": "nv-image-banner",
+      "disabled": true,
+      "name": "NV:Image banner",
+      "settings": {
+        "fullwidth": true,
+        "image": "shopify://shop_images/Background_ART_2.png",
+        "url": "",
+        "section_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "nv_coa_section_n7CkRN": {
+      "type": "nv-coa-section",
+      "blocks": {
+        "heading_AtmwMm": {
+          "type": "heading",
+          "settings": {
+            "heading_1": "Test Date",
+            "heading_2": "Product Name",
+            "heading_3": "Batch Number",
+            "heading_4": "Test Results",
+            "heading_5": "Best By Date"
+          }
+        },
+        "row_YK7f9D": {
+          "type": "row",
+          "name": "BOH:4/20/26",
+          "settings": {
+            "value_1": "April 3, 2026",
+            "value_2": "Yuzu Mint 5mg THC: 10mg CBD per 355mL",
+            "value_3": "26110.1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Yuzu_Mint_5mg_THC_10mg_CBD.pdf?v=1779901990",
+            "value_5": "4/2/2027"
+          }
+        },
+        "row_DbH4fC": {
+          "type": "row",
+          "name": "BOH:4/20/26",
+          "settings": {
+            "value_1": "April 20, 2026",
+            "value_2": "Blood Orange Hibiscus 5mg THC: 10mg CBD per 355mL",
+            "value_3": "26100.1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Blood_Orange_Hibiscus_5mg_THC_10mg_CBD.pdf?v=1777483196",
+            "value_5": "4/17/2027"
+          }
+        },
+        "row_pLBKPp": {
+          "type": "row",
+          "name": "CV:4/20/26",
+          "settings": {
+            "value_1": "April 20, 2026",
+            "value_2": "Clementine Vanilla 5mg THC: 10mg CBD per 355mL",
+            "value_3": "26100",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_Flower_Clementine_Vanilla_5mg_THC_10mg_CBD.pdf?v=1777483195",
+            "value_5": "4/17/2027"
+          }
+        },
+        "row_4RK8rc": {
+          "type": "row",
+          "name": "BOH(10mg):4/3/26",
+          "settings": {
+            "value_1": "April 3, 2026",
+            "value_2": "Blood Orange Hibiscus 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26098",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/260402TRI002.004_-_Stereo_Flower_Blood_Orange_Hibiscus_10mg_THC_10mg_CBD.pdf?v=1776456942",
+            "value_5": "4/2/2027"
+          }
+        },
+        "row_FnU86i": {
+          "type": "row",
+          "name": "CV(10mg):4/3/26",
+          "settings": {
+            "value_1": "April 3, 2026",
+            "value_2": "Clementine Vanilla 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26099",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/260402TRI002.002_-_Stereo_Flower_Clementine_Vanilla_10mg_THC_10mg_CBD.pdf?v=1776456942",
+            "value_5": "4/2/2027"
+          }
+        },
+        "row_BfDLq9": {
+          "type": "row",
+          "name": "YM:2/6/26",
+          "settings": {
+            "value_1": "April 3, 2026",
+            "value_2": "Yuzu Mint 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26099",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/260402TRI002.006_Stereo_Flower_Yuzu_Mint_10mg_THC_10mg_CBD.pdf?v=1776456943",
+            "value_5": "4/2/2027"
+          }
+        },
+        "row_TMCqY4": {
+          "type": "row",
+          "name": "BOH:2/6/26",
+          "settings": {
+            "value_1": "February 6, 2026",
+            "value_2": "Blood Orange Hibiscus 5mg THC: 10mg CBD per 355mL",
+            "value_3": "1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Blood_Orange_Hibiscus_Stereo_Flower_COA_2_6_2026.pdf?v=1772209168",
+            "value_5": "2/4/2027"
+          }
+        },
+        "row_zE4yRh": {
+          "type": "row",
+          "name": "CV:2/6/26",
+          "settings": {
+            "value_1": "February 6, 2026",
+            "value_2": "Clementine Vanilla 5mg THC: 10mg CBD per 355mL",
+            "value_3": "1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Clementine_Vanilla_Stereo_Flower_COA_2_6_2026.pdf?v=1772135495",
+            "value_5": "2/4/2027"
+          }
+        },
+        "row_R7xbiY": {
+          "type": "row",
+          "name": "YM:2/6/26",
+          "settings": {
+            "value_1": "February 6, 2026",
+            "value_2": "Yuzu Mint 5mg THC: 10mg CBD per 355mL",
+            "value_3": "1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Yuzu_Mint_Stereo_Flower_COA_2_6_2026.pdf?v=1772135495",
+            "value_5": "2/4/2027"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AtmwMm",
+        "row_YK7f9D",
+        "row_DbH4fC",
+        "row_pLBKPp",
+        "row_4RK8rc",
+        "row_FnU86i",
+        "row_BfDLq9",
+        "row_TMCqY4",
+        "row_zE4yRh",
+        "row_R7xbiY"
+      ],
+      "name": "NV:COA section",
+      "settings": {
+        "section_color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_banner_GYVWTT",
+    "nv_image_banner_H38EYR",
+    "main",
+    "nv_coa_section_n7CkRN"
+  ]
+}
