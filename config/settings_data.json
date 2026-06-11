@@ -285,11 +285,11 @@
         "settings": {
           "background": "#a9dbb8",
           "background_gradient": "",
-          "text": "#353535",
-          "button": "#353535",
+          "text": "#000000",
+          "button": "#000000",
           "button_label": "#ffffff",
-          "secondary_button_label": "#353535",
-          "shadow": "#353535"
+          "secondary_button_label": "#000000",
+          "shadow": "#000000"
         }
       },
       "scheme-e70798cd-8b3a-434c-a025-2681e84c88a4": {
