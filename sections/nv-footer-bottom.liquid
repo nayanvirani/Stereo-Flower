@@ -135,7 +135,7 @@
         {% if section.settings.payment_icon != blank %}
         <div class="nv-footer-bottom-item payment-icon-item">
             <div class="image-wrapper">
-                <img src="{{section.settings.payment_icon | image_url }}" width="{{ section.settings.payment_icon.width }}" height="{{ section.settings.payment_icon.height }}" loading="lazy">
+                <img alt="{{ section.settings.payment_icon.alt | default:"Payment icons" | escape }}" src="{{section.settings.payment_icon | image_url }}" width="{{ section.settings.payment_icon.width }}" height="{{ section.settings.payment_icon.height }}" loading="lazy">
             </div>
         </div>
         {% endif %}
