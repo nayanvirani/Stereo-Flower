@@ -310,7 +310,7 @@
     <div class="nv-order-the-set-wrapper">
         <div class="nv-order-set-item image-item">
             <div class="image-wrapper">
-                <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width}}" height="{{ section.settings.image.height}}">
+                <img alt="{{ section.settings.image.alt | default:section.settings.alt_text | escape }}" src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width}}" height="{{ section.settings.image.height}}">
             </div>
         </div>
         <div class="nv-order-set-item right-item">
@@ -319,7 +319,7 @@
                     {% when 'image' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                                 <div class="image--wrapper custom-image-b-rapper" >
-                                    <img src="{{block.settings.image | image_url }}" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" loading="lazy">
+                                    <img alt="{{ section.settings.image.alt | default:block.settings.alt_text | escape }}" src="{{block.settings.image | image_url }}" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" loading="lazy">
                                 </div>
                         </div>
                     {% when 'heading' %}
@@ -361,6 +361,11 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image",
+    },
+    {
+        "type": "text",
+        "id":"alt_text",
+        "label": "Image alt"
     },
     {
         "type": "number",
@@ -414,6 +419,11 @@
                 "type": "image_picker",
                 "id": "image",
                 "label": "Image",
+            },
+            {
+                "type": "text",
+                "id":"alt_text",
+                "label": "Image alt"
             }
         ]
     },
