@@ -116,7 +116,8 @@ sticky-atc quantity-input.quantity {
         <div class="product-image-wrapper">
             {% for variant in product.variants %}
                 <div class="product-image-item{% unless variant.id == product.selected_or_first_available_variant.id %} hidden{% endunless %}">
-                    {{ variant.featured_image | default:product.featured_image | image_url: width: '120x' | image_tag }}
+                  {% assign alt_text = product.title | append:'-' | append: variant.title | escape %}
+                    {{ variant.featured_image | default:product.featured_image | image_url: width: '120x' | image_tag:alt:alt_text }}
                 </div>
             {% endfor %}
         </div>
