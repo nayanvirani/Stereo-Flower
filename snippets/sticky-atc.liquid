@@ -163,6 +163,7 @@ sticky-atc quantity-input.quantity {
                     {{- 'icon-minus.svg' | inline_asset_content -}}
                 </span>
                 </button>
+                <label class="hidden visually-hidden">Quantity</label>
                 <input
                 class="quantity__input"
                 type="number"
@@ -178,7 +179,7 @@ sticky-atc quantity-input.quantity {
                 step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
                 value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                 form="{{ product_form_id }}"
-                aria-labelledby="quantity"
+                aria-labelledby="Quantity-{{ product.id }}"
                 >
                 <button class="quantity__button" name="plus" type="button">
                 <span class="visually-hidden">
