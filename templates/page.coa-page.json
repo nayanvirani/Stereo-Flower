@@ -83,6 +83,17 @@
     "nv_coa_section_n7CkRN": {
       "type": "nv-coa-section",
       "blocks": {
+        "row_KGmwgd": {
+          "type": "row",
+          "settings": {
+            "value_1": "July 27, 2026",
+            "value_2": "Blood Orange Hibiscus 25mg THC: 10mg CBD per 355ml",
+            "value_3": "260723TRI016.004",
+            "value_4": "Click here",
+            "value_4_url": "",
+            "value_5": "7/27/2027"
+          }
+        },
         "heading_AtmwMm": {
           "type": "heading",
           "settings": {
@@ -203,6 +214,7 @@
         }
       },
       "block_order": [
+        "row_KGmwgd",
         "heading_AtmwMm",
         "row_DbH4fC",
         "row_pLBKPp",
