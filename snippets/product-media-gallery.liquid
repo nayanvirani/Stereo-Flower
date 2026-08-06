@@ -303,6 +303,7 @@
                 aria-describedby="{{ thumbnail_id }}"
                  {% endcomment %}
               >
+                {% assign alt_text =  media.alt | append:'-' | append:forloop.index %}
                 {{
                   media.preview_image
                   | image_url: width: 416
@@ -311,7 +312,7 @@
                     sizes: sizes,
                     widths: '54, 74, 104, 162, 208, 324, 416',
                     id: thumbnail_id,
-                    alt: media.alt | append:'-' | append:forloop.index
+                    alt:alt_text
                   | escape
                 }}
               </button>
