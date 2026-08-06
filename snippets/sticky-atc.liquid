@@ -195,9 +195,6 @@ sticky-atc quantity-input.quantity {
                 type="submit"
                 name="add"
                 class="quick-add__submit button button--full-width button--primary"
-                aria-haspopup="dialog"
-                aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ product.id }}"
-                aria-live="polite"
                 data-sold-out-message="true"
                 {% if product.selected_or_first_available_variant.available == false %}
                   disabled
