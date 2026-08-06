@@ -105,9 +105,9 @@
   <div class="page-width">
     <div class="nv-footer-bottom-wrapper">
         {% if section.settings.image != blank %}
-        <div class="nv-footer-bottom-item  image-21-item">
+        <div class="nv-footer-bottom-item image-21-item">
             <div class="image-wrapper">
-                <img src="{{section.settings.image | image_url }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
+                <img alt="{{ section.settings.image.alt | default:"Age 21+" | escape }}" src="{{section.settings.image | image_url }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}" loading="lazy">
             </div>
             {% if section.settings.age_text_note != blank %}
               <div class="age-text-note uppercase">{{ section.settings.age_text_note }}</div>
