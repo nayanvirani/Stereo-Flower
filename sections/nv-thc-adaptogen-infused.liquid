@@ -178,7 +178,7 @@
             <div class="nv-thc-adaptogen-item{% if block.settings.enable_wave == true %} enable-wave{% endif %}">
                 {% if block.settings.image != blank %}
                     <div class="image-wrapper" {% if block.settings.image_width > 0 %} style="max-width:{{ block.settings.image_width }}px;"{% endif %}>
-                        <img alt="{{ block.settings.image.alt | default:block.settings.title }}" src="{{ block.settings.image | image_url }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
+                        <img alt="{{ block.settings.image.alt | default:block.settings.title | escape }}" src="{{ block.settings.image | image_url }}" loading="lazy" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}">
                     </div>
                 {% endif %}
                 {% if block.settings.title != blank %}
