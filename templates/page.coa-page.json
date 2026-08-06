@@ -85,6 +85,7 @@
       "blocks": {
         "row_6BcQgL": {
           "type": "row",
+          "name": "CV(25mg):7/27/26",
           "settings": {
             "value_1": "July 27, 2026",
             "value_2": "Clementine Vanilla 25mg THC: 10mg CBD per 355ml",
@@ -96,6 +97,7 @@
         },
         "row_KGmwgd": {
           "type": "row",
+          "name": "BOH (25mg):7/27/26",
           "settings": {
             "value_1": "July 27, 2026",
             "value_2": "Blood Orange Hibiscus 25mg THC: 10mg CBD per 355ml",
