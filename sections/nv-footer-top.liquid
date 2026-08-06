@@ -108,19 +108,19 @@
     <div class="nv-footer-top-wrapper">
        {% if section.settings.title_image != blank %}
             <div class="image-wrapper nv-footer-top-title-image"{% if section.settings.title_image_width > 0 %} style="max-width:{{ section.settings.title_image_width }}px;"{% endif %}>
-                <img src="{{ section.settings.title_image | image_url }}" loading="lazy" width="{{ section.settings.title_image.width }}" height="{{section.settings.title_image.height }}" alt="{{ section.settings.title }}">
+                <img alt="{{ section.settings.title_image.alt | default:section.settings.title_image_alt | escape }}" src="{{ section.settings.title_image | image_url }}" loading="lazy" width="{{ section.settings.title_image.width }}" height="{{section.settings.title_image.height }}" alt="{{ section.settings.title }}">
             </div>
         {% elsif section.settings.title != blank %}
             <h3 class="nv-footer-top-section-title h1">{{ section.settings.title }}</h3>
         {% endif %}
         {% if section.settings.image != blank %}
             <div class="image-wrapper nv-footer-top-logo-center">
-                <img src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
+                <img alt="{{ section.settings.image.alt | default:section.settings.image_alt | escape }}" src="{{ section.settings.image | image_url }}" loading="lazy" width="{{ section.settings.image.width }}" height="{{section.settings.image.height }}" alt="{{ section.settings.title }}">
             </div>
         {% endif %}
          {% if section.settings.text_image != blank %}
             <div class="image-wrapper nv-footer-top-text-image"{% if section.settings.text_image_width > 0 %} style="max-width:{{ section.settings.text_image_width }}px;"{% endif %}>
-                <img src="{{ section.settings.text_image | image_url }}" loading="lazy" width="{{ section.settings.text_image.width }}" height="{{section.settings.text_image.height }}" alt="{{ section.settings.text }}">
+                <img alt="{{ section.settings.text_image.alt | default:section.settings.text_image_alt | escape }}" src="{{ section.settings.text_image | image_url }}" loading="lazy" width="{{ section.settings.text_image.width }}" height="{{section.settings.text_image.height }}" alt="{{ section.settings.text }}">
             </div>
         {% elsif section.settings.text != blank %}
             <div class="nv-footer-top-section-text">{{ section.settings.text }}</div>
@@ -146,6 +146,12 @@
         "info": "If you want to use image instead of title"
     },
     {
+        "type": "text",
+        "id":"title_image_alt",
+        "label": "Image alt",
+        "default":"STEREO FLOWER"
+    },
+    {
         "type": "number",
         "id": "title_image_width",
         "label": "Title image width",
@@ -154,6 +160,12 @@
         "type": "image_picker",
         "id": "image",
         "label": "Image",
+    },
+    {
+        "type": "text",
+        "id":"image_alt",
+        "label": "Image alt",
+        "default":"Footer logo"
     },
     {
         "type": "text",
@@ -166,6 +178,12 @@
         "id": "text_image",
         "label": "Text Image",
         "info": "If you want to use image instead of Text"
+    },
+    {
+        "type": "text",
+        "id":"text_image_alt",
+        "label": "Image alt",
+        "default":"DRINK UP, TUNE IN, STAY LOUD"
     },
     {
         "type": "number",
