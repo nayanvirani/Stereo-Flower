@@ -286,7 +286,8 @@
         "image_HPxRe4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Newtag.webp"
+            "image": "shopify://shop_images/Newtag.webp",
+            "alt_text": "New badge"
           }
         },
         "heading_AMXAhN": {
@@ -396,6 +397,7 @@
       "name": "NV: Order the set",
       "settings": {
         "image": "shopify://shop_images/HWD-SF-ASSETS-03.webp",
+        "alt_text": "Order the full set",
         "border_radius": 40,
         "section_color_scheme": "",
         "padding_top": 36,
