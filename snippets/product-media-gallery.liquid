@@ -241,6 +241,7 @@
               aria-describedby="{{ thumbnail_id }}"
             {% endcomment %}
             >
+              {% assign alt_text =  'thumbnail - ' | append: featured_media.alt | append:' - ' | append:forloop.index %}
               {{
                 featured_media.preview_image
                 | image_url: width: 416
@@ -249,7 +250,7 @@
                   sizes: sizes,
                   widths: '54, 74, 104, 162, 208, 324, 416',
                   id: thumbnail_id,
-                  alt: featured_media.alt
+                  alt: alt_text
                 | escape
               }}
             </button>
@@ -305,7 +306,7 @@
                 aria-describedby="{{ thumbnail_id }}"
                  {% endcomment %}
               >
-                {% assign alt_text =  media.alt | append:'-' | append:forloop.index %}
+                {% assign alt_text =  'thumbnail - ' | append: media.alt | append:' - ' | append:forloop.index %}
                 {{
                   media.preview_image
                   | image_url: width: 416
