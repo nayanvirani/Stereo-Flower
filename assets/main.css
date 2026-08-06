@@ -412,3 +412,6 @@ span.needsclick.Teaser-pointer-Hn1zd.kl-private-reset-css-Xuajs1 .needsclick.go1
   color: transparent !important;
   font-size: 0 !important;
 }*/
+.AirReviews-Widget.AirReviews-Widget--Stars[data-review-count="0"] {
+    display: none;
+}
