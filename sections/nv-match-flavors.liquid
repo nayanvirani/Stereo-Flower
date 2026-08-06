@@ -316,7 +316,7 @@
                     <div class="nv-match-flavor-item-content-wrapper">
                         {% if block.settings.top_icon != blank %}
                             <div class="image-wrapper top-icon-wrapper">
-                                <img src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
+                                <img alt="{{block.settings.top_icon.alt | default:block.settings.title | escape }}" src="{{ block.settings.top_icon | image_url }}" loading="lazy" width="{{ block.settings.top_icon.width }}" height="{{ block.settings.top_icon.height }}">
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
