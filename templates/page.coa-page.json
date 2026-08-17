@@ -83,6 +83,18 @@
     "nv_coa_section_n7CkRN": {
       "type": "nv-coa-section",
       "blocks": {
+        "row_3fxbae": {
+          "type": "row",
+          "name": "YM(25mg):7/27/26",
+          "settings": {
+            "value_1": "July 27, 2026",
+            "value_2": "Yuzu Mint 25mg THC: 10mg CBD per 237mL",
+            "value_3": "26210.1",
+            "value_4": "Click here",
+            "value_4_url": "",
+            "value_5": "07/27/2027"
+          }
+        },
         "row_6BcQgL": {
           "type": "row",
           "name": "CV(25mg):7/27/26",
@@ -227,6 +239,7 @@
         }
       },
       "block_order": [
+        "row_3fxbae",
         "row_6BcQgL",
         "row_KGmwgd",
         "heading_AtmwMm",
