@@ -11,13 +11,30 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "17890594533857890e": {
+      "type": "apps",
+      "blocks": {
+        "store_seek_store_locations_KC3G7N": {
+          "type": "shopify://apps/store-seek/blocks/store-locations/7d2cb426-32e7-416c-9f6c-c6a51f2842e0",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "store_seek_store_locations_KC3G7N"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "17890594533857890e"
   ]
 }
