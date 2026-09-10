@@ -28,6 +28,9 @@
       "block_order": [
         "store_seek_store_locations_KC3G7N"
       ],
+      "custom_css": [
+        "{padding: 30px 0;}"
+      ],
       "settings": {
         "include_margins": true
       }
