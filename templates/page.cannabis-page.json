@@ -16,7 +16,7 @@
           "type": "heading",
           "settings": {
             "heading": "The Stereo Flower Is More Than a Beverage Brand",
-            "heading_size": "h0"
+            "heading_size": "h1"
           }
         },
         "text_Edk8Bn": {
@@ -47,11 +47,11 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Webssite_Stereo_Banner_Playlists_Hero_copy_1.jpg",
+        "image": "shopify://shop_images/Textable_SF_Launch_1_wercopy_copy.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "top-center",
         "desktop_content_alignment": "center",
         "show_text_box": false,
         "color_scheme": "scheme-3",
