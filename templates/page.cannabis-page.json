@@ -114,6 +114,7 @@
     },
     "image_banner_cnxk8P": {
       "type": "image-banner",
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
         "image": "shopify://shop_images/Website_Banner_Stereo_6.jpg",
@@ -150,6 +151,7 @@
         "heading_dneFVq",
         "text_p43j9G"
       ],
+      "disabled": true,
       "name": "Broader Brand Experience",
       "settings": {
         "desktop_content_position": "center",
