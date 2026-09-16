@@ -564,7 +564,7 @@
         "item_8aWdz3": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/LTheanine_1.png",
+            "icon": "shopify://shop_images/Lthenine_Icon_9d2259fc-f391-41c8-a690-b5e2dc07e004.png",
             "icon_width": 75,
             "title": "L-Theanine",
             "title_color": "#000000",
@@ -575,7 +575,7 @@
         "item_jXBCFX": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/GABA_1.png",
+            "icon": "shopify://shop_images/Gaba_Icon_501b0aa4-6574-4af7-8274-6e68dc5d3e41.png",
             "icon_width": 75,
             "title": "GABA",
             "title_color": "#000000",
@@ -586,7 +586,7 @@
         "item_QYaXfJ": {
           "type": "item",
           "settings": {
-            "icon": "shopify://shop_images/Lions_Mane_1.png",
+            "icon": "shopify://shop_images/Lions_Mane_Icon_e8f387ad-94d3-4248-862e-9dcf124cbc2d.png",
             "icon_width": 75,
             "title": "Lion’s Mane",
             "title_color": "#000000",
