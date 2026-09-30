@@ -34,6 +34,7 @@
         },
         "slide_yJTjAR": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/SF-WEB-r6-Bfanner_Desktop.webp",
             "image_overlay_opacity": 0,
