@@ -62,10 +62,33 @@
         "padding_top": 12,
         "padding_bottom": 12
       }
+    },
+    "nv_image_text_b4q3fL": {
+      "type": "nv-image-text",
+      "name": "NV:Image text",
+      "settings": {
+        "section_color_scheme": "scheme-3",
+        "background_image": "shopify://shop_images/Textable_SF_Launch_1_copy5.jpg",
+        "background_image_": "shopify://shop_images/Textable_SF_Launch_1_copy5.jpg",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "title": "FIND STEREO FLOWER NEAR YOU",
+        "subtitle": "",
+        "content": "",
+        "content_center": true,
+        "is_uppercase": false,
+        "button": "",
+        "url": "",
+        "enable_border_radius": false,
+        "border_radius": 40,
+        "paddingleftright": 40,
+        "paddingleftright_m": 20
+      }
     }
   },
   "order": [
     "announcement_bar_EQwEkt",
-    "header"
+    "header",
+    "nv_image_text_b4q3fL"
   ]
 }
