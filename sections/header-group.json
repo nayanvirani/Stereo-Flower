@@ -14,24 +14,24 @@
     "announcement_bar_EQwEkt": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_8EEUdq": {
-          "type": "announcement",
-          "settings": {
-            "text": "FREE SHIPPING ON ORDERS $120+",
-            "link": ""
-          }
-        },
         "announcement_WJQRpX": {
           "type": "announcement",
           "settings": {
             "text": "50% OFF SITEWIDE // Happy Sober October!",
             "link": "shopify://collections/all"
           }
+        },
+        "announcement_8EEUdq": {
+          "type": "announcement",
+          "settings": {
+            "text": "FREE SHIPPING ON ORDERS $120+",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "announcement_8EEUdq",
-        "announcement_WJQRpX"
+        "announcement_WJQRpX",
+        "announcement_8EEUdq"
       ],
       "name": "t:sections.announcement-bar.presets.name",
       "settings": {

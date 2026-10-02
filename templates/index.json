@@ -14,92 +14,15 @@
       "blocks": {
         "slide_4zdHyH": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/Website_Stereo_Banner_1eDesktop_copy.webp",
-            "image_m": "shopify://shop_images/Website_Stereo_Banner_1eDesktop_copy.webp",
+            "image": "shopify://shop_images/Textable_SFs_Launch_1_copy5_3786a612-54db-4e50-a7b9-7e28cc73e2d6.jpg",
+            "image_m": "shopify://shop_images/Textable_SFs_Launch_1_copy5_3786a612-54db-4e50-a7b9-7e28cc73e2d6.jpg",
             "image_overlay_opacity": 0,
-            "heading": "",
+            "heading": "50% OFF SITEWIDE",
             "heading_size": "h1",
-            "subheading": "",
+            "subheading": "<strong>Happy Sober-ish October! Discount applied automatically.</strong>",
             "button_label": "",
             "link": "shopify://collections/stereo-flower-thc-infused-sparkling-teas",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-4"
-          }
-        },
-        "slide_yJTjAR": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/SF-WEB-r6-Bfanner_Desktop.webp",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "shopify://collections/stereo-flower-thc-infused-sparkling-teas",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
-          }
-        },
-        "slide_E4ckzM": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Banner_LF_2_a9c8c194-2f67-4cc4-bf8a-52307e205cf0.jpg",
-            "image_overlay_opacity": 20,
-            "heading": "<strong>Cooler Full. Volume Up.</strong>",
-            "heading_size": "h1",
-            "subheading": "<strong>Crisp sparkling teas with THC, bold flavor, and just the right lift for the moment.</strong>",
-            "button_label": "Shop Now",
-            "link": "shopify://collections/stereo-flower-thc-infused-sparkling-teas",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
-          }
-        },
-        "slide_eVgM4b": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image_overlay_opacity": 20,
-            "heading": "Festival Season, In Stereo",
-            "heading_size": "h1",
-            "subheading": "Sparkling THC teas made for cooler packing, set hopping, and finding your perfect vibe.",
-            "button_label": "Try a Festival Ready Starter Pack",
-            "link": "shopify://collections/starter-packs",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
-          }
-        },
-        "slide_9xPHeX": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/Untitled-1456.jpg",
-            "image_m": "shopify://shop_images/Untitled-1456.jpg",
-            "image_overlay_opacity": 20,
-            "heading": "<strong>Drink Up. Tune In. Stay Loud.</strong>",
-            "heading_size": "h1",
-            "subheading": "<strong>Curated Stereo Flower playlists made to pair with the moment.</strong>",
-            "button_label": "Tune In",
-            "link": "shopify://pages/stereo-flower-playlists",
             "button_style_secondary": false,
             "show_text_box": false,
             "box_align": "bottom-center",
@@ -110,11 +33,7 @@
         }
       },
       "block_order": [
-        "slide_4zdHyH",
-        "slide_yJTjAR",
-        "slide_E4ckzM",
-        "slide_eVgM4b",
-        "slide_9xPHeX"
+        "slide_4zdHyH"
       ],
       "custom_css": [
         "a.button.button--primary {font-size: 26px; line-height: 100%; min-height: auto; padding: 12px 10px 10px 10px;}",
