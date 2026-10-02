@@ -415,3 +415,10 @@ span.needsclick.Teaser-pointer-Hn1zd.kl-private-reset-css-Xuajs1 .needsclick.go1
 .AirReviews-Widget.AirReviews-Widget--Stars[data-review-count="0"] {
     display: none;
 }
+
+@media(max-width:1820px){
+
+    .header__menu-item {
+        font-size: 16px;
+    }
+}
