@@ -17,6 +17,35 @@
         "padding_bottom": 28
       }
     },
+    "image_banner_CdrP4q": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_BB8pHq": {
+          "type": "heading",
+          "settings": {
+            "heading": "FIND STEREO FLOWER NEAR YOU",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BB8pHq"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Textable_SFs_Launch_1_copy5.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": false,
+        "color_scheme": "scheme-3",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
     "17890594533857890e": {
       "type": "apps",
       "blocks": {
@@ -38,6 +67,7 @@
   },
   "order": [
     "main",
+    "image_banner_CdrP4q",
     "17890594533857890e"
   ]
 }
