@@ -422,3 +422,9 @@ span.needsclick.Teaser-pointer-Hn1zd.kl-private-reset-css-Xuajs1 .needsclick.go1
         font-size: 16px;
     }
 }
+@media(max-width:1560px){
+
+    .header__menu-item {
+        font-size: 14px;
+    }
+}
