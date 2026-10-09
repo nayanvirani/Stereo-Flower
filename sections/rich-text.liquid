@@ -52,6 +52,18 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
+              {%  if block.settings.enable_h1_tag == true %}
+                <h1
+                  class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                  {{ block.shopify_attributes }}
+                  {% if settings.animations_reveal_on_scroll %}
+                    data-cascade
+                    style="--animation-order: {{ forloop.index }};"
+                  {% endif %}
+                >
+                  {{ block.settings.heading }}
+                </h1>
+              {% else %}
               <h2
                 class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
@@ -62,6 +74,7 @@
               >
                 {{ block.settings.heading }}
               </h2>
+            {% endif %}
             {%- when 'caption' -%}
               <p
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -263,6 +276,12 @@
       "name": "t:sections.rich-text.blocks.heading.name",
       "limit": 3,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_h1_tag",
+          "label": "Enable h1 tag?",
+          "default":false
+        },
         {
           "type": "inline_richtext",
           "id": "heading",
