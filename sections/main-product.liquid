@@ -251,7 +251,7 @@
                       {{ block.settings.page.content }}
                       {% if block.settings.image != blank %}
                         <div class="pdp-accord-image-wrapper">
-                          <img src="{{block.settings.image | image_url }}" loading="lazy" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" alt="{{ block.settings.image | default:block.settings.heading | escape}}">
+                          <img src="{{block.settings.image | image_url }}" loading="lazy" width="{{block.settings.image.width }}" height="{{block.settings.image.height }}" alt="{{ block.settings.image.alt | default:block.settings.heading | escape}}">
                         </div>
                       {% endif %}
                     </div>
