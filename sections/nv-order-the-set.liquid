@@ -304,10 +304,11 @@
 }
 {%- endstyle -%}
 
-{% assign area_label ="" %}
+{% assign area_label = "" %}
 {% for block in section.blocks %}
 {% if block.type == 'heading' and block.settings.heading != blank %}
-    {% assign area_label = block.settings.heading | replace:'__BREAKLINE__','' %}
+    {% assign area_label = block.settings.heading | replace:'__BREAKLINE__',' ' %}
+    {% break %}
 {%  endif %}
 {% endfor %}
                             
