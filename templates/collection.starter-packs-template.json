@@ -24,6 +24,7 @@
         "heading_74AXad": {
           "type": "heading",
           "settings": {
+            "enable_h1_tag": true,
             "heading": "THC INFUSED SPARKLING TEA STARTER PACKS",
             "heading_size": "h0"
           }
