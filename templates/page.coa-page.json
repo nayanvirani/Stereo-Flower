@@ -46,7 +46,7 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Untitled-ert1.webp",
+        "image": "shopify://shop_images/Textable_SFs_Launch_1_copy5.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -65,7 +65,6 @@
       "name": "NV:Image banner",
       "settings": {
         "fullwidth": true,
-        "image": "shopify://shop_images/Background_ART_2.png",
         "url": "",
         "section_color_scheme": "",
         "padding_top": 0,
