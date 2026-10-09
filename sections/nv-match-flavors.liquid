@@ -329,7 +329,7 @@
                             <div class="nv-match-flavor-item-content">{{ block.settings.content | replace:'__BREAKLINE__','<br/>' }}</div>
                         {% endif %}
                         {% if block.settings.button_text != blank and block.settings.button_url != blank %}
-                            <div class="nv-match-flavor-item-button-wrapper">
+                            <div class="nv-match-flavor-item-button-wrapper" aria-label="{{block.settings.title | escape }}">
                                 <a href="{{ block.settings.button_url }}" class="button button--primary uppercase"{% if block.settings.button_color != blank %} style="
                                     --color-button: {{ block.settings.button_bg_color.red }},{{ block.settings.button_bg_color.green }},{{ block.settings.button_bg_color.blue }};
                                     --color-button-text: {{ block.settings.button_color.red }},{{ block.settings.button_color.green }},{{ block.settings.button_color.blue }};
