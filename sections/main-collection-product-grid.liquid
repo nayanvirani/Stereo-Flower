@@ -37,6 +37,14 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+  {% if section.settings.enable_hidden_title == true %}
+    <h1
+          class="hidden visually-hidden"
+            style="display:none"
+        >
+          {{ collection.title }}
+        </h1>
+  {% endif %}
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -200,6 +208,12 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_hidden_title",
+      "label": "Enable hidden tile for collction for Accessibly?",
+      "default":false
+    },
     {
       "type": "range",
       "id": "products_per_page",
