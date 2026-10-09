@@ -90,7 +90,7 @@
                 <div
                   class="announcement-bar__announcement"
                   role="region"
-                  aria-label="{{ 'sections.header.announcement' | t }}"
+                  aria-label="{{ 'sections.header.announcement' | t }} - {{ forloop.index }}"
                 >
                   {%- if block.settings.text != blank -%}
                     {%- if block.settings.link != blank -%}
