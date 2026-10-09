@@ -109,7 +109,7 @@ sticky-atc quantity-input.quantity {
     }
 }
 {% endstyle %}
-<sticky-atc>
+<sticky-atc role="region" aria-label="Product Sticky Add to cart">
     <div class="page-width">
     <div class="custom-sticky-flex-wrapper">
     <div class="custom-sticky-title-wrapper small-hide">
@@ -137,8 +137,8 @@ sticky-atc quantity-input.quantity {
               data-type: 'add-to-cart-form'
             -%}
             {%  if product.variants.size > 1 %}
-              <label class="label-sticky-select">
-                <select class="custom-sticky-select" name="id">
+              <label class="label-sticky-select" for="custom-sticky-variant-selector-{{ product.id }}">
+                <select class="custom-sticky-select" name="id" aria-label="Pack size" id="custom-sticky-variant-selector-{{ product.id }}">
                     {%  for variant in product.variants %}
                         <option value="{{ variant.id }}"{% if variant.id == product.selected_or_first_available_variant.id %}selected{% endif %}>{{ variant.title }} - {{ variant.price | money }}</option>
                     {%  endfor %}
