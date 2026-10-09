@@ -304,7 +304,14 @@
 }
 {%- endstyle -%}
 
-
+{% assign area_label ="" %}
+{% for block in section.blocks %}
+{% if block.type == 'heading' and block.settings.heading != blank %}
+    {% assign area_label = block.settings.heading | replace:'__BREAKLINE__','' %}
+{%  endif %}
+{% endfor %}
+                            
+                
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.section_color_scheme }}">
   <div class="page-width">
     <div class="nv-order-the-set-wrapper">
@@ -342,7 +349,7 @@
                         </div>
                     {% when 'button' %}
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
-                            <a class="button button--primary" href="{{ block.settings.url }}">{{ block.settings.title }}</a>
+                            <a class="button button--primary" href="{{ block.settings.url }}" aria-label="{{area_label }}">{{ block.settings.title }}</a>
                         </div>
                     {% when 'spacing' %}
                         <div id="custom-nv-{{block.id}}-block"></div>
