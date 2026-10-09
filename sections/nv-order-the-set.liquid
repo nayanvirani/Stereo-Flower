@@ -341,7 +341,7 @@
                         <div class="nv-block-item" id="custom-nv-{{block.id}}-block">
                             <div class="custom-nv-order-subtitle">{{ block.settings.title }}</div>
                             {% if block.settings.button != blank %}
-                                <a class="button button--primary" href="{{ block.settings.url }}">{{ block.settings.button }}</a>
+                                <a class="button button--primary" aria-label="{{block.settings.title }}" href="{{ block.settings.url }}">{{ block.settings.button }}</a>
                             {% endif %}
                         </div>
                     {% when 'content' %}
