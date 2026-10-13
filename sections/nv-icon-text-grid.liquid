@@ -62,7 +62,7 @@
                      <div class="swiper-slide nv-icon-text-grid-swiper-slide">
                          {% if block.settings.icon != blank %}
                             <div class="image-wrapper" style="{% if block.settings.icon_width > 0 %}max-width:{{ block.settings.icon_width }}px;{% endif %}">
-                                {{ block.settings.icon | image_url: width: '400x' | image_tag:loading:'lazy'  }}
+                                {{ block.settings.icon | image_url: width: '400x' | image_tag:loading:'lazy',alt:block.settings.title }}
                             </div>
                         {% endif %}
                         {% if block.settings.title != blank %}
