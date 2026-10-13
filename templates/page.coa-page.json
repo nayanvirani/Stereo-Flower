@@ -84,6 +84,18 @@
       "blocks": {
         "row_wDEDbz": {
           "type": "row",
+          "name": "CV(10mg):8/11/26",
+          "settings": {
+            "value_1": "August 11, 2026",
+            "value_2": "Clementine Vanilla 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26218.1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/Stereo_-_Yuzu_Mint_10mg.pdf?v=1791922223",
+            "value_5": "08/11/2027"
+          }
+        },
+        "row_WBrFbC": {
+          "type": "row",
           "name": "YM(10mg):8/11/26",
           "settings": {
             "value_1": "August 11, 2026",
@@ -299,6 +311,7 @@
       },
       "block_order": [
         "row_wDEDbz",
+        "row_WBrFbC",
         "row_3fxbae",
         "row_W4t3L9",
         "row_dUBEtH",
