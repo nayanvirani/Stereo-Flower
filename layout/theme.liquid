@@ -444,5 +444,52 @@
     {% if template contains 'product' %}
       {% render 'sticky-atc' %}
     {% endif %}
+
+    <script>
+      /* Keyboard + screen reader patch for Age Verifier by Omega. Remove once Omega ships a fix. */
+      (function () {
+        function patch() {
+          var ok = document.getElementById('av_submit_form');
+          var cancel = document.getElementById('av_cancel_form');
+          if (!ok || !cancel || ok.dataset.a11yPatched) return;
+          ok.dataset.a11yPatched = '1';
+          [ok, cancel].forEach(function (el) {
+            el.setAttribute('role', 'button');
+            el.setAttribute('tabindex', '0');
+            el.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+            });
+          });
+          var labels = { avMonth: 'Birth month', avDay: 'Birth day', avYear: 'Birth year' };
+          Object.keys(labels).forEach(function (id) {
+            var s = document.getElementById(id);
+            if (s && !s.getAttribute('aria-label')) s.setAttribute('aria-label', labels[id]);
+          });
+          var dialog = document.getElementById('av-overlay-form') || ok.closest('div');
+          var heading = dialog.querySelector('h1, h2, h3, h4');
+          dialog.setAttribute('role', 'dialog');
+          dialog.setAttribute('aria-modal', 'true');
+          if (heading) {
+            if (!heading.id) heading.id = 'av-gate-heading';
+            dialog.setAttribute('aria-labelledby', heading.id);
+          } else {
+            dialog.setAttribute('aria-label', 'Age verification');
+          }
+          var first = dialog.querySelector('select, [tabindex="0"]');
+          (first || ok).focus();
+          dialog.addEventListener('keydown', function (e) {
+            if (e.key !== 'Tab') return;
+            var items = Array.prototype.slice.call(dialog.querySelectorAll('select, [tabindex="0"], button, input, a[href]'))
+              .filter(function (el) { return el.offsetParent !== null; });
+            if (!items.length) return;
+            var firstEl = items[0], lastEl = items[items.length - 1];
+            if (e.shiftKey && document.activeElement === firstEl) { e.preventDefault(); lastEl.focus(); }
+            else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); firstEl.focus(); }
+          });
+        }
+        patch();
+        new MutationObserver(patch).observe(document.documentElement, { childList: true, subtree: true });
+      })();
+      </script>
   </body>
 </html>
