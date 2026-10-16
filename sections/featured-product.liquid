@@ -184,6 +184,7 @@
                       for="Quantity-{{ section.id }}"
                       aria-labelledby="quantity-label-{{ section.id }}"
                     >
+                      <span>{{ 'products.product.quantity.label' | t }}</span>
                       <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}" aria-hidden="true">
                         {%- render 'loading-spinner' -%}
                         <span
