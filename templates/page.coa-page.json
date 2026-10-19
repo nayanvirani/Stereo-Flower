@@ -277,6 +277,18 @@
           "name": "BOH(10mg):5/19/26",
           "settings": {
             "value_1": "May 19, 2026",
+            "value_2": "Clementine Vanilla 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26139.3",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/260519TRI008.003_-_The_Love_Lab_LLC_-_Stereo_Flower_Clementine_Vanilla_10mg_THC_10mg_CBD.pdf?v=1792438631",
+            "value_5": "5/19/2027"
+          }
+        },
+        "row_MLDQGm": {
+          "type": "row",
+          "name": "BOH(10mg):5/19/26",
+          "settings": {
+            "value_1": "May 19, 2026",
             "value_2": "Blood Orange Hibiscus 10mg THC: 10mg CBD per 355mL",
             "value_3": "26139.2",
             "value_4": "Click here",
@@ -411,6 +423,7 @@
         "row_BXNVr4",
         "row_M7PHGU",
         "row_zTUbdA",
+        "row_MLDQGm",
         "row_GHLk3J",
         "row_pLBKPp",
         "row_YK7f9D",
