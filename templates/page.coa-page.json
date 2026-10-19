@@ -238,6 +238,18 @@
         },
         "row_qFG486": {
           "type": "row",
+          "name": "CV(10mg):6/02/26",
+          "settings": {
+            "value_1": "June 2, 2026",
+            "value_2": "Clementine Vanilla 10mg THC: 10mg CBD per 355mL",
+            "value_3": "26141.1",
+            "value_4": "Click here",
+            "value_4_url": "https://cdn.shopify.com/s/files/1/0956/8344/5049/files/260526TRI011.002_-_The_Love_Lab_LLC_-_Stereo_Flower_Clementine_10mg.pdf?v=1792433953",
+            "value_5": "6/02/2027"
+          }
+        },
+        "row_M7PHGU": {
+          "type": "row",
           "name": "YM:6/02/26",
           "settings": {
             "value_1": "June 2, 2026",
@@ -372,6 +384,7 @@
         "row_iAF4me",
         "row_KzpcaF",
         "row_qFG486",
+        "row_M7PHGU",
         "row_zTUbdA",
         "row_pLBKPp",
         "row_YK7f9D",
