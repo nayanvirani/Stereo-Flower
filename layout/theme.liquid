@@ -455,8 +455,8 @@
           }); 
         }
         function patch() { 
-          var ok = document.getElementById('avsubmitform'); 
-          var cancel = document.getElementById('avcancelform'); 
+          var ok = document.getElementById('av_submit_form'); 
+          var cancel = document.getElementById('av_cancel_form'); 
           if (!ok || !cancel || ok.dataset.a11yPatched) return; 
           ok.dataset.a11yPatched = '1'; 
           [ok, cancel].forEach(function (el) { 
