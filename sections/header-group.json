@@ -14,13 +14,6 @@
     "announcement_bar_EQwEkt": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_WJQRpX": {
-          "type": "announcement",
-          "settings": {
-            "text": "50% OFF SITEWIDE // Happy Sober October!",
-            "link": "shopify://collections/all"
-          }
-        },
         "announcement_8EEUdq": {
           "type": "announcement",
           "settings": {
@@ -30,7 +23,6 @@
         }
       },
       "block_order": [
-        "announcement_WJQRpX",
         "announcement_8EEUdq"
       ],
       "name": "t:sections.announcement-bar.presets.name",
